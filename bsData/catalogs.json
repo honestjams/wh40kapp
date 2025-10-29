@@ -1,0 +1,12 @@
+[
+  { "id": "space-marines", "name": "Imperium - Space Marines", "file": "/bsData/Imperium - Space Marines.cat" },
+  { "id": "tyranids", "name": "Tyranids", "file": "/bsData/Tyranids.cat" },
+  { "id": "orks", "name": "Orks", "file": "/bsData/Orks.cat" },
+  { "id": "necrons", "name": "Necrons", "file": "/bsData/Necrons.cat" },
+  { "id": "eldar-craftworlds", "name": "Aeldari - Craftworlds", "file": "/bsData/Aeldari - Craftworlds.cat" },
+  { "id": "tau", "name": "T'au Empire", "file": "/bsData/T'au Empire.cat" },
+  { "id": "imperium-space-marines-chapters", "name": "Imperium - Space Marines (Chapters)", "file": "/bsData/Imperium - Space Marines.cat" },
+  { "id": "chaos-space-marines", "name": "Chaos - Chaos Space Marines", "file": "/bsData/Chaos - Chaos Space Marines.cat" },
+  { "id": "genestealer-cults", "name": "Genestealer Cults", "file": "/bsData/Genestealer Cults.cat" },
+  { "id": "aeldari-drukhari", "name": "Aeldari - Drukhari", "file": "/bsData/Aeldari - Drukhari.cat" }
+]
