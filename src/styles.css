@@ -1,17 +1,108 @@
 :root{
-  --bg:#0f1720;
-  --card:#111827;
-  --muted:#9ca3af;
-  --accent:#ef4444;
+  /* Core palette */
+  --bg: #0f1720;
+  --card: #111827;
+  --surface: #1a2333;
+  --border: #1f2937;
+  --muted: #9ca3af;
+  --accent: #ef4444;
+  --accent-dim: #991b1b;
+
+  /* Text */
+  --text: #e5e7eb;
+  --text-secondary: #9ca3af;
+
+  /* Spacing scale */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+
+  /* Border radius */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.4), 0 1px 2px rgba(0,0,0,0.3);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.5);
 }
-html,body,#root{height:100%;}
-body{margin:0;font-family:Inter,ui-sans-serif,system-ui,Segoe UI,Roboto,Arial;background:linear-gradient(180deg,#071021, #071829);color:#e5e7eb}
-.app{max-width:1000px;margin:24px auto;padding:16px}
-header h1{margin:0 0 12px}
-main{display:grid;grid-template-columns:1fr 420px;gap:16px}
-.list-builder{background:var(--card);padding:12px;border-radius:8px}
-.list-builder input{display:inline-block}
-.hint{color:var(--muted);font-size:13px}
+
+html, body, #root { height: 100%; }
+body {
+  margin: 0;
+  font-family: Inter, ui-sans-serif, system-ui, 'Segoe UI', Roboto, Arial;
+  background: linear-gradient(180deg, #071021, #071829);
+  color: var(--text);
+}
+
+/* App shell */
+.app-container {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: var(--spacing-md);
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+header h1 { margin: 0 0 var(--spacing-sm); }
+
+main {
+  flex: 1;
+  padding-bottom: 72px; /* space for fixed nav */
+}
+
+/* Builder section */
+.list-builder {
+  background: var(--card);
+  padding: var(--spacing-md);
+  border-radius: var(--radius-md);
+}
+.list-builder input { display: inline-block; }
+
+/* Nav bar */
+.nav-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--card);
+  border-top: 1px solid var(--border);
+  padding: var(--spacing-sm);
+  z-index: 100;
+}
+.nav-menu {
+  max-width: 680px;
+  margin: 0 auto;
+  display: flex;
+  gap: var(--spacing-sm);
+}
+.nav-item {
+  flex: 1;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.15s, color 0.15s;
+}
+.nav-item.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+.nav-item:hover:not(.active) {
+  background: var(--surface);
+  color: var(--text);
+}
+
+/* Misc */
+.hint { color: var(--text-secondary); font-size: 13px; }
+
 .carousel {
   background: var(--surface);
   border-radius: var(--radius-md);
@@ -20,24 +111,21 @@ main{display:grid;grid-template-columns:1fr 420px;gap:16px}
   box-shadow: var(--shadow-sm);
   overflow: hidden;
 }
-
-.empty-state,
-.loading-state {
+.empty-state, .loading-state {
   text-align: center;
   padding: var(--spacing-lg);
   color: var(--text-secondary);
 }
-
-.empty-state p,
-.loading-state p {
-  margin-bottom: var(--spacing-sm);
+.empty-state p, .loading-state p { margin-bottom: var(--spacing-sm); }
+.empty-state p:last-child, .loading-state p:last-child { margin-bottom: 0; }
+.carousel.empty { opacity: 0.7; }
+.card { min-width: 280px; text-align: center; }
+.controls { margin-top: var(--spacing-sm); display: flex; gap: var(--spacing-sm); align-items: center; }
+.controls button {
+  background: var(--card);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
 }
-
-.empty-state p:last-child,
-.loading-state p:last-child {
-  margin-bottom: 0;
-}
-.carousel.empty{opacity:0.7}
-.card{min-width:280px;text-align:center}
-.controls{margin-top:12px;display:flex;gap:8px;align-items:center}
-.controls button{background:#111827;border:1px solid #1f2937;color:#e5e7eb;padding:8px 12px;border-radius:6px}

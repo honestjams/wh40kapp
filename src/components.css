@@ -44,6 +44,25 @@
   font-size: 0.875rem;
   margin-top: var(--spacing-md);
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+}
+
+.clear-btn {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  padding: 2px var(--spacing-sm);
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  cursor: pointer;
+  margin-left: auto;
+}
+.clear-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
 }
 
 /* Card Carousel Specific Styles */
