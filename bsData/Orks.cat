@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="a55f-b7b3-6c65-a05f" name="Xenos - Orks" gameSystemId="sys-352e-adc2-7639-d6a9" gameSystemRevision="1" revision="128" battleScribeVersion="2.03" type="catalogue" authorName="BSData Developers" authorContact="Dunamis55 &amp; AbonShell">
+<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="a55f-b7b3-6c65-a05f" name="Xenos - Orks" gameSystemId="sys-352e-adc2-7639-d6a9" gameSystemRevision="1" revision="144" battleScribeVersion="2.03" type="catalogue" authorName="BSData Developers" authorContact="Dunamis55 &amp; AbonShell">
   <sharedSelectionEntries>
     <selectionEntry type="upgrade" import="true" name="Warlord" id="8b5-898c-f79b-5a9c">
       <categoryLinks>
@@ -1688,32 +1688,24 @@ Designer’s Note: Place a Grot Helper token next to the bearer, removing it onc
             <characteristic name="Description" typeId="9b8f-694b-e5e-b573">In your Shooting phase, after this model has shot, select one enemy unit hit by one or more of those attacks; that unit must take a Battle-shock test.</characteristic>
           </characteristics>
         </profile>
+        <profile name="Leader" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="2207-d598-7b99-c019">
+          <characteristics>
+            <characteristic name="Description" typeId="9b8f-694b-e5e-b573">This model can be attached to the following units:
+- **^^Boyz^^**
+- **^^Lootas^^**
+- **^^Mek Gunz^^**
+- **^^Nobz^^**</characteristic>
+          </characteristics>
+        </profile>
       </profiles>
       <entryLinks>
         <entryLink import="true" name="Enhancements" hidden="false" type="selectionEntryGroup" id="e3cf-c1a6-301d-c6cc" targetId="1dd8-39ae-cbd8-a9fa" sortIndex="3"/>
         <entryLink import="true" name="Warlord" hidden="false" type="selectionEntry" id="49fa-d537-b58f-7213" targetId="8b5-898c-f79b-5a9c" sortIndex="2"/>
         <entryLink import="true" name="Crusade" hidden="false" id="9a0a-249f-e4a7-cd6b" type="selectionEntryGroup" targetId="87e9-baa9-52e2-5cce" sortIndex="1"/>
       </entryLinks>
-      <infoGroups>
-        <infoGroup name="Leader" hidden="false" id="4e22-8266-ca1f-883">
-          <infoLinks>
-            <infoLink name="Leader" hidden="false" type="rule" id="1fcc-8607-1dee-1387" targetId="b4dd-3e1f-41cb-218f"/>
-          </infoLinks>
-          <profiles>
-            <profile name="Leader" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="2207-d598-7b99-c019">
-              <characteristics>
-                <characteristic name="Description" id="cd61-a5ee-bd95-6c74" hidden="false" typeId="9b8f-694b-e5e-b573">This model can be attached to the following units:
-- BOYZ
-- LOOTAZ
-- MEK GUNZ
-- NOBZ</characteristic>
-              </characteristics>
-            </profile>
-          </profiles>
-        </infoGroup>
-      </infoGroups>
       <infoLinks>
         <infoLink name="Waaagh!" hidden="false" type="rule" id="bb4f-79e6-d5d2-2122" targetId="37c-6ef9-277-9091"/>
+        <infoLink name="Leader" id="1fcc-8607-1dee-1387" hidden="false" type="rule" targetId="b4dd-3e1f-41cb-218f"/>
       </infoLinks>
       <selectionEntryGroups>
         <selectionEntryGroup name="Wargear" id="ade6-24f4-f4e3-f259" hidden="false" sortIndex="4">
@@ -3079,7 +3071,7 @@ Designer’s Note: Place a Grot Helper token next to the bearer, removing it onc
                     <constraint type="max" value="4" field="selections" scope="parent" shared="true" id="e336-57be-4406-de6e" includeChildSelections="false"/>
                   </constraints>
                 </entryLink>
-                <entryLink import="true" name="Spanner" hidden="false" id="96cd-2ffd-2b10-c9cd" type="selectionEntry" targetId="e4ce-4da4-d613-8447">
+                <entryLink import="true" name="Spanner" hidden="false" id="96cd-2ffd-2b10-c9cd" type="selectionEntry" targetId="6378-8214-640f-a69a">
                   <constraints>
                     <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="df59-5a45-45d8-5bd7" includeChildSelections="false"/>
                     <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="d7c0-9262-baba-a002" includeChildSelections="false"/>
@@ -3095,7 +3087,7 @@ Designer’s Note: Place a Grot Helper token next to the bearer, removing it onc
                     <constraint type="max" value="8" field="selections" scope="parent" shared="true" id="4027-d3e0-cc42-d241" includeChildSelections="false"/>
                   </constraints>
                 </entryLink>
-                <entryLink import="true" name="Spanner" hidden="false" id="1d51-b128-6cd2-1c3" type="selectionEntry" targetId="e4ce-4da4-d613-8447">
+                <entryLink import="true" name="Spanner" hidden="false" id="1d51-b128-6cd2-1c3" type="selectionEntry" targetId="6378-8214-640f-a69a">
                   <constraints>
                     <constraint type="min" value="2" field="selections" scope="parent" shared="true" id="450d-62ff-6002-8bf8" includeChildSelections="false"/>
                     <constraint type="max" value="2" field="selections" scope="parent" shared="true" id="a2e5-7daf-e578-3334" includeChildSelections="false"/>
@@ -6146,7 +6138,8 @@ Designer’s Note: Place a Grot Helper token next to the bearer, removing it onc
         </profile>
         <profile name="Patrol Squad" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="2202-5092-3d23-fc9f">
           <characteristics>
-            <characteristic name="Description" typeId="9b8f-694b-e5e-b573">At the start of the Declare Battle Formations step this unit can be split into two units, each containing five models.</characteristic>
+            <characteristic name="Description" typeId="9b8f-694b-e5e-b573">At the start of the Declare Battle Formations step this unit can be split into two units, each containing five models.
+(when splitting a unit in this way, make a note of which models form each of the two new units. If you are splitting a unit that is equipped with 1 bomb squig and/or 1 distraction grot, only one of the new units can use that ability during the battle – make a note of which of the new units this will be).</characteristic>
           </characteristics>
         </profile>
       </profiles>
@@ -6364,7 +6357,7 @@ Designer’s Note: Place a Grot Helper token next to the bearer, removing it onc
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="dd02-f308-c21a-f811"/>
               </constraints>
               <infoLinks>
-                <infoLink name="Bomb Squigs" id="a0d0-5466-75ac-ea7b" hidden="false" type="profile" targetId="1e29-7605-a22c-2eab"/>
+                <infoLink name="Bomb Squigs" id="81bd-5863-cfce-02f0" hidden="false" type="profile" targetId="1e29-7605-a22c-2eab"/>
               </infoLinks>
             </selectionEntry>
           </selectionEntries>
@@ -10005,7 +9998,7 @@ Designer’s Note: Place a Squig Mine token next to the model, removing it once 
         </profile>
         <profile name="Stompin’ Forward" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="98e3-6215-2597-aa86">
           <characteristics>
-            <characteristic name="Description" typeId="9b8f-694b-e5e-b573">Each time this model makes a Normal, Advance or Fall Back move, it can move over models (excluding TITANIC models) and terrain features that are 4&quot; or less in height as if they were not there.</characteristic>
+            <characteristic name="Description" typeId="9b8f-694b-e5e-b573">Each time this model makes a Normal, Advance or Fall Back move, it can move over models (excluding **^^Titanic^^** models) and terrain features that are 4&quot; or less in height as if they were not there.</characteristic>
           </characteristics>
         </profile>
         <profile name="Stompa" typeId="74f8-5443-9d6d-1f1e" typeName="Transport" hidden="false" id="6c4a-42e4-b9fa-8bf8">
@@ -11578,7 +11571,7 @@ Designer’s Note: Place a Squig Mine token next to the model, removing it once 
         </profile>
         <profile name="Dead Brutal" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="b423-a011-7b47-5afa">
           <characteristics>
-            <characteristic name="Description" typeId="9b8f-694b-e5e-b573">When you call a Waaagh!, until the start of the next battle round, this model&apos;s &apos;uge choppa has a Damage characteristic of 3.</characteristic>
+            <characteristic name="Description" typeId="9b8f-694b-e5e-b573">While the Waaagh! is active for your army, this model&apos;s &apos;uge choppa has a Damage characteristic of 3.</characteristic>
           </characteristics>
         </profile>
       </profiles>
@@ -15293,7 +15286,7 @@ Designer’s Note: Place a Squig Mine token next to the model, removing it once 
         <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="ceca-bf7d-d580-37ae"/>
       </constraints>
       <profiles>
-        <profile name="Da Red Gobbo [Legends]" typeId="c547-1836-d8a-ff4f" typeName="Unit" hidden="false" id="2bcf-a69b-fafb-4c20">
+        <profile name="Da Red Gobbo" typeId="c547-1836-d8a-ff4f" typeName="Unit" hidden="false" id="2bcf-a69b-fafb-4c20">
           <characteristics>
             <characteristic name="M" typeId="e703-ecb6-5ce7-aec1">6&quot;</characteristic>
             <characteristic name="T" typeId="d29d-cf75-fc2d-34a4">2</characteristic>
@@ -15397,8 +15390,8 @@ Designer’s Note: Place a Squig Mine token next to the model, removing it once 
           <profiles>
             <profile name="Leader" hidden="false" id="d473-6ae7-bb3f-1e54" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities">
               <characteristics>
-                <characteristic name="Description" id="ae35-131-243-1a2a" hidden="false" typeId="9b8f-694b-e5e-b573">This model can be attached to the following unit:
-- GRETCHIN</characteristic>
+                <characteristic name="Description" typeId="9b8f-694b-e5e-b573">This model can be attached to the following unit:
+- **^^Gretchin^^**</characteristic>
               </characteristics>
             </profile>
           </profiles>
@@ -19461,6 +19454,7 @@ Designer’s Note: Place a Squig Mine token next to the model, removing it once 
           </constraints>
         </entryLink>
       </entryLinks>
+      <comment>Lootas variant</comment>
     </selectionEntry>
     <selectionEntry type="model" import="true" name="Loota" hidden="false" id="e2c1-bd0-fdfa-6921">
       <selectionEntries>
@@ -20872,6 +20866,173 @@ Designer’s Note: Place a Squig Mine token next to the model, removing it once 
         </selectionEntryGroup>
       </selectionEntryGroups>
     </selectionEntry>
+    <selectionEntry type="model" import="true" name="Spanner" hidden="false" id="6378-8214-640f-a69a">
+      <selectionEntryGroups>
+        <selectionEntryGroup name="Big Shoota" id="fc96-9022-b3d9-8202" hidden="false" defaultSelectionEntryId="281d-c040-53a5-fe38">
+          <entryLinks>
+            <entryLink import="true" name="Big shoota" hidden="false" id="a9df-663e-ce85-1937" type="selectionEntry" targetId="1fa0-d99a-154f-ffd8">
+              <entryLinks>
+                <entryLink import="true" name="Weapon Modifications" hidden="false" id="a949-bf99-5b9b-7162" type="selectionEntryGroup" targetId="f9da-852a-d7f0-92e9"/>
+              </entryLinks>
+            </entryLink>
+            <entryLink import="true" name="Kustom mega-blasta" hidden="false" id="4910-9177-022e-11bc" type="selectionEntry" targetId="7242-bca9-a3c7-ba6a">
+              <entryLinks>
+                <entryLink import="true" name="Weapon Modifications" hidden="false" id="74b0-ce06-d050-a317" type="selectionEntryGroup" targetId="f9da-852a-d7f0-92e9"/>
+              </entryLinks>
+            </entryLink>
+            <entryLink import="true" name="Rokkit launcha" hidden="false" id="7707-b689-0b8d-6eff" type="selectionEntry" targetId="80bc-5c89-4125-2253">
+              <entryLinks>
+                <entryLink import="true" name="Weapon Modifications" hidden="false" id="61f1-f0fd-36c6-1c9d" type="selectionEntryGroup" targetId="f9da-852a-d7f0-92e9"/>
+              </entryLinks>
+            </entryLink>
+          </entryLinks>
+          <constraints>
+            <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="cc32-30f0-04ea-b740" includeChildSelections="false"/>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="4251-5dbc-af0e-18b6" includeChildSelections="false"/>
+          </constraints>
+        </selectionEntryGroup>
+      </selectionEntryGroups>
+      <selectionEntries>
+        <selectionEntry type="upgrade" import="true" name="Close combat weapon" hidden="false" id="050a-60ad-b309-77f5" collective="true">
+          <profiles>
+            <profile name="Close combat weapon" typeId="8a40-4aaa-c780-9046" typeName="Melee Weapons" hidden="false" id="7aa4-27ac-33c4-f0fd">
+              <characteristics>
+                <characteristic name="Range" typeId="914c-b413-91e3-a132">Melee</characteristic>
+                <characteristic name="A" typeId="2337-daa1-6682-b110">3</characteristic>
+                <characteristic name="WS" typeId="95d1-95f-45b4-11d6">3+</characteristic>
+                <characteristic name="S" typeId="ab33-d393-96ce-ccba">4</characteristic>
+                <characteristic name="AP" typeId="41a0-1301-112a-e2f2">0</characteristic>
+                <characteristic name="D" typeId="3254-9fe6-d824-513e">1</characteristic>
+                <characteristic name="Keywords" typeId="893f-9000-ccf7-648e">-</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+          <comment>A3 S4</comment>
+          <entryLinks>
+            <entryLink import="true" name="Weapon Modifications" hidden="false" id="e51f-b5f8-3a88-049a" type="selectionEntryGroup" targetId="f9da-852a-d7f0-92e9"/>
+          </entryLinks>
+          <constraints>
+            <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="2aad-5f4a-0732-dff1"/>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="6c1a-4f86-918f-ebf2"/>
+          </constraints>
+        </selectionEntry>
+      </selectionEntries>
+      <comment>Burna Boyz variant</comment>
+    </selectionEntry>
+    <selectionEntry type="model" import="true" name="Da Red Gobbo&apos;s Tinboy [Legends]" hidden="false" id="070f-5f7f-2cab-6ee6">
+      <constraints>
+        <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="cf54-fd40-a5ce-eff0"/>
+      </constraints>
+      <profiles>
+        <profile name="Da Red Gobbo&apos;s Tinboy" typeId="c547-1836-d8a-ff4f" typeName="Unit" hidden="false" id="72a9-ee51-f45e-8273">
+          <characteristics>
+            <characteristic name="M" typeId="e703-ecb6-5ce7-aec1">6&quot;</characteristic>
+            <characteristic name="T" typeId="d29d-cf75-fc2d-34a4">6</characteristic>
+            <characteristic name="SV" typeId="450-a17e-9d5e-29da">3+</characteristic>
+            <characteristic name="W" typeId="750a-a2ec-90d3-21fe">5</characteristic>
+            <characteristic name="LD" typeId="58d2-b879-49c7-43bc">7+</characteristic>
+            <characteristic name="OC" typeId="bef7-942a-1a23-59f8">2</characteristic>
+          </characteristics>
+          <attributes>
+            <attribute typeId="ee2c-fa85-08b6-ad86" name="New Attribute Type"/>
+          </attributes>
+        </profile>
+        <profile name="Redistributin&apos; da Gifts" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="cc3a-9ca0-5100-cd0c">
+          <characteristics>
+            <characteristic name="Description" typeId="9b8f-694b-e5e-b573">Once in each of your Shooting phases, you can target this unit with the Grenade Stratagem for 0CP, and can do so even if you have already targeted a different unit with that Stratagem this phase.</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+      <categoryLinks>
+        <categoryLink targetId="4f3a-f0f7-6647-348d" id="129d-55d1-a3ba-c8fb" primary="true" name="Epic Hero"/>
+        <categoryLink targetId="9cfd-1c32-585f-7d5c" id="55ed-e36d-1127-08ce" primary="false" name="Character"/>
+        <categoryLink targetId="56cc-5f43-2403-8da0" id="cff5-7237-a883-b1aa" primary="false" name="Faction: Orks"/>
+        <categoryLink targetId="731a-7e61-9186-2f1" id="8a42-797b-f3d0-d563" primary="false" name="Da Red Gobbo"/>
+        <categoryLink targetId="c7c7-ef60-67e3-def2" id="0a29-cf71-476c-bc0a" primary="false" name="Grots"/>
+        <categoryLink name="Vehicle" hidden="false" id="9a1b-e0fa-7e18-a921" targetId="dbd4-63-af05-998" primary="false"/>
+        <categoryLink name="Walker" hidden="false" id="b6e6-b19e-410f-7201" targetId="6dda-e157-334d-e93a" primary="false"/>
+      </categoryLinks>
+      <infoLinks>
+        <infoLink name="Waaagh!" hidden="false" type="rule" id="0e24-5d3c-5557-fba7" targetId="37c-6ef9-277-9091"/>
+        <infoLink name="Invulnerable Save (5+)" id="b2c4-6ed0-c5cf-c32d" hidden="false" type="profile" targetId="bc64-b2f5-f074-67d8"/>
+        <infoLink name="Deadly Demise" id="0eac-39ef-912b-0c7a" hidden="false" type="rule" targetId="b68a-5ded-65ac-98c">
+          <modifiers>
+            <modifier type="append" value="1" field="name" join=" "/>
+          </modifiers>
+        </infoLink>
+        <infoLink name="Lone Operative" id="a7a5-65a1-1e97-691a" hidden="false" type="rule" targetId="a8a0-8fe7-898-e0f3"/>
+        <infoLink name="Scouts" id="68b9-680e-d68c-e994" hidden="false" type="rule" targetId="ada6-bac1-ffe0-d6f7">
+          <modifiers>
+            <modifier type="append" value="6&quot;" field="name" join=" "/>
+          </modifiers>
+        </infoLink>
+      </infoLinks>
+      <entryLinks>
+        <entryLink import="true" name="Warlord" hidden="false" type="selectionEntry" id="d54d-7b04-a470-a095" targetId="8b5-898c-f79b-5a9c"/>
+      </entryLinks>
+      <selectionEntries>
+        <selectionEntry type="upgrade" import="true" name="Tinboy&apos;s kustom shoota" hidden="false" id="becb-e2a8-df18-0bcb">
+          <constraints>
+            <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="d2f9-8ec4-66a4-2dc6"/>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="8267-b2b8-7e3e-a7b4"/>
+          </constraints>
+          <profiles>
+            <profile name="Tinboy&apos;s kustom shoota" typeId="f77d-b953-8fa4-b762" typeName="Ranged Weapons" hidden="false" id="59b3-3596-ddae-0f73">
+              <characteristics>
+                <characteristic name="Range" typeId="9896-9419-16a1-92fc">18&quot;</characteristic>
+                <characteristic name="A" typeId="3bb-c35f-f54-fb08">D3</characteristic>
+                <characteristic name="BS" typeId="94d-8a98-cf90-183e">3+</characteristic>
+                <characteristic name="S" typeId="2229-f494-25db-c5d3">5</characteristic>
+                <characteristic name="AP" typeId="9ead-8a10-520-de15">-1</characteristic>
+                <characteristic name="D" typeId="a354-c1c8-a745-f9e3">2</characteristic>
+                <characteristic name="Keywords" typeId="7f1b-8591-2fcf-d01c">-</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+        </selectionEntry>
+        <selectionEntry type="upgrade" import="true" name="Tinboy&apos;s klaw" hidden="false" id="3890-8b77-1602-b36d">
+          <constraints>
+            <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="147d-7cf3-35a6-5270"/>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="24ca-5c60-117a-f8d7"/>
+          </constraints>
+          <profiles>
+            <profile name="Tinboy&apos;s klaw" typeId="8a40-4aaa-c780-9046" typeName="Melee Weapons" hidden="false" id="48d4-a41e-2e83-51b0">
+              <characteristics>
+                <characteristic name="Range" typeId="914c-b413-91e3-a132">Melee</characteristic>
+                <characteristic name="A" typeId="2337-daa1-6682-b110">3</characteristic>
+                <characteristic name="WS" typeId="95d1-95f-45b4-11d6">3+</characteristic>
+                <characteristic name="S" typeId="ab33-d393-96ce-ccba">6</characteristic>
+                <characteristic name="AP" typeId="41a0-1301-112a-e2f2">-1</characteristic>
+                <characteristic name="D" typeId="3254-9fe6-d824-513e">2</characteristic>
+                <characteristic name="Keywords" typeId="893f-9000-ccf7-648e">-</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+        </selectionEntry>
+      </selectionEntries>
+      <costs>
+        <cost name="pts" typeId="51b2-306e-1021-d207" value="45"/>
+        <cost name="Crusade Points" typeId="b03b-c239-15a5-da55" value="0"/>
+        <cost name="Crusade: Battle Honours" typeId="75bb-ded1-c86d-bdf0" value="0"/>
+        <cost name="Crusade: Experience" typeId="a623-fe74-1d33-cddf" value="0"/>
+        <cost name="Crusade: Weapon Modifications" typeId="716d-91b7-d55a-1022" value="0"/>
+        <cost name="Blackstone Fragments" typeId="ac6b-ced3-9b5e-9a6e" value="0"/>
+      </costs>
+      <modifiers>
+        <modifier type="set" value="true" field="hidden">
+          <conditions>
+            <condition type="lessThan" value="1" field="selections" scope="roster" childId="9ed-cbf4-bfe5-90bf" shared="true" includeChildSelections="true" includeChildForces="false"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+      <selectionEntryGroups>
+        <selectionEntryGroup name="Crusade" id="6163-4ade-7dfe-7dd6" hidden="false" sortIndex="1">
+          <entryLinks>
+            <entryLink import="true" name="Mighty Champions" hidden="false" id="59c5-f9f4-eb8f-e492" type="selectionEntryGroup" targetId="f842-6e90-bc5a-80f1"/>
+          </entryLinks>
+        </selectionEntryGroup>
+      </selectionEntryGroups>
+    </selectionEntry>
   </sharedSelectionEntries>
   <rules>
     <rule name="Waaagh!" hidden="false" id="37c-6ef9-277-9091">
@@ -20899,26 +21060,22 @@ Designer’s Note: Place a Squig Mine token next to the model, removing it once 
                   </conditionGroups>
                 </modifier>
               </modifiers>
-              <infoGroups>
-                <infoGroup name="Supa-Cybork Body" id="47d8-2536-e5a2-5e04" hidden="false">
-                  <profiles>
-                    <profile name="Supa-Cybork Body" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="9d7c-9297-d112-4a27">
-                      <characteristics>
-                        <characteristic name="Description" id="8688-b345-ac16-a8b2" hidden="false" typeId="9b8f-694b-e5e-b573">ORKS model only. The bearer has the Feel No Pain 4+ ability.</characteristic>
-                      </characteristics>
-                    </profile>
-                  </profiles>
-                  <infoLinks>
-                    <infoLink name="Feel No Pain" id="179d-1e88-cc7b-851e" hidden="false" type="rule" targetId="9bf4-280f-bbe2-6fbb"/>
-                  </infoLinks>
-                </infoGroup>
-              </infoGroups>
               <costs>
                 <cost name="pts" typeId="51b2-306e-1021-d207" value="15"/>
               </costs>
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="10d9-696b-96cb-6e08" includeChildSelections="true" includeChildForces="false"/>
               </constraints>
+              <profiles>
+                <profile name="Supa-Cybork Body" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="9d7c-9297-d112-4a27">
+                  <characteristics>
+                    <characteristic name="Description" typeId="9b8f-694b-e5e-b573">**^^Orks^^** model only. The bearer has the Feel No Pain 4+ ability.</characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+              <infoLinks>
+                <infoLink name="Feel No Pain" id="179d-1e88-cc7b-851e" hidden="false" type="rule" targetId="9bf4-280f-bbe2-6fbb"/>
+              </infoLinks>
             </selectionEntry>
             <selectionEntry type="upgrade" import="true" name="Headwoppa’s Killchoppa" hidden="false" id="40fb-e485-dca0-cb12">
               <modifiers>
@@ -20967,7 +21124,7 @@ Designer’s Note: Place a Squig Mine token next to the model, removing it once 
               <profiles>
                 <profile name="Kunnin’ But Brutal" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="d79f-9a38-11c2-61b7">
                   <characteristics>
-                    <characteristic name="Description" id="2a32-5cf5-53c8-4fc6" hidden="false" typeId="9b8f-694b-e5e-b573">ORKS model only. While the bearer is leading a unit, that unit is eligible to shoot and declare a charge in a turn in which it Fell Back.</characteristic>
+                    <characteristic name="Description" typeId="9b8f-694b-e5e-b573">**^^Orks^^** model only. While the bearer is leading a unit, that unit is eligible to shoot and declare a charge in a turn in which it Fell Back.</characteristic>
                   </characteristics>
                 </profile>
               </profiles>
@@ -20994,7 +21151,7 @@ Designer’s Note: Place a Squig Mine token next to the model, removing it once 
               <profiles>
                 <profile name="Follow Me Ladz" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="b62-192c-8bb0-d558">
                   <characteristics>
-                    <characteristic name="Description" id="c2a5-bb75-1d8a-4573" hidden="false" typeId="9b8f-694b-e5e-b573">ORKS model only. While the bearer is leading a unit, add 2&quot; to the Move characteristic of models in that unit.</characteristic>
+                    <characteristic name="Description" typeId="9b8f-694b-e5e-b573">**^^Orks^^** model only. While the bearer is leading a unit, add 2&quot; to the Move characteristic of models in that unit.</characteristic>
                   </characteristics>
                 </profile>
               </profiles>
@@ -21059,7 +21216,7 @@ Designer’s Note: Place a Squig Mine token next to the model, removing it once 
               <profiles>
                 <profile name="Surly As A Squiggoth" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="2d19-f42c-252d-2598">
                   <characteristics>
-                    <characteristic name="Description" id="a983-b73c-30a-629" hidden="false" typeId="9b8f-694b-e5e-b573">BEASTBOSS ON SQUIGOSAUR model only. While the bearer is leading a unit, each time an attack targets that unit, if the Strength characteristic of that attack is greater than the Toughness characteristic of that unit, subtract 1 from the Wound roll.</characteristic>
+                    <characteristic name="Description" typeId="9b8f-694b-e5e-b573">**^^Beastboss On Squigosaur^^** model only. While the bearer is leading a unit, each time an attack targets that unit, if the Strength characteristic of that attack is greater than the Toughness characteristic of that unit, subtract 1 from the Wound roll.</characteristic>
                   </characteristics>
                 </profile>
               </profiles>
@@ -21093,7 +21250,7 @@ Designer’s Note: Place a Squig Mine token next to the model, removing it once 
               <profiles>
                 <profile name="Skrag Every Stash!" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="7948-1a9-57a1-d9ad">
                   <characteristics>
-                    <characteristic name="Description" typeId="9b8f-694b-e5e-b573">BEAST SNAGGA model only. At the end of your Command phase, if the bearer is within range of an objective marker you control, that objective market remains under your control, even if you have no models within range of it, until your opponent controls it at the start of end of any turn.</characteristic>
+                    <characteristic name="Description" typeId="9b8f-694b-e5e-b573">**^^Beast Snagga^^** model only. At the end of your Command phase, if the bearer is within range of an objective marker you control, that objective market remains under your control, even if you have no models within range of it, until your opponent controls it at the start of end of any turn.</characteristic>
                   </characteristics>
                 </profile>
               </profiles>
@@ -21154,7 +21311,7 @@ Designer’s Note: Place a Squig Mine token next to the model, removing it once 
               <profiles>
                 <profile name="Glory Hog" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="b709-2526-c257-a06d">
                   <characteristics>
-                    <characteristic name="Description" id="dcbd-b3f9-efb6-e39" hidden="false" typeId="9b8f-694b-e5e-b573">BEASTBOSS ON SQUIGOSAUR model only. Models in the bearer&apos;s unit have the Scouts 9&quot; ability.</characteristic>
+                    <characteristic name="Description" typeId="9b8f-694b-e5e-b573">**^^Beastboss On Squigosaur^^** model only. Models in the bearer&apos;s unit have the Scouts 9&quot; ability.</characteristic>
                   </characteristics>
                 </profile>
               </profiles>
@@ -21226,7 +21383,7 @@ Designer’s Note: Place a Squig Mine token next to the model, removing it once 
               <profiles>
                 <profile name="Gitfinder Gogglez" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="523a-2366-a308-9879">
                   <characteristics>
-                    <characteristic name="Description" id="3a88-fa08-98b2-b8c1" hidden="false" typeId="9b8f-694b-e5e-b573">MEK model only. Ranged weapons equipped by models in the bearer&apos;s unit have the [IGNORES COVER] ability.</characteristic>
+                    <characteristic name="Description" typeId="9b8f-694b-e5e-b573">**^^Mek^^** model only. Ranged weapons equipped by models in the bearer&apos;s unit have the **[IGNORES COVER]** ability.</characteristic>
                   </characteristics>
                 </profile>
               </profiles>
@@ -21312,7 +21469,7 @@ Designer’s Note: Place a Squig Mine token next to the model, removing it once 
               <profiles>
                 <profile name="Smoky Gubbinz" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="2db3-c44e-3bfb-d3a0">
                   <characteristics>
-                    <characteristic name="Description" id="9729-6d5b-ccd7-bff" hidden="false" typeId="9b8f-694b-e5e-b573">MEK model only. Models in the bearer&apos;s unit have the Stealth ability.</characteristic>
+                    <characteristic name="Description" typeId="9b8f-694b-e5e-b573">**^^Mek^^** model only. Models in the bearer&apos;s unit have the Stealth ability.</characteristic>
                   </characteristics>
                 </profile>
               </profiles>
@@ -21387,7 +21544,7 @@ Designer’s Note: Place a Squig Mine token next to the model, removing it once 
               <profiles>
                 <profile name="Ferocious Show Off" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="4960-b1d4-a81d-1d5">
                   <characteristics>
-                    <characteristic name="Description" id="f3ce-a66f-b211-a570" hidden="false" typeId="9b8f-694b-e5e-b573">ORKS INFANTRY model only. Each time the bearer fights, while resolving those attacks, add 1 to the Strength characteristic of the bearer&apos;s melee weapons. If the bearer&apos;s unit contains 10 or more models, while resolving those attacks, add 3 to the Strength characteristic instead.</characteristic>
+                    <characteristic name="Description" typeId="9b8f-694b-e5e-b573">**^^Orks Infantry^^** model only. Each time the bearer fights, while resolving those attacks, add 1 to the Strength characteristic of the bearer&apos;s melee weapons. If the bearer&apos;s unit contains 10 or more models, while resolving those attacks, add 3 to the Strength characteristic instead.</characteristic>
                   </characteristics>
                 </profile>
               </profiles>
@@ -21421,7 +21578,7 @@ Designer’s Note: Place a Squig Mine token next to the model, removing it once 
               <profiles>
                 <profile name="Brutal But Kunnin&apos;" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="d1d7-f5fb-8152-9376">
                   <characteristics>
-                    <characteristic name="Description" id="68e3-3acd-3999-4079" hidden="false" typeId="9b8f-694b-e5e-b573">ORKS INFANTRY model only. In your Command phase, if the bearer is on the battlefield (or is embarked within a TRANSPORT that is on the battlefield), roll one D6, adding 2 to the result if the bearer&apos;s unit contains 10 or more models: on a 5+, you gain 1 CP.</characteristic>
+                    <characteristic name="Description" typeId="9b8f-694b-e5e-b573">**^^Orks Infantry^^** model only. In your Command phase, if the bearer is on the battlefield (or is embarked within a **^^Transport^^** that is on the battlefield), roll one D6, adding 2 to the result if the bearer&apos;s unit contains 10 or more models: on a 5+, you gain 1 CP.</characteristic>
                   </characteristics>
                 </profile>
               </profiles>
@@ -21436,7 +21593,7 @@ Designer’s Note: Place a Squig Mine token next to the model, removing it once 
               <profiles>
                 <profile name="Raucous Warcaller" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="bc35-449b-8b1-684">
                   <characteristics>
-                    <characteristic name="Description" id="8753-363f-2eaf-4dcb" hidden="false" typeId="9b8f-694b-e5e-b573">ORKS INFANTRY model only. While the bearer is leading a unit, that unit always counts as containing 10 or more models for the purposes of your Detachment rule and any Stratagems you use.</characteristic>
+                    <characteristic name="Description" typeId="9b8f-694b-e5e-b573">**^^Orks Infantry^^** model only. While the bearer is leading a unit, that unit always counts as containing 10 or more models for the purposes of your Detachment rule and any Stratagems you use.</characteristic>
                   </characteristics>
                 </profile>
               </profiles>
@@ -21470,7 +21627,7 @@ Designer’s Note: Place a Squig Mine token next to the model, removing it once 
               <profiles>
                 <profile name="Bloodthirsty Belligerence" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="f008-1a2a-526a-ff57">
                   <characteristics>
-                    <characteristic name="Description" id="1e32-d5bb-40a3-638e" hidden="false" typeId="9b8f-694b-e5e-b573">ORKS INFANTRY model only. While the bearer is leading a unit, you can re-roll Advance rolls made for that unit. While that unit contains 10 or more models, you can re-roll Charge rolls made for that unit as well.</characteristic>
+                    <characteristic name="Description" typeId="9b8f-694b-e5e-b573">**^^Orks Infantry^^** model only. While the bearer is leading a unit, you can re-roll Advance rolls made for that unit. While that unit contains 10 or more models, you can re-roll Charge rolls made for that unit as well.</characteristic>
                   </characteristics>
                 </profile>
               </profiles>
@@ -21528,7 +21685,7 @@ Designer’s Note: Place a Squig Mine token next to the model, removing it once 
                         <conditionGroup type="and">
                           <conditions>
                             <condition type="atLeast" value="1" field="selections" scope="roster" childId="ccd6-6490-a314-78a0" shared="true" includeChildForces="true" includeChildSelections="true"/>
-                            <condition type="lessThan" value="1" field="selections" scope="parent" childId="ccd6-6490-a314-78a0" shared="true" includeChildForces="true" includeChildSelections="true"/>
+                            <condition type="lessThan" value="1" field="selections" scope="root-entry" childId="ccd6-6490-a314-78a0" shared="true" includeChildForces="true" includeChildSelections="true"/>
                           </conditions>
                         </conditionGroup>
                         <conditionGroup type="or">
@@ -21545,7 +21702,7 @@ Designer’s Note: Place a Squig Mine token next to the model, removing it once 
               <profiles>
                 <profile name="Da Biggest Boss" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="5fa9-4648-617a-8bac">
                   <characteristics>
-                    <characteristic name="Description" id="7711-7dd4-d42a-3048" hidden="false" typeId="9b8f-694b-e5e-b573">INFANTRY WARBOSS model only. Add 2 to the bearer&apos;s Wounds characteristic.</characteristic>
+                    <characteristic name="Description" typeId="9b8f-694b-e5e-b573">**^^Infantry Warboss^^** model only. Add 2 to the bearer&apos;s Wounds characteristic.</characteristic>
                   </characteristics>
                 </profile>
               </profiles>
@@ -21558,18 +21715,13 @@ Designer’s Note: Place a Squig Mine token next to the model, removing it once 
               <modifierGroups>
                 <modifierGroup type="and">
                   <modifiers>
-                    <modifier type="append" value="Da Biggest Boss" field="annotation" join=", " affects="self.entries.profiles.Unit" scope="model-or-unit">
-                      <conditions>
-                        <condition type="atLeast" value="1" field="selections" scope="model-or-unit" childId="ccd6-6490-a314-78a0" shared="true" includeChildSelections="true"/>
-                      </conditions>
-                    </modifier>
-                    <modifier type="increment" value="2" field="750a-a2ec-90d3-21fe" affects="profiles.Unit" scope="model-or-unit">
-                      <conditions>
-                        <condition type="equalTo" value="1" field="selections" scope="self" childId="ccd6-6490-a314-78a0" shared="true" includeChildSelections="true"/>
-                      </conditions>
-                    </modifier>
+                    <modifier type="append" value="Da Biggest Boss" field="annotation" join=", " affects="self.entries.profiles.Unit" scope="root-entry"/>
+                    <modifier type="increment" value="2" field="750a-a2ec-90d3-21fe" affects="self.entries.profiles.Unit" scope="root-entry"/>
                   </modifiers>
                   <comment>Da Biggest Boss</comment>
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="root-entry" childId="ccd6-6490-a314-78a0" shared="true" includeChildSelections="true"/>
+                  </conditions>
                 </modifierGroup>
               </modifierGroups>
             </selectionEntry>
@@ -21614,7 +21766,7 @@ Designer’s Note: Place a Squig Mine token next to the model, removing it once 
               <profiles>
                 <profile name="&apos;Eadstompa" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="1763-9039-3a6d-9d3">
                   <characteristics>
-                    <characteristic name="Description" id="239f-23fb-54b6-5693" hidden="false" typeId="9b8f-694b-e5e-b573">INFANTRY WARBOSS model only. Each time the bearer makes an attack that targets a unit that is below its Starting Strength, re-roll a Wound roll of 1. If that unit is Below Half-strength, you can re-roll the Wound roll instead.</characteristic>
+                    <characteristic name="Description" typeId="9b8f-694b-e5e-b573">**^^Infantry Warboss^^** model only. Each time the bearer makes an attack that targets a unit that is below its Starting Strength, re-roll a Wound roll of 1. If that unit is Below Half-strength, you can re-roll the Wound roll instead.</characteristic>
                   </characteristics>
                 </profile>
               </profiles>
@@ -21651,7 +21803,7 @@ Designer’s Note: Place a Squig Mine token next to the model, removing it once 
               <profiles>
                 <profile name="Tellyporta" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="3474-84f-8bf-783">
                   <characteristics>
-                    <characteristic name="Description" id="6b6c-197d-479f-c2ba" hidden="false" typeId="9b8f-694b-e5e-b573">WARBOSS IN MEGA ARMOUR model only. Models in the bearer&apos;s unit have the Deep Strike ability.</characteristic>
+                    <characteristic name="Description" typeId="9b8f-694b-e5e-b573">**^^Warboss In Mega Armour^^** model only. Models in the bearer&apos;s unit have the Deep Strike ability.</characteristic>
                   </characteristics>
                 </profile>
               </profiles>
@@ -21732,7 +21884,7 @@ Designer’s Note: Place a Squig Mine token next to the model, removing it once 
               <profiles>
                 <profile name="Fasta Than Yooz" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="639a-a3c-9211-b74e">
                   <characteristics>
-                    <characteristic name="Description" id="f3e2-a8bd-c87b-ddaa" hidden="false" typeId="9b8f-694b-e5e-b573">ORKS INFANTRY model only. Each time the bearer&apos;s unit disembarks from a TRANSPORT after that TRANSPORT has made a Normal move, the bearer&apos;s unit is still eligible to declare a charge this turn.</characteristic>
+                    <characteristic name="Description" typeId="9b8f-694b-e5e-b573">**^^Orks Infantry^^** model only. Each time the bearer&apos;s unit disembarks from a **^^Transport^^** after that **^^Transport^^** has made a Normal move, the bearer&apos;s unit is still eligible to declare a charge this turn.</characteristic>
                   </characteristics>
                 </profile>
               </profiles>
@@ -21766,7 +21918,7 @@ Designer’s Note: Place a Squig Mine token next to the model, removing it once 
               <profiles>
                 <profile name="Squig-hide Tyres" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="f91f-8809-a7ff-b029">
                   <characteristics>
-                    <characteristic name="Description" id="5429-4a58-f777-630b" hidden="false" typeId="9b8f-694b-e5e-b573">DEFFKILLA WARTRIKE model only. Each time a model in the bearer&apos;s unit makes a Consolidation move, it can move up to 6&quot; instead of up to 3&quot;.</characteristic>
+                    <characteristic name="Description" typeId="9b8f-694b-e5e-b573">**^^Deffkilla Wartrike^^** model only. Each time a model in the bearer&apos;s unit makes a Consolidation move, it can move up to 6&quot; instead of up to 3&quot;.</characteristic>
                   </characteristics>
                 </profile>
               </profiles>
@@ -21775,7 +21927,7 @@ Designer’s Note: Place a Squig Mine token next to the model, removing it once 
               <profiles>
                 <profile name="Speed Makes Right" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="953d-e226-da82-795">
                   <characteristics>
-                    <characteristic name="Description" id="aba7-6256-da55-9092" hidden="false" typeId="9b8f-694b-e5e-b573">ORKS model only. In your Command phase, if the bearer (or a TRANSPORT the bearer is embarked within) is within 9&quot; of one or more enemy units, roll one D6; on a 3+, you gain 1CP.</characteristic>
+                    <characteristic name="Description" typeId="9b8f-694b-e5e-b573">**^^Orks^^** model only. In your Command phase, if the bearer (or a **^^Transport^^** the bearer is embarked within) is within 9&quot; of one or more enemy units, roll one D6; on a 3+, you gain 1CP.</characteristic>
                   </characteristics>
                 </profile>
               </profiles>
@@ -21887,7 +22039,7 @@ Designer’s Note: Place a Squig Mine token next to the model, removing it once 
               <profiles>
                 <profile name="Gob Boomer" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="24fc-7c86-6957-ae00">
                   <characteristics>
-                    <characteristic name="Description" typeId="9b8f-694b-e5e-b573">WARBOSS or MEK model only. Each time the bearer issues Taktiks, it can do so to a friendly ORKS INFANTRY or ORKS MOUNTED unit within 18&quot;, instead of 6&quot;.</characteristic>
+                    <characteristic name="Description" typeId="9b8f-694b-e5e-b573">**^^Warboss^^** or **^^Mek^^** model only. Each time the bearer issues Taktiks, it can do so to a friendly **^^Orks Infantry^^** or **^^Orks Mounted^^** unit within 18&quot;, instead of 6&quot;.</characteristic>
                   </characteristics>
                 </profile>
               </profiles>
@@ -21927,7 +22079,7 @@ Designer’s Note: Place a Squig Mine token next to the model, removing it once 
               <profiles>
                 <profile name="Mek Kaptin" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="e48f-314a-1335-4d10">
                   <characteristics>
-                    <characteristic name="Description" typeId="9b8f-694b-e5e-b573">BIG MEK, BIG MEK IN MEGA ARMOUR or BIG MEK WITH SHOKK ATTACK GUN model only. During the Declare Battle Formations step, the bearer can be attached to a FLASH GITZ unit. Each time a model in the bearer’s unit makes a ranged attack, you can re‑roll the Hit roll.</characteristic>
+                    <characteristic name="Description" typeId="9b8f-694b-e5e-b573">**^^Big Mek^^**, **^^Big Mek In Mega Armour^^** or **^^Big Mek With Shokk Attack Gun^^** model only. During the Declare Battle Formations step, the bearer can be attached to a **^^Flash Gitz^^** unit. Each time a model in the bearer’s unit makes a ranged attack, you can re‑roll the Hit roll.</characteristic>
                   </characteristics>
                 </profile>
               </profiles>
@@ -21974,13 +22126,13 @@ Designer’s Note: Place a Squig Mine token next to the model, removing it once 
                         <conditionGroup type="and">
                           <conditions>
                             <condition type="atLeast" value="1" field="selections" scope="roster" childId="2381-390e-5e7d-0426" shared="true" includeChildForces="true" includeChildSelections="true"/>
-                            <condition type="lessThan" value="1" field="selections" scope="parent" childId="2381-390e-5e7d-0426" shared="true" includeChildForces="true" includeChildSelections="true"/>
+                            <condition type="lessThan" value="1" field="selections" scope="root-entry" childId="2381-390e-5e7d-0426" shared="true" includeChildForces="true" includeChildSelections="true"/>
                           </conditions>
                         </conditionGroup>
-                        <conditionGroup type="and">
+                        <conditionGroup type="or">
                           <conditions>
-                            <condition type="notInstanceOf" value="1" field="selections" scope="parent" childId="47cc-4071-6fda-688e" shared="true"/>
-                            <condition type="notInstanceOf" value="1" field="selections" scope="parent" childId="cf47-a0d7-7207-29dc" shared="true"/>
+                            <condition type="notInstanceOf" value="1" field="selections" scope="ancestor" childId="47cc-4071-6fda-688e" shared="true"/>
+                            <condition type="notInstanceOf" value="1" field="selections" scope="ancestor" childId="cf47-a0d7-7207-29dc" shared="true"/>
                           </conditions>
                         </conditionGroup>
                       </conditionGroups>
@@ -21998,21 +22150,17 @@ Designer’s Note: Place a Squig Mine token next to the model, removing it once 
               <constraints>
                 <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="7682-45d6-75b6-adb5" includeChildSelections="true" includeChildForces="false"/>
               </constraints>
-              <infoGroups>
-                <infoGroup name="Skwad Leader" id="b492-f3fe-333e-d771" hidden="false">
-                  <profiles>
-                    <profile name="Skwad Leader" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="becb-7197-d769-6f8c">
-                      <characteristics>
-                        <characteristic name="Description" typeId="9b8f-694b-e5e-b573">**^^Warboss Infantry^^** model only. During the Declare Battle Formations step, the bearer can be attached to a **^^Kommandos^^** unit. While leading a **^^Kommandos^^** unit, it has the Infiltrators and Stealth abilities.</characteristic>
-                      </characteristics>
-                    </profile>
-                  </profiles>
-                  <infoLinks>
-                    <infoLink name="Infiltrators" id="dce1-b824-59aa-c0b9" hidden="false" type="rule" targetId="c05d-f4c3-f091-4938"/>
-                    <infoLink name="Stealth" id="9fb7-48ec-6516-f309" hidden="false" type="rule" targetId="bec5-4288-34a6-ccfa"/>
-                  </infoLinks>
-                </infoGroup>
-              </infoGroups>
+              <infoLinks>
+                <infoLink name="Infiltrators" id="dce1-b824-59aa-c0b9" hidden="false" type="rule" targetId="c05d-f4c3-f091-4938"/>
+                <infoLink name="Stealth" id="9fb7-48ec-6516-f309" hidden="false" type="rule" targetId="bec5-4288-34a6-ccfa"/>
+              </infoLinks>
+              <profiles>
+                <profile name="Skwad Leader" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="3beb-198a-61f4-f94d">
+                  <characteristics>
+                    <characteristic name="Description" typeId="9b8f-694b-e5e-b573">**^^Warboss Infantry^^** model only. During the Declare Battle Formations step, the bearer can be attached to a **^^Kommandos^^** unit. While leading a **^^Kommandos^^** unit, it has the Infiltrators and Stealth abilities.</characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
             </selectionEntry>
           </selectionEntries>
           <constraints>
@@ -22181,6 +22329,174 @@ Designer’s Note: Place a Squig Mine token next to the model, removing it once 
             </modifier>
           </modifiers>
         </selectionEntryGroup>
+        <selectionEntryGroup name="Freebooter Krew Enhancements" id="158c-7423-da23-6d8b" hidden="false">
+          <selectionEntries>
+            <selectionEntry type="upgrade" import="true" name="Razgit&apos;s Magik Map" hidden="false" id="1f59-a92a-38f0-75d6">
+              <modifiers>
+                <modifier type="set" value="true" field="hidden">
+                  <conditionGroups>
+                    <conditionGroup type="and">
+                      <conditions>
+                        <condition type="atLeast" value="1" field="selections" scope="roster" childId="1f59-a92a-38f0-75d6" shared="true" includeChildForces="true" includeChildSelections="true"/>
+                        <condition type="lessThan" value="1" field="selections" scope="parent" childId="1f59-a92a-38f0-75d6" shared="true" includeChildForces="true" includeChildSelections="true"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </modifier>
+              </modifiers>
+              <costs>
+                <cost name="pts" typeId="51b2-306e-1021-d207" value="25"/>
+                <cost name="Crusade Points" typeId="b03b-c239-15a5-da55" value="0"/>
+                <cost name="Crusade: Battle Honours" typeId="75bb-ded1-c86d-bdf0" value="0"/>
+                <cost name="Crusade: Experience" typeId="a623-fe74-1d33-cddf" value="0"/>
+                <cost name="Crusade: Weapon Modifications" typeId="716d-91b7-d55a-1022" value="0"/>
+                <cost name="Blackstone Fragments" typeId="ac6b-ced3-9b5e-9a6e" value="0"/>
+              </costs>
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="c1a7-3346-98ac-8f35" includeChildSelections="true" includeChildForces="false"/>
+              </constraints>
+              <profiles>
+                <profile name="Razgit&apos;s Magik Map" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="9eff-9c5f-43ce-f892">
+                  <characteristics>
+                    <characteristic name="Description" typeId="9b8f-694b-e5e-b573">**^^Orks^^** model only. After both players have deployed their armies, select up to three **^^Orks Infantry^^** units from your army and redeploy them. When doing so, you can set those units up in Strategic Reserves, regardless of how many units are already in Strategic Reserves.</characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+            </selectionEntry>
+            <selectionEntry type="upgrade" import="true" name="Git-spotter Squig" hidden="false" id="8620-a781-136c-b9e8">
+              <modifiers>
+                <modifier type="set" value="true" field="hidden">
+                  <conditionGroups>
+                    <conditionGroup type="and">
+                      <conditions>
+                        <condition type="atLeast" value="1" field="selections" scope="roster" childId="8620-a781-136c-b9e8" shared="true" includeChildForces="true" includeChildSelections="true"/>
+                        <condition type="lessThan" value="1" field="selections" scope="parent" childId="8620-a781-136c-b9e8" shared="true" includeChildForces="true" includeChildSelections="true"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </modifier>
+              </modifiers>
+              <costs>
+                <cost name="pts" typeId="51b2-306e-1021-d207" value="20"/>
+              </costs>
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="ec4c-a939-a216-99df" includeChildSelections="true" includeChildForces="false"/>
+              </constraints>
+              <infoLinks>
+                <infoLink name="Ignores Cover" id="e68b-db76-20ca-1788" hidden="false" type="rule" targetId="4640-43e7-30b-215a"/>
+              </infoLinks>
+              <profiles>
+                <profile name="Git-spotter Squig" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="888c-bf79-c151-7d95">
+                  <characteristics>
+                    <characteristic name="Description" typeId="9b8f-694b-e5e-b573">**^^Orks^^** model only. Ranged weapons equipped by models in the bearer’s unit have the **[IGNORES COVER]** ability.</characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+              <modifierGroups>
+                <modifierGroup type="and">
+                  <modifiers>
+                    <modifier type="append" value="Git-spotter Squig" field="annotation" join=", " scope="root-entry" affects="self.entries.recursive.profiles.Ranged Weapons"/>
+                    <modifier type="append" value="Ignores Cover" field="893f-9000-ccf7-648e" scope="root-entry" affects="self.entries.recursive.profiles.Ranged Weapons" join=", "/>
+                  </modifiers>
+                </modifierGroup>
+              </modifierGroups>
+            </selectionEntry>
+            <selectionEntry type="upgrade" import="true" name="Bionik Workshop" hidden="false" id="a4e4-b6d1-8ad1-6b54">
+              <profiles>
+                <profile name="Bionik Workshop" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="96ed-b6d4-f919-14de">
+                  <characteristics>
+                    <characteristic name="Description" typeId="9b8f-694b-e5e-b573">**^^Big Mek^^** or **^^Painboy^^** model only. At the start of the battle, roll one D3 and compare the result to the list below. Until the end of the battle, models in the bearer’s unit have that bioniks ability.
+**1. Bionik Legs:** Add 2&quot; to the Move characteristic of this model.
+**2. Bionik Arms:** Add 1 to the Strength characteristic of melee weapons equipped by this model.
+**3. Bionik Bonce:** Improve the Weapon Skill characteristic of melee weapons equipped by this model by 1.</characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+              <modifiers>
+                <modifier type="set" value="true" field="hidden">
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditionGroups>
+                        <conditionGroup type="and">
+                          <conditions>
+                            <condition type="atLeast" value="1" field="selections" scope="roster" childId="a4e4-b6d1-8ad1-6b54" shared="true" includeChildForces="true" includeChildSelections="true"/>
+                            <condition type="lessThan" value="1" field="selections" scope="parent" childId="a4e4-b6d1-8ad1-6b54" shared="true" includeChildForces="true" includeChildSelections="true"/>
+                          </conditions>
+                        </conditionGroup>
+                        <conditionGroup type="and">
+                          <conditions>
+                            <condition type="notInstanceOf" value="1" field="selections" scope="parent" childId="1ea0-8b1a-ddea-4d7c" shared="true"/>
+                            <condition type="notInstanceOf" value="1" field="selections" scope="parent" childId="d844-fb57-f3b6-1560" shared="true"/>
+                          </conditions>
+                        </conditionGroup>
+                      </conditionGroups>
+                    </conditionGroup>
+                  </conditionGroups>
+                </modifier>
+              </modifiers>
+              <costs>
+                <cost name="pts" typeId="51b2-306e-1021-d207" value="15"/>
+              </costs>
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="d988-3cf2-9748-f330" includeChildSelections="true" includeChildForces="false"/>
+              </constraints>
+            </selectionEntry>
+            <selectionEntry type="upgrade" import="true" name="Da Kaptin" hidden="false" id="a1c0-bf58-83ec-60b7">
+              <profiles>
+                <profile name="Da Kaptin" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="a813-57b4-ee80-17d1">
+                  <characteristics>
+                    <characteristic name="Description" typeId="9b8f-694b-e5e-b573">**^^Warboss^^** model only. Once per battle round, at the start of any phase, you can select one friendly **^^Orks^^** unit that is Battle‑shocked and within 12&quot; of the bearer. That unit suffers D3 mortal wounds and it is no longer Battle‑shocked.</characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+              <modifiers>
+                <modifier type="set" value="true" field="hidden">
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditionGroups>
+                        <conditionGroup type="and">
+                          <conditions>
+                            <condition type="atLeast" value="1" field="selections" scope="roster" childId="a1c0-bf58-83ec-60b7" shared="true" includeChildForces="true" includeChildSelections="true"/>
+                            <condition type="lessThan" value="1" field="selections" scope="parent" childId="a1c0-bf58-83ec-60b7" shared="true" includeChildForces="true" includeChildSelections="true"/>
+                          </conditions>
+                        </conditionGroup>
+                      </conditionGroups>
+                      <conditions>
+                        <condition type="notInstanceOf" value="1" field="selections" scope="parent" childId="47cc-4071-6fda-688e" shared="true"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </modifier>
+              </modifiers>
+              <costs>
+                <cost name="pts" typeId="51b2-306e-1021-d207" value="10"/>
+                <cost name="Crusade Points" typeId="b03b-c239-15a5-da55" value="0"/>
+                <cost name="Crusade: Battle Honours" typeId="75bb-ded1-c86d-bdf0" value="0"/>
+                <cost name="Crusade: Experience" typeId="a623-fe74-1d33-cddf" value="0"/>
+                <cost name="Crusade: Weapon Modifications" typeId="716d-91b7-d55a-1022" value="0"/>
+                <cost name="Blackstone Fragments" typeId="ac6b-ced3-9b5e-9a6e" value="0"/>
+              </costs>
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="0081-d15b-af3b-4861" includeChildSelections="true" includeChildForces="false"/>
+              </constraints>
+            </selectionEntry>
+          </selectionEntries>
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="4c2b-4551-cd1d-3556" includeChildSelections="false" includeChildForces="false"/>
+          </constraints>
+          <modifiers>
+            <modifier type="set" value="true" field="hidden">
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition type="lessThan" value="1" field="forces" scope="roster" childId="cac3-71d1-ea4b-795d" shared="true" includeChildSelections="true" includeChildForces="true"/>
+                    <condition type="lessThan" value="1" field="selections" scope="roster" childId="bea1-1e34-5f31-78f2" shared="true" includeChildSelections="true" includeChildForces="true"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
+        </selectionEntryGroup>
       </selectionEntryGroups>
       <constraints>
         <constraint type="max" value="1" field="selections" scope="self" shared="true" id="eea8-b34a-f6a4-2ec4" includeChildSelections="true"/>
@@ -22199,7 +22515,7 @@ Designer’s Note: Place a Squig Mine token next to the model, removing it once 
         <selectionEntry type="upgrade" import="true" name="War Horde" hidden="false" id="496c-ddb9-3e71-e0b3">
           <rules>
             <rule name="Get Stuck In" id="7d88-fb67-ac56-ec9" hidden="false">
-              <description>Melee weapons equipped by ORKS models from your army have the [SUSTAINED HITS 1] ability.</description>
+              <description>Melee weapons equipped by **^^Orks^^** models from your army have the **[SUSTAINED HITS 1]** ability.</description>
             </rule>
           </rules>
           <infoLinks>
@@ -22209,20 +22525,20 @@ Designer’s Note: Place a Squig Mine token next to the model, removing it once 
         <selectionEntry type="upgrade" import="true" name="Da Big Hunt" hidden="false" id="80e6-2190-9767-a7ed">
           <rules>
             <rule name="Da Hunt Is On" id="b82f-6b0d-7564-87df" hidden="false">
-              <description>At the start of your Command phase, select one MONSTER, VEHICLE, or CHARACTER unit from your opponent&apos;s army. Until the start of your next Command phase, that enemy unit is your Prey:
-- Each time a BEAST SNAGGA unit from your army declares a charge that includes your Prey as one of the targets, you can re-roll the Charge roll.
-- Each time a BEAST SNAGGA model from your army makes an attack that targets your Prey, improve the Armour Penetration characteristic of that attack by 1.</description>
+              <description>At the start of your Command phase, select one **^^Monster^^**, **^^Vehicle^^**, or **^^Character^^** unit from your opponent&apos;s army. Until the start of your next Command phase, that enemy unit is your Prey:
+- Each time a **^^Beast Snagga^^** unit from your army declares a charge that includes your Prey as one of the targets, you can re-roll the Charge roll.
+- Each time a **^^Beast Snagga^^** model from your army makes an attack that targets your Prey, improve the Armour Penetration characteristic of that attack by 1.</description>
             </rule>
           </rules>
         </selectionEntry>
         <selectionEntry type="upgrade" import="true" name="Dread Mob" hidden="false" id="807c-9732-5465-5ca5">
           <rules>
             <rule name="Try Dat Button!" id="3664-2bb3-64e4-e684" hidden="false">
-              <description>Each time a MEK, ORKS WALKER or GROTS VEHICLE unit from your army is selected to shoot or fight, roll one D6. Until the end of the phase, weapons equipped by models in that unit have the corresponding ability shown in the table below.
-Alternatively, when such a unit is selected to shoot or fight, you can select one of the abilities above instead of rolling the D6. If you do, until the end of the phase, weapons equipped by models in that unit have the [HAZARDOUS] ability as well.
-If a weapon equipped by a model you army has the [HAZARDOUS] ability from multiple sources, each time you take a Hazardous test for that weapon, it is failed on a roll of a 1 or a 2.
+              <description>Each time a **^^Mek^^**, **^^Orks Walker^^** or **^^Grots Vehicle^^** unit from your army is selected to shoot or fight, roll one D6. Until the end of the phase, weapons equipped by models in that unit have the corresponding ability shown in the table below.
+Alternatively, when such a unit is selected to shoot or fight, you can select one of the abilities above instead of rolling the D6. If you do, until the end of the phase, weapons equipped by models in that unit have the **[HAZARDOUS]* ability as well.
+If a weapon equipped by a model you army has the **[HAZARDOUS]** ability from multiple sources, each time you take a Hazardous test for that weapon, it is failed on a roll of a 1 or a 2.
 
-GRETCHIN units from your army gain the BATTLELINE keyword.</description>
+**^^Gretchin^^** units from your army gain the **^^Battleline^^** keyword.</description>
             </rule>
           </rules>
           <infoLinks>
@@ -22233,12 +22549,12 @@ GRETCHIN units from your army gain the BATTLELINE keyword.</description>
           <profiles>
             <profile name="1-2" typeId="2ece-65f0-756f-bc77" typeName="Try Dat Button! - D6" hidden="false" id="3ccb-2766-28c3-4c35">
               <characteristics>
-                <characteristic name="Button Effect" id="c8ee-92a9-4b56-e728" hidden="false" typeId="dcd0-b896-8ccf-ea83">[SUSTAINED HITS 1] ability</characteristic>
+                <characteristic name="Button Effect" typeId="dcd0-b896-8ccf-ea83">**[SUSTAINED HITS 1]** ability</characteristic>
               </characteristics>
             </profile>
             <profile name="3-4" typeId="2ece-65f0-756f-bc77" typeName="Try Dat Button! - D6" hidden="false" id="6ca9-ebfa-af32-38c9">
               <characteristics>
-                <characteristic name="Button Effect" id="cf3a-a38f-3490-aad3" hidden="false" typeId="dcd0-b896-8ccf-ea83">[LETHAL HITS] ability</characteristic>
+                <characteristic name="Button Effect" typeId="dcd0-b896-8ccf-ea83">**[LETHAL HITS]** ability</characteristic>
               </characteristics>
             </profile>
             <profile name="5-6" typeId="2ece-65f0-756f-bc77" typeName="Try Dat Button! - D6" hidden="false" id="2687-ceb1-a423-fc12">
@@ -22251,14 +22567,14 @@ GRETCHIN units from your army gain the BATTLELINE keyword.</description>
         <selectionEntry type="upgrade" import="true" name="Green Tide" hidden="false" id="795f-b961-9504-bd08">
           <rules>
             <rule name="Mob Mentality" id="4e1-4598-e547-e79c" hidden="false">
-              <description>Each time an attack targets a BOYZ unit from your army, models in that unit have a 6+ invulnerable save against that attack. Each time an attack targets a BOYZ unit from your army that contains 10 or more models, models in that unit have a 5+ invulnerable save against that attack.</description>
+              <description>Each time an attack targets a **^^Boyz^^** unit from your army, models in that unit have a 6+ invulnerable save against that attack. Each time an attack targets a **^^Boyz^^** unit from your army that contains 10 or more models, models in that unit have a 5+ invulnerable save against that attack.</description>
             </rule>
           </rules>
         </selectionEntry>
         <selectionEntry type="upgrade" import="true" name="Bully Boyz" hidden="false" id="4b17-a73a-7a0a-a265">
           <rules>
             <rule name="Da Boss Is Watchin&apos;" id="2195-4d6e-a1f1-1b63" hidden="false">
-              <description>At the start of your Command phase, in a turn in which you have not called a Waaagh!, if you have one or more WARBOSS models on the battlefield (or embarked within a TRANSPORT that is on the battlefield), you can call a Waaagh! for a second time this battle. When doing so, that second Waaagh! only counts as having been called for WARBOSS, NOBZ and MEGANOBZ units from your army.</description>
+              <description>At the start of your Command phase, in a turn in which you have not called a Waaagh!, if you have one or more **^^Warboss^^** models on the battlefield (or embarked within a **^^Transport^^** that is on the battlefield), you can call a Waaagh! for a second time this battle. When doing so, that second Waaagh! only counts as having been called for **^^Warboss^^**, **^^Nobz^^** and **^^Meganobz^^** units from your army.</description>
             </rule>
           </rules>
         </selectionEntry>
@@ -22272,22 +22588,22 @@ GRETCHIN units from your army gain the BATTLELINE keyword.</description>
         <selectionEntry type="upgrade" import="true" name="Taktikal Brigade" hidden="false" id="fdd5-9868-a9ee-e9f1">
           <rules>
             <rule name="Keywords" id="00e6-fb6e-31b0-9bdb" hidden="false">
-              <description>STORMBOYZ units from your army gain the BATTLELINE keyword.</description>
+              <description>**^^Stormboyz^^** units from your army gain the **^^Battleline^^** keyword.</description>
             </rule>
             <rule name="Lissen &apos;Ere" id="8e19-56b8-b90a-ae8d" hidden="false">
-              <description>Once per battle round, in your Command phase or after being set up on the battlefield in your Movement phase, each BOSS SNIKROT, MEK and WARBOSS model in your army can issue Taktiks abilities.
+              <description>Once per battle round, in your Command phase or after being set up on the battlefield in your Movement phase, each **^^Boss Snikrot^^**, **^^Mek^^** and **^^Warboss^^** model in your army can issue Taktiks abilities.
 
-To do so, select one of the Taktiks abilities below and select one friendly ORKS unit within 6&quot; of that model to issue them to. That model must take a Leadership test: if failed, the selected unit suffers 1 mortal wound. Until the start of your next Command phase, the selected unit is affected by the selected Taktik. A unit cannot have Taktiks issued to it in this way more than once per battle round.
+To do so, select one of the Taktiks abilities below and select one friendly **^^Orks^^** unit within 6&quot; of that model to issue them to. That model must take a Leadership test: if failed, the selected unit suffers 1 mortal wound. Until the start of your next Command phase, the selected unit is affected by the selected Taktik. A unit cannot have Taktiks issued to it in this way more than once per battle round.
 
-Taktiks abilities cannot be issued to Battle‑shocked units, and if a unit affected by Taktiks becomes Battle‑shocked, all Taktiks cease to affect that unit while it is Battle‑shocked.
+Taktiks abilities cannot be issued to Battle shocked units, and if a unit affected by Taktiks becomes Battle shocked, all Taktiks cease to affect that unit while it is Battle shocked.
 
-Get Stuck In: You can re‑roll Charge rolls made for this unit.
+**Get Stuck In:** You can re roll Charge rolls made for this unit.
 
-Get On Wiv It: Add 1 to the Strength characteristic of melee weapons equipped by models in this unit.
+**Get On Wiv It:** Add 1 to the Strength characteristic of melee weapons equipped by models in this unit.
 
-Sneaky Stalkin’: INFANTRY and MOUNTED models (excluding MEGANOBZ) in this unit have the Stealth ability and each time a ranged attack targets this unit, those models have the Benefit of Cover against that attack.
+**Sneaky Stalkin’:** **^^Infantry^^** and **^^Mounted^^** models (excluding **^^Meganobz^^**) in this unit have the Stealth ability and each time a ranged attack targets this unit, those models have the Benefit of Cover against that attack.
 
-Shoota Drills: Each time an INFANTRY or MOUNTED model in this unit makes a ranged attack, add 1 to the Hit roll.</description>
+**Shoota Drills:** Each time an **^^Infantry^^** or **^^Mounted^^** model in this unit makes a ranged attack, add 1 to the Hit roll.</description>
             </rule>
           </rules>
         </selectionEntry>
@@ -22302,6 +22618,21 @@ While the Waaagh! is active for your army, during your Shooting phase, ranged we
           <infoLinks>
             <infoLink name="Sustained Hits" id="3b40-c0fe-dffc-5f2b" hidden="false" type="rule" targetId="1897-c22c-9597-12b1"/>
             <infoLink name="Assault" id="d8a9-8b89-5eb0-68a9" hidden="false" type="rule" targetId="fc8a-8c24-bae9-cc1c"/>
+          </infoLinks>
+        </selectionEntry>
+        <selectionEntry type="upgrade" import="true" name="Freebooter Krew" hidden="false" id="bea1-1e34-5f31-78f2">
+          <rules>
+            <rule name="Here Be Loot" id="078c-99f5-cc7a-9ad9" hidden="false">
+              <description>At the start of the battle round, select one objective marker. Until the start of the next battle round, that objective marker is your loot objective.
+
+Each time a model in an **^^Orks Infantry^^**, **^^Orks Mounted^^** or **^^Orks Walker^^** unit from your army makes an attack, that attack has the **[SUSTAINED HITS 1]** ability if either or both of the following are true:
+
+- That model&apos;s unit is within range of your loot objective.
+- That attack targets a unit within range of your loot objective.</description>
+            </rule>
+          </rules>
+          <infoLinks>
+            <infoLink name="Sustained Hits" id="20bd-cb08-e800-1179" hidden="false" type="rule" targetId="1897-c22c-9597-12b1"/>
           </infoLinks>
         </selectionEntry>
       </selectionEntries>
@@ -22679,6 +23010,15 @@ Each time the bearer&apos;s unit is selected to shoot, if that unit is not withi
           <infoLinks>
             <infoLink name="Fights First" id="3b8b-a5e3-cac5-e03d" hidden="false" type="rule" targetId="24-c886-e8ba-5a89"/>
           </infoLinks>
+          <modifierGroups>
+            <modifierGroup type="and">
+              <modifiers>
+                <modifier type="append" value="Rezmekka&apos;s Redder Paint" field="annotation" join=", " affects="self.entries.profiles.Unit" scope="root-entry"/>
+                <modifier type="increment" value="2" field="e703-ecb6-5ce7-aec1" affects="profiles.Unit" scope="root-entry"/>
+              </modifiers>
+              <comment>Bestest Bossloot: Da Krushin&apos; Armour</comment>
+            </modifierGroup>
+          </modifierGroups>
         </selectionEntry>
         <selectionEntry type="upgrade" import="true" name="Da Irongob" hidden="false" id="b275-be5d-40c8-f283">
           <profiles>
@@ -22733,9 +23073,9 @@ Each time the bearer&apos;s unit is selected to shoot, if that unit is not withi
           <profiles>
             <profile name="Da Krushin&apos; Armour" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="c52f-63f1-5845-cb48">
               <characteristics>
-                <characteristic name="Description" typeId="9b8f-694b-e5e-b573">■ The bearer has a 4+ invulnerable save.
-■ Add 1 to the bearer&apos;s Wounds characteristic.
-■ Each time the bearer&apos;s unit ends a Charge move, select one enemy unit within Engagement Range of the bearer and roll one D6: on a 2+, that enemy unit suffers D3 mortal wounds.</characteristic>
+                <characteristic name="Description" typeId="9b8f-694b-e5e-b573">- The bearer has a 4+ invulnerable save.
+- Add 1 to the bearer&apos;s Wounds characteristic.
+- Each time the bearer&apos;s unit ends a Charge move, select one enemy unit within Engagement Range of the bearer and roll one D6: on a 2+, that enemy unit suffers D3 mortal wounds.</characteristic>
               </characteristics>
             </profile>
           </profiles>
@@ -23236,10 +23576,10 @@ Each time the bearer&apos;s unit is selected to shoot, if that unit is not withi
               <modifiers>
                 <modifier type="set" value="true" field="hidden">
                   <conditionGroups>
-                    <conditionGroup type="and">
+                    <conditionGroup type="or">
                       <conditions>
-                        <condition type="notInstanceOf" value="1" field="selections" scope="parent" childId="fe8b-9078-9a3d-fed" shared="true" includeChildSelections="false" includeChildForces="false"/>
-                        <condition type="notInstanceOf" value="1" field="selections" scope="parent" childId="dbd4-63-af05-998" shared="true" includeChildSelections="false" includeChildForces="false"/>
+                        <condition type="notInstanceOf" value="1" field="selections" scope="ancestor" childId="fe8b-9078-9a3d-fed" shared="true" includeChildSelections="false" includeChildForces="false"/>
+                        <condition type="notInstanceOf" value="1" field="selections" scope="ancestor" childId="dbd4-63-af05-998" shared="true" includeChildSelections="false" includeChildForces="false"/>
                       </conditions>
                     </conditionGroup>
                   </conditionGroups>
@@ -23286,12 +23626,18 @@ Each time the bearer&apos;s unit is selected to shoot, if that unit is not withi
               <modifiers>
                 <modifier type="set" value="true" field="hidden">
                   <conditionGroups>
-                    <conditionGroup type="and">
+                    <conditionGroup type="or">
                       <conditions>
-                        <condition type="notInstanceOf" value="1" field="selections" scope="parent" childId="9224-dbd4-36ad-6ab2" shared="true" includeChildSelections="false" includeChildForces="false"/>
-                        <condition type="notInstanceOf" value="1" field="selections" scope="parent" childId="ea9-8161-e2e-53f0" shared="true" includeChildSelections="false" includeChildForces="false"/>
-                        <condition type="notInstanceOf" value="1" field="selections" scope="parent" childId="dbd4-63-af05-998" shared="true" includeChildSelections="false" includeChildForces="false"/>
+                        <condition type="notInstanceOf" value="1" field="selections" scope="ancestor" childId="dbd4-63-af05-998" shared="true" includeChildSelections="false" includeChildForces="false"/>
                       </conditions>
+                      <conditionGroups>
+                        <conditionGroup type="and">
+                          <conditions>
+                            <condition type="notInstanceOf" value="1" field="selections" scope="ancestor" childId="ea9-8161-e2e-53f0" shared="true" includeChildSelections="false" includeChildForces="false"/>
+                            <condition type="notInstanceOf" value="1" field="selections" scope="ancestor" childId="9224-dbd4-36ad-6ab2" shared="true" includeChildSelections="false" includeChildForces="false"/>
+                          </conditions>
+                        </conditionGroup>
+                      </conditionGroups>
                     </conditionGroup>
                   </conditionGroups>
                 </modifier>
@@ -23375,7 +23721,7 @@ Each time the bearer&apos;s unit is selected to shoot, if that unit is not withi
               <modifiers>
                 <modifier type="set" value="true" field="hidden">
                   <conditions>
-                    <condition type="notInstanceOf" value="1" field="selections" scope="parent" childId="dbd4-63-af05-998" shared="true" includeChildSelections="false" includeChildForces="false"/>
+                    <condition type="notInstanceOf" value="1" field="selections" scope="ancestor" childId="dbd4-63-af05-998" shared="true" includeChildSelections="false" includeChildForces="false"/>
                   </conditions>
                 </modifier>
                 <modifier type="set" value="2" field="b03b-c239-15a5-da55">
@@ -23411,16 +23757,10 @@ Each time the bearer&apos;s unit is selected to shoot, if that unit is not withi
                 <modifier type="set" value="true" field="hidden">
                   <conditionGroups>
                     <conditionGroup type="or">
-                      <conditionGroups>
-                        <conditionGroup type="and">
-                          <conditions>
-                            <condition type="notInstanceOf" value="1" field="selections" scope="parent" childId="6dda-e157-334d-e93a" shared="true" includeChildSelections="false" includeChildForces="false"/>
-                            <condition type="notInstanceOf" value="1" field="selections" scope="parent" childId="dbd4-63-af05-998" shared="true" includeChildSelections="false" includeChildForces="false"/>
-                          </conditions>
-                        </conditionGroup>
-                      </conditionGroups>
                       <conditions>
-                        <condition type="instanceOf" value="1" field="selections" scope="parent" childId="d64b-c6f7-dacf-4035" shared="true" includeChildSelections="false" includeChildForces="false"/>
+                        <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="d64b-c6f7-dacf-4035" shared="true" includeChildSelections="false" includeChildForces="false"/>
+                        <condition type="notInstanceOf" value="1" field="selections" scope="ancestor" childId="dbd4-63-af05-998" shared="true" includeChildSelections="false" includeChildForces="false"/>
+                        <condition type="notInstanceOf" value="1" field="selections" scope="ancestor" childId="6dda-e157-334d-e93a" shared="true" includeChildSelections="false" includeChildForces="false"/>
                       </conditions>
                     </conditionGroup>
                   </conditionGroups>
@@ -23795,6 +24135,7 @@ Each time the bearer&apos;s unit is selected to shoot, if that unit is not withi
     <entryLink import="true" name="Beast Snagga Boyz" hidden="false" type="selectionEntry" id="fd9d-87f3-1895-3470" targetId="b7c3-d00e-daf2-76fb"/>
     <entryLink import="true" name="Beastboss" hidden="false" type="selectionEntry" id="2f80-26a6-9486-b348" targetId="5a5d-c5a4-39b8-4a3f"/>
     <entryLink import="true" name="Da Red Gobbo&apos;s A-bomb-inable Snowman [Legends]" hidden="false" type="selectionEntry" id="b7bb-3da3-d2f2-ed0f" targetId="6610-3cb7-dc72-8852"/>
+    <entryLink import="true" name="Da Red Gobbo&apos;s Tinboy [Legends]" hidden="false" id="654e-3175-0294-7507" targetId="070f-5f7f-2cab-6ee6" type="selectionEntry"/>
   </entryLinks>
   <sharedProfiles>
     <profile name="Damaged: 1-5 Wounds Remaining" hidden="false" id="2be6-f2b9-f73c-82b1" typeName="Abilities" typeId="9cc3-6d83-4dd3-9b64">

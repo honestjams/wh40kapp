@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" id="8106-aad2-918a-9ac" name="Chaos - Chaos Knights Library" revision="55" battleScribeVersion="2.03" library="true" gameSystemId="sys-352e-adc2-7639-d6a9" gameSystemRevision="1" type="catalogue">
+<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" id="8106-aad2-918a-9ac" name="Chaos - Chaos Knights Library" revision="63" battleScribeVersion="2.03" library="true" gameSystemId="sys-352e-adc2-7639-d6a9" gameSystemRevision="1" type="catalogue">
   <categoryEntries>
     <categoryEntry id="99dc-0f47-85e2-75da" name="War Dog" hidden="false">
       <modifiers>
@@ -315,7 +315,7 @@
           <conditionGroups>
             <conditionGroup type="and">
               <conditions>
-                <condition type="lessThan" value="1" field="selections" scope="force" childId="aeb4-96de-7401-eaa3" shared="true" includeChildSelections="true" includeChildForces="true"/>
+                <condition type="lessThan" value="1" field="selections" scope="roster" childId="aeb4-96de-7401-eaa3" shared="true" includeChildSelections="true" includeChildForces="true"/>
                 <condition type="notInstanceOf" value="1" field="selections" scope="primary-catalogue" childId="46d8-abc8-ef3a-9f85" shared="true"/>
               </conditions>
             </conditionGroup>
@@ -328,7 +328,7 @@
         </modifier>
         <modifier type="set-primary" value="e338-111e-d0c6-b687" field="category">
           <conditions>
-            <condition type="atLeast" value="1" field="selections" scope="force" childId="6cb5-45cf-c626-fa86" shared="true" includeChildSelections="true" includeChildForces="true"/>
+            <condition type="atLeast" value="1" field="selections" scope="roster" childId="6cb5-45cf-c626-fa86" shared="true" includeChildSelections="true" includeChildForces="true"/>
           </conditions>
         </modifier>
         <modifier type="set" value="6" field="b0aa-5b7a-4a18-1c9f">
@@ -732,7 +732,7 @@
           <conditionGroups>
             <conditionGroup type="and">
               <conditions>
-                <condition type="lessThan" value="1" field="selections" scope="force" childId="aeb4-96de-7401-eaa3" shared="true" includeChildSelections="true" includeChildForces="true"/>
+                <condition type="lessThan" value="1" field="selections" scope="roster" childId="aeb4-96de-7401-eaa3" shared="true" includeChildSelections="true" includeChildForces="true"/>
                 <condition type="notInstanceOf" value="1" field="selections" scope="primary-catalogue" childId="46d8-abc8-ef3a-9f85" shared="true"/>
               </conditions>
             </conditionGroup>
@@ -745,7 +745,7 @@
         </modifier>
         <modifier type="set-primary" value="e338-111e-d0c6-b687" field="category">
           <conditions>
-            <condition type="atLeast" value="1" field="selections" scope="force" childId="6cb5-45cf-c626-fa86" shared="true" includeChildSelections="true" includeChildForces="true"/>
+            <condition type="atLeast" value="1" field="selections" scope="roster" childId="6cb5-45cf-c626-fa86" shared="true" includeChildSelections="true" includeChildForces="true"/>
           </conditions>
         </modifier>
         <modifier type="set" value="6" field="2ba8-ba3f-1a25-cb99">
@@ -966,7 +966,7 @@
           <conditionGroups>
             <conditionGroup type="and">
               <conditions>
-                <condition type="lessThan" value="1" field="selections" scope="force" childId="aeb4-96de-7401-eaa3" shared="true" includeChildSelections="true" includeChildForces="true"/>
+                <condition type="lessThan" value="1" field="selections" scope="roster" childId="aeb4-96de-7401-eaa3" shared="true" includeChildSelections="true" includeChildForces="true"/>
                 <condition type="notInstanceOf" value="1" field="selections" scope="primary-catalogue" childId="46d8-abc8-ef3a-9f85" shared="true"/>
               </conditions>
             </conditionGroup>
@@ -979,7 +979,7 @@
         </modifier>
         <modifier type="set-primary" value="e338-111e-d0c6-b687" field="category">
           <conditions>
-            <condition type="atLeast" value="1" field="selections" scope="force" childId="6cb5-45cf-c626-fa86" shared="true" includeChildSelections="true" includeChildForces="true"/>
+            <condition type="atLeast" value="1" field="selections" scope="roster" childId="6cb5-45cf-c626-fa86" shared="true" includeChildSelections="true" includeChildForces="true"/>
           </conditions>
         </modifier>
         <modifier type="set" value="6" field="1df3-61b3-1a11-0900">
@@ -1170,7 +1170,7 @@
           <conditionGroups>
             <conditionGroup type="and">
               <conditions>
-                <condition type="lessThan" value="1" field="selections" scope="force" childId="aeb4-96de-7401-eaa3" shared="true" includeChildSelections="true" includeChildForces="true"/>
+                <condition type="lessThan" value="1" field="selections" scope="roster" childId="aeb4-96de-7401-eaa3" shared="true" includeChildSelections="true" includeChildForces="true"/>
                 <condition type="notInstanceOf" value="1" field="selections" scope="primary-catalogue" childId="46d8-abc8-ef3a-9f85" shared="true"/>
               </conditions>
             </conditionGroup>
@@ -1183,7 +1183,7 @@
         </modifier>
         <modifier type="set-primary" value="e338-111e-d0c6-b687" field="category">
           <conditions>
-            <condition type="atLeast" value="1" field="selections" scope="force" childId="6cb5-45cf-c626-fa86" shared="true" includeChildSelections="true" includeChildForces="true"/>
+            <condition type="atLeast" value="1" field="selections" scope="roster" childId="6cb5-45cf-c626-fa86" shared="true" includeChildSelections="true" includeChildForces="true"/>
           </conditions>
         </modifier>
         <modifier type="set" value="6" field="1995-c5fc-e109-31f1">
@@ -1369,7 +1369,7 @@
           <conditionGroups>
             <conditionGroup type="and">
               <conditions>
-                <condition type="lessThan" value="1" field="selections" scope="force" childId="aeb4-96de-7401-eaa3" shared="true" includeChildSelections="true" includeChildForces="true"/>
+                <condition type="lessThan" value="1" field="selections" scope="roster" childId="aeb4-96de-7401-eaa3" shared="true" includeChildSelections="true" includeChildForces="true"/>
                 <condition type="notInstanceOf" value="1" field="selections" scope="primary-catalogue" childId="46d8-abc8-ef3a-9f85" shared="true"/>
               </conditions>
             </conditionGroup>
@@ -1382,7 +1382,7 @@
         </modifier>
         <modifier type="set-primary" value="e338-111e-d0c6-b687" field="category">
           <conditions>
-            <condition type="atLeast" value="1" field="selections" scope="force" childId="6cb5-45cf-c626-fa86" shared="true" includeChildSelections="true" includeChildForces="true"/>
+            <condition type="atLeast" value="1" field="selections" scope="roster" childId="6cb5-45cf-c626-fa86" shared="true" includeChildSelections="true" includeChildForces="true"/>
           </conditions>
         </modifier>
         <modifier type="set" value="6" field="f1a4-0645-a8de-81bd">
@@ -1829,18 +1829,19 @@
         <entryLink import="true" name="Crusade" hidden="false" id="0a70-37b2-7d46-7e55" type="selectionEntryGroup" targetId="e91b-3100-3431-e2f8" sortIndex="1"/>
       </entryLinks>
       <costs>
-        <cost name="pts" typeId="51b2-306e-1021-d207" value="375"/>
+        <cost name="pts" typeId="51b2-306e-1021-d207" value="390"/>
         <cost name="Crusade Points" typeId="b03b-c239-15a5-da55" value="0"/>
         <cost name="Crusade: Battle Honours" typeId="75bb-ded1-c86d-bdf0" value="0"/>
         <cost name="Crusade: Experience" typeId="a623-fe74-1d33-cddf" value="0"/>
         <cost name="Crusade: Weapon Modifications" typeId="716d-91b7-d55a-1022" value="0"/>
+        <cost name="Blackstone Fragments" typeId="ac6b-ced3-9b5e-9a6e" value="0"/>
       </costs>
       <modifiers>
         <modifier type="set" value="true" field="hidden">
           <conditionGroups>
             <conditionGroup type="and">
               <conditions>
-                <condition type="lessThan" value="1" field="selections" scope="force" childId="aeb4-96de-7401-eaa3" shared="true" includeChildSelections="true" includeChildForces="true"/>
+                <condition type="lessThan" value="1" field="selections" scope="roster" childId="aeb4-96de-7401-eaa3" shared="true" includeChildSelections="true" includeChildForces="true"/>
                 <condition type="notInstanceOf" value="1" field="selections" scope="primary-catalogue" childId="46d8-abc8-ef3a-9f85" shared="true"/>
               </conditions>
             </conditionGroup>
@@ -2319,18 +2320,19 @@
         <entryLink import="true" name="Crusade" hidden="false" id="89c2-6778-25bd-9d8a" type="selectionEntryGroup" targetId="e91b-3100-3431-e2f8" sortIndex="1"/>
       </entryLinks>
       <costs>
-        <cost name="pts" typeId="51b2-306e-1021-d207" value="365"/>
+        <cost name="pts" typeId="51b2-306e-1021-d207" value="355"/>
         <cost name="Crusade Points" typeId="b03b-c239-15a5-da55" value="0"/>
         <cost name="Crusade: Battle Honours" typeId="75bb-ded1-c86d-bdf0" value="0"/>
         <cost name="Crusade: Experience" typeId="a623-fe74-1d33-cddf" value="0"/>
         <cost name="Crusade: Weapon Modifications" typeId="716d-91b7-d55a-1022" value="0"/>
+        <cost name="Blackstone Fragments" typeId="ac6b-ced3-9b5e-9a6e" value="0"/>
       </costs>
       <modifiers>
         <modifier type="set" value="true" field="hidden">
           <conditionGroups>
             <conditionGroup type="and">
               <conditions>
-                <condition type="lessThan" value="1" field="selections" scope="force" childId="aeb4-96de-7401-eaa3" shared="true" includeChildSelections="true" includeChildForces="true"/>
+                <condition type="lessThan" value="1" field="selections" scope="roster" childId="aeb4-96de-7401-eaa3" shared="true" includeChildSelections="true" includeChildForces="true"/>
                 <condition type="notInstanceOf" value="1" field="selections" scope="primary-catalogue" childId="46d8-abc8-ef3a-9f85" shared="true"/>
               </conditions>
             </conditionGroup>
@@ -2481,7 +2483,7 @@
           <conditionGroups>
             <conditionGroup type="and">
               <conditions>
-                <condition type="lessThan" value="1" field="selections" scope="force" childId="aeb4-96de-7401-eaa3" shared="true" includeChildSelections="true" includeChildForces="true"/>
+                <condition type="lessThan" value="1" field="selections" scope="roster" childId="aeb4-96de-7401-eaa3" shared="true" includeChildSelections="true" includeChildForces="true"/>
                 <condition type="notInstanceOf" value="1" field="selections" scope="primary-catalogue" childId="46d8-abc8-ef3a-9f85" shared="true"/>
               </conditions>
             </conditionGroup>
@@ -2748,7 +2750,7 @@
           <conditionGroups>
             <conditionGroup type="and">
               <conditions>
-                <condition type="lessThan" value="1" field="selections" scope="force" childId="aeb4-96de-7401-eaa3" shared="true" includeChildSelections="true" includeChildForces="true"/>
+                <condition type="lessThan" value="1" field="selections" scope="roster" childId="aeb4-96de-7401-eaa3" shared="true" includeChildSelections="true" includeChildForces="true"/>
                 <condition type="notInstanceOf" value="1" field="selections" scope="primary-catalogue" childId="46d8-abc8-ef3a-9f85" shared="true"/>
               </conditions>
             </conditionGroup>
@@ -3356,7 +3358,7 @@
           <conditionGroups>
             <conditionGroup type="and">
               <conditions>
-                <condition type="lessThan" value="1" field="selections" scope="force" childId="aeb4-96de-7401-eaa3" shared="true" includeChildSelections="true" includeChildForces="true"/>
+                <condition type="lessThan" value="1" field="selections" scope="roster" childId="aeb4-96de-7401-eaa3" shared="true" includeChildSelections="true" includeChildForces="true"/>
                 <condition type="notInstanceOf" value="1" field="selections" scope="primary-catalogue" childId="46d8-abc8-ef3a-9f85" shared="true"/>
               </conditions>
             </conditionGroup>
@@ -3577,7 +3579,7 @@ While using the Houndpack Lance Detachment, the following rules apply:
                 <rule name="Malefic Surge" id="b671-ba7f-7668-9c08" hidden="false">
                   <description>In your Command phase, one or more ^^**Chaos Knights^^** units from your army can make a Malefic Surge. Each one that does must first take a Leadership test; if that test is failed, that unit suffers D3 mortal wounds. Then, until the start of your next Command phase, that unit is Empowered. While a unit is Empowered, it can use one of the Malefic Surge abilities below. Once that unit has used a Malefic Surge ability, it is no longer Empowered.
 
-*Unholy Hunger:** When a model in this unit makes a Normal, Advance or Fall Back move, until the end of the phase, add 3&quot; to its Move characteristic.
+**Unholy Hunger:** When a model in this unit makes a Normal, Advance or Fall Back move, until the end of the phase, add 3&quot; to its Move characteristic.
 
 **Diabolic Power:** When this unit is selected to shoot or fight, select either the [Lethal Hits] or [Sustained Hits 1] ability. Until the end of the phase, weapons equipped by models in this unit have the selected ability.
 
@@ -3663,7 +3665,7 @@ While using the Houndpack Lance Detachment, the following rules apply:
           <conditionGroups>
             <conditionGroup type="and">
               <conditions>
-                <condition type="lessThan" value="1" field="selections" scope="force" childId="aeb4-96de-7401-eaa3" shared="true" includeChildSelections="true" includeChildForces="true"/>
+                <condition type="lessThan" value="1" field="selections" scope="roster" childId="aeb4-96de-7401-eaa3" shared="true" includeChildSelections="true" includeChildForces="true"/>
                 <condition type="notInstanceOf" value="1" field="selections" scope="primary-catalogue" childId="46d8-abc8-ef3a-9f85" shared="true"/>
               </conditions>
             </conditionGroup>
@@ -4094,7 +4096,7 @@ While using the Houndpack Lance Detachment, the following rules apply:
           <conditionGroups>
             <conditionGroup type="and">
               <conditions>
-                <condition type="lessThan" value="1" field="selections" scope="force" childId="aeb4-96de-7401-eaa3" shared="true" includeChildSelections="true" includeChildForces="true"/>
+                <condition type="lessThan" value="1" field="selections" scope="roster" childId="aeb4-96de-7401-eaa3" shared="true" includeChildSelections="true" includeChildForces="true"/>
                 <condition type="notInstanceOf" value="1" field="selections" scope="primary-catalogue" childId="46d8-abc8-ef3a-9f85" shared="true"/>
               </conditions>
             </conditionGroup>
@@ -4249,7 +4251,7 @@ While using the Houndpack Lance Detachment, the following rules apply:
           <conditionGroups>
             <conditionGroup type="and">
               <conditions>
-                <condition type="lessThan" value="1" field="selections" scope="force" childId="aeb4-96de-7401-eaa3" shared="true" includeChildSelections="true" includeChildForces="true"/>
+                <condition type="lessThan" value="1" field="selections" scope="roster" childId="aeb4-96de-7401-eaa3" shared="true" includeChildSelections="true" includeChildForces="true"/>
                 <condition type="notInstanceOf" value="1" field="selections" scope="primary-catalogue" childId="46d8-abc8-ef3a-9f85" shared="true"/>
               </conditions>
             </conditionGroup>
@@ -4470,7 +4472,7 @@ While using the Houndpack Lance Detachment, the following rules apply:
           <conditionGroups>
             <conditionGroup type="and">
               <conditions>
-                <condition type="lessThan" value="1" field="selections" scope="force" childId="aeb4-96de-7401-eaa3" shared="true" includeChildSelections="true" includeChildForces="true"/>
+                <condition type="lessThan" value="1" field="selections" scope="roster" childId="aeb4-96de-7401-eaa3" shared="true" includeChildSelections="true" includeChildForces="true"/>
                 <condition type="notInstanceOf" value="1" field="selections" scope="primary-catalogue" childId="46d8-abc8-ef3a-9f85" shared="true"/>
               </conditions>
             </conditionGroup>
@@ -4705,7 +4707,7 @@ While using the Houndpack Lance Detachment, the following rules apply:
           <conditionGroups>
             <conditionGroup type="and">
               <conditions>
-                <condition type="lessThan" value="1" field="selections" scope="force" childId="aeb4-96de-7401-eaa3" shared="true" includeChildSelections="true" includeChildForces="true"/>
+                <condition type="lessThan" value="1" field="selections" scope="roster" childId="aeb4-96de-7401-eaa3" shared="true" includeChildSelections="true" includeChildForces="true"/>
                 <condition type="notInstanceOf" value="1" field="selections" scope="primary-catalogue" childId="46d8-abc8-ef3a-9f85" shared="true"/>
               </conditions>
             </conditionGroup>
@@ -4984,7 +4986,7 @@ While using the Houndpack Lance Detachment, the following rules apply:
           <conditionGroups>
             <conditionGroup type="and">
               <conditions>
-                <condition type="lessThan" value="1" field="selections" scope="force" childId="aeb4-96de-7401-eaa3" shared="true" includeChildSelections="true" includeChildForces="true"/>
+                <condition type="lessThan" value="1" field="selections" scope="roster" childId="aeb4-96de-7401-eaa3" shared="true" includeChildSelections="true" includeChildForces="true"/>
                 <condition type="notInstanceOf" value="1" field="selections" scope="primary-catalogue" childId="46d8-abc8-ef3a-9f85" shared="true"/>
               </conditions>
             </conditionGroup>
@@ -5453,7 +5455,7 @@ While using the Houndpack Lance Detachment, the following rules apply:
           <conditionGroups>
             <conditionGroup type="and">
               <conditions>
-                <condition type="lessThan" value="1" field="selections" scope="force" childId="aeb4-96de-7401-eaa3" shared="true" includeChildSelections="true" includeChildForces="true"/>
+                <condition type="lessThan" value="1" field="selections" scope="roster" childId="aeb4-96de-7401-eaa3" shared="true" includeChildSelections="true" includeChildForces="true"/>
                 <condition type="notInstanceOf" value="1" field="selections" scope="primary-catalogue" childId="46d8-abc8-ef3a-9f85" shared="true"/>
               </conditions>
             </conditionGroup>
@@ -5635,7 +5637,7 @@ While using the Houndpack Lance Detachment, the following rules apply:
                 <profile name="Volkite chierovile" typeId="f77d-b953-8fa4-b762" typeName="Ranged Weapons" hidden="false" id="2554-21b4-d8e0-1b20">
                   <characteristics>
                     <characteristic name="Range" typeId="9896-9419-16a1-92fc">30&quot;</characteristic>
-                    <characteristic name="A" typeId="3bb-c35f-f54-fb08">9</characteristic>
+                    <characteristic name="A" typeId="3bb-c35f-f54-fb08">12</characteristic>
                     <characteristic name="BS" typeId="94d-8a98-cf90-183e">3+</characteristic>
                     <characteristic name="S" typeId="2229-f494-25db-c5d3">12</characteristic>
                     <characteristic name="AP" typeId="9ead-8a10-520-de15">0</characteristic>
@@ -5789,7 +5791,7 @@ While using the Houndpack Lance Detachment, the following rules apply:
           <conditionGroups>
             <conditionGroup type="and">
               <conditions>
-                <condition type="lessThan" value="1" field="selections" scope="force" childId="aeb4-96de-7401-eaa3" shared="true" includeChildSelections="true" includeChildForces="true"/>
+                <condition type="lessThan" value="1" field="selections" scope="roster" childId="aeb4-96de-7401-eaa3" shared="true" includeChildSelections="true" includeChildForces="true"/>
                 <condition type="notInstanceOf" value="1" field="selections" scope="primary-catalogue" childId="46d8-abc8-ef3a-9f85" shared="true"/>
               </conditions>
             </conditionGroup>
@@ -6126,7 +6128,7 @@ While using the Houndpack Lance Detachment, the following rules apply:
           <conditionGroups>
             <conditionGroup type="and">
               <conditions>
-                <condition type="lessThan" value="1" field="selections" scope="force" childId="aeb4-96de-7401-eaa3" shared="true" includeChildSelections="true" includeChildForces="true"/>
+                <condition type="lessThan" value="1" field="selections" scope="roster" childId="aeb4-96de-7401-eaa3" shared="true" includeChildSelections="true" includeChildForces="true"/>
                 <condition type="notInstanceOf" value="1" field="selections" scope="primary-catalogue" childId="46d8-abc8-ef3a-9f85" shared="true"/>
               </conditions>
             </conditionGroup>
@@ -6139,7 +6141,7 @@ While using the Houndpack Lance Detachment, the following rules apply:
         </modifier>
         <modifier type="set-primary" value="e338-111e-d0c6-b687" field="category">
           <conditions>
-            <condition type="atLeast" value="1" field="selections" scope="force" childId="6cb5-45cf-c626-fa86" shared="true" includeChildSelections="true" includeChildForces="true"/>
+            <condition type="atLeast" value="1" field="selections" scope="roster" childId="6cb5-45cf-c626-fa86" shared="true" includeChildSelections="true" includeChildForces="true"/>
           </conditions>
         </modifier>
         <modifier type="set" value="6" field="1df3-61b3-1a11-0900">
@@ -6228,14 +6230,14 @@ While using the Houndpack Lance Detachment, the following rules apply:
     </selectionEntry>
     <selectionEntry type="upgrade" import="true" name="Houndpack Lance Character" hidden="false" id="b02a-a6e2-3eb4-4872">
       <constraints>
-        <constraint type="min" value="3" field="selections" scope="force" shared="true" id="8203-3d9a-d3f9-aa1c-min" includeChildSelections="true"/>
-        <constraint type="max" value="3" field="selections" scope="force" shared="true" id="8203-3d9a-d3f9-aa1c-max" includeChildSelections="true"/>
+        <constraint type="min" value="3" field="selections" scope="force" shared="true" id="8203-3d9a-d3f9-aa1c-min" includeChildSelections="true" includeChildForces="true"/>
+        <constraint type="max" value="3" field="selections" scope="force" shared="true" id="8203-3d9a-d3f9-aa1c-max" includeChildSelections="true" includeChildForces="true"/>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="93c2-9935-ec89-6486" includeChildSelections="false"/>
       </constraints>
       <modifiers>
         <modifier type="set" value="true" field="hidden">
           <conditions>
-            <condition type="lessThan" value="1" field="selections" scope="force" childId="6cb5-45cf-c626-fa86" shared="true" includeChildSelections="true" includeChildForces="true"/>
+            <condition type="lessThan" value="1" field="selections" scope="roster" childId="6cb5-45cf-c626-fa86" shared="true" includeChildSelections="true" includeChildForces="true"/>
           </conditions>
         </modifier>
         <modifier type="add" value="9cfd-1c32-585f-7d5c" field="category" scope="parent"/>
@@ -6305,18 +6307,19 @@ While using the Houndpack Lance Detachment, the following rules apply:
         <entryLink import="true" name="Crusade" hidden="false" id="b341-779c-c5af-7f1f" type="selectionEntryGroup" targetId="e91b-3100-3431-e2f8" sortIndex="1"/>
       </entryLinks>
       <costs>
-        <cost name="pts" typeId="51b2-306e-1021-d207" value="375"/>
+        <cost name="pts" typeId="51b2-306e-1021-d207" value="355"/>
         <cost name="Crusade Points" typeId="b03b-c239-15a5-da55" value="0"/>
         <cost name="Crusade: Battle Honours" typeId="75bb-ded1-c86d-bdf0" value="0"/>
         <cost name="Crusade: Experience" typeId="a623-fe74-1d33-cddf" value="0"/>
         <cost name="Crusade: Weapon Modifications" typeId="716d-91b7-d55a-1022" value="0"/>
+        <cost name="Blackstone Fragments" typeId="ac6b-ced3-9b5e-9a6e" value="0"/>
       </costs>
       <modifiers>
         <modifier type="set" value="true" field="hidden">
           <conditionGroups>
             <conditionGroup type="and">
               <conditions>
-                <condition type="lessThan" value="1" field="selections" scope="force" childId="aeb4-96de-7401-eaa3" shared="true" includeChildSelections="true" includeChildForces="true"/>
+                <condition type="lessThan" value="1" field="selections" scope="roster" childId="aeb4-96de-7401-eaa3" shared="true" includeChildSelections="true" includeChildForces="true"/>
                 <condition type="notInstanceOf" value="1" field="selections" scope="primary-catalogue" childId="46d8-abc8-ef3a-9f85" shared="true"/>
               </conditions>
             </conditionGroup>
@@ -6553,6 +6556,11 @@ While using the Houndpack Lance Detachment, the following rules apply:
                 </conditionGroup>
               </conditionGroups>
             </modifier>
+            <modifier type="set" value="true" field="hidden">
+              <conditions>
+                <condition type="instanceOf" value="0" field="selections" scope="ancestor" childId="99dc-0f47-85e2-75da" shared="true" includeChildSelections="true"/>
+              </conditions>
+            </modifier>
           </modifiers>
           <comment>Traitoris Lance</comment>
         </selectionEntry>
@@ -6584,6 +6592,11 @@ While using the Houndpack Lance Detachment, the following rules apply:
                   </conditions>
                 </conditionGroup>
               </conditionGroups>
+            </modifier>
+            <modifier type="set" value="true" field="hidden">
+              <conditions>
+                <condition type="instanceOf" value="0" field="selections" scope="ancestor" childId="99dc-0f47-85e2-75da" shared="true" includeChildSelections="true"/>
+              </conditions>
             </modifier>
           </modifiers>
           <comment>Traitoris Lance</comment>
@@ -6617,6 +6630,11 @@ While using the Houndpack Lance Detachment, the following rules apply:
                 </conditionGroup>
               </conditionGroups>
             </modifier>
+            <modifier type="set" value="true" field="hidden">
+              <conditions>
+                <condition type="instanceOf" value="0" field="selections" scope="ancestor" childId="99dc-0f47-85e2-75da" shared="true" includeChildSelections="true"/>
+              </conditions>
+            </modifier>
           </modifiers>
           <comment>Traitoris Lance</comment>
         </selectionEntry>
@@ -6649,6 +6667,11 @@ While using the Houndpack Lance Detachment, the following rules apply:
                 </conditionGroup>
               </conditionGroups>
             </modifier>
+            <modifier type="set" value="true" field="hidden">
+              <conditions>
+                <condition type="instanceOf" value="0" field="selections" scope="ancestor" childId="99dc-0f47-85e2-75da" shared="true" includeChildSelections="true"/>
+              </conditions>
+            </modifier>
           </modifiers>
           <comment>Traitoris Lance</comment>
         </selectionEntry>
@@ -6664,6 +6687,11 @@ While using the Houndpack Lance Detachment, the following rules apply:
                   </conditions>
                 </conditionGroup>
               </conditionGroups>
+            </modifier>
+            <modifier type="set" value="true" field="hidden">
+              <conditions>
+                <condition type="instanceOf" value="0" field="selections" scope="ancestor" childId="99dc-0f47-85e2-75da" shared="true" includeChildSelections="true"/>
+              </conditions>
             </modifier>
           </modifiers>
           <constraints>
@@ -6701,6 +6729,11 @@ While using the Houndpack Lance Detachment, the following rules apply:
               </conditionGroups>
             </modifier>
             <modifier type="append" value="Assault" field="7f1b-8591-2fcf-d01c" scope="parent" affects="self.entries.profiles.Ranged Weapons" join=", "/>
+            <modifier type="set" value="true" field="hidden">
+              <conditions>
+                <condition type="instanceOf" value="0" field="selections" scope="ancestor" childId="99dc-0f47-85e2-75da" shared="true" includeChildSelections="true"/>
+              </conditions>
+            </modifier>
           </modifiers>
           <constraints>
             <constraint type="max" value="1" field="selections" scope="force" shared="true" id="2bca-96d1-5a8a-625e" percentValue="false" includeChildSelections="true" includeChildForces="false"/>
@@ -6734,6 +6767,11 @@ While using the Houndpack Lance Detachment, the following rules apply:
               </conditionGroups>
             </modifier>
             <modifier type="set" value="2+" field="450-a17e-9d5e-29da" scope="parent" affects="self.entries.profiles.Unit"/>
+            <modifier type="set" value="true" field="hidden">
+              <conditions>
+                <condition type="instanceOf" value="0" field="selections" scope="ancestor" childId="99dc-0f47-85e2-75da" shared="true" includeChildSelections="true"/>
+              </conditions>
+            </modifier>
           </modifiers>
           <constraints>
             <constraint type="max" value="1" field="selections" scope="force" shared="true" id="c334-7f47-5b40-64a4" percentValue="false" includeChildSelections="true" includeChildForces="false"/>
@@ -6766,6 +6804,16 @@ While using the Houndpack Lance Detachment, the following rules apply:
                 </conditionGroup>
               </conditionGroups>
             </modifier>
+            <modifier type="set" value="true" field="hidden">
+              <conditions>
+                <condition type="instanceOf" value="0" field="selections" scope="ancestor" childId="99dc-0f47-85e2-75da" shared="true" includeChildSelections="true"/>
+              </conditions>
+            </modifier>
+            <modifier type="set" value="true" field="hidden">
+              <conditions>
+                <condition type="instanceOf" value="0" field="selections" scope="ancestor" childId="99dc-0f47-85e2-75da" shared="true" includeChildSelections="true"/>
+              </conditions>
+            </modifier>
           </modifiers>
           <constraints>
             <constraint type="max" value="1" field="selections" scope="force" shared="true" id="1f0e-9593-5f83-eed7" percentValue="false" includeChildSelections="true" includeChildForces="false"/>
@@ -6773,7 +6821,12 @@ While using the Houndpack Lance Detachment, the following rules apply:
           <profiles>
             <profile name="Mirror of Fates" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="8a8a-7965-4430-f43c">
               <characteristics>
-                <characteristic name="Description" typeId="9b8f-694b-e5e-b573">Once per battle round, you can target the bearer with the Command Re-roll Stratagem for 0CP, and can do so even if another unit from your army has already been targeted by that Stratagem this phase. In addition, once per battle, just after your opponent uses a Stratagem, if the bearer is on the battlefield, it can use this Enhancement. If it does, until the end of the battle, the CP cost your opponent must pay to use that Stratagem again is increased by 1CP.</characteristic>
+                <characteristic name="Description" typeId="9b8f-694b-e5e-b573">Once per battle round, you can target the bearer with the Command Re-roll Stratagem for 0CP, and can do so even if another unit from your army has already been targeted by that Stratagem this phase. In addition, you gain the Lord of Deceit abiity.</characteristic>
+              </characteristics>
+            </profile>
+            <profile name="Lord of Deceit (Aura)" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="208d-4e3a-81da-9372">
+              <characteristics>
+                <characteristic name="Description" typeId="9b8f-694b-e5e-b573">Each time your opponent targets a unit from their army with a Stratagem, if that unit is within 12&quot; of this model, increase the cost of that use of that Stratagem by 1CP.</characteristic>
               </characteristics>
             </profile>
           </profiles>
@@ -6797,6 +6850,11 @@ While using the Houndpack Lance Detachment, the following rules apply:
                   </conditions>
                 </conditionGroup>
               </conditionGroups>
+            </modifier>
+            <modifier type="set" value="true" field="hidden">
+              <conditions>
+                <condition type="instanceOf" value="0" field="selections" scope="ancestor" childId="99dc-0f47-85e2-75da" shared="true" includeChildSelections="true"/>
+              </conditions>
             </modifier>
           </modifiers>
           <constraints>
@@ -6829,6 +6887,11 @@ While using the Houndpack Lance Detachment, the following rules apply:
                   </conditions>
                 </conditionGroup>
               </conditionGroups>
+            </modifier>
+            <modifier type="set" value="true" field="hidden">
+              <conditions>
+                <condition type="instanceOf" value="0" field="selections" scope="ancestor" childId="99dc-0f47-85e2-75da" shared="true" includeChildSelections="true"/>
+              </conditions>
             </modifier>
           </modifiers>
           <constraints>
@@ -7014,6 +7077,11 @@ While using the Houndpack Lance Detachment, the following rules apply:
               </conditionGroups>
             </modifier>
             <modifier type="increment" value="1" field="d29d-cf75-fc2d-34a4" scope="parent" affects="self.entries.profiles.Unit"/>
+            <modifier type="set" value="true" field="hidden">
+              <conditions>
+                <condition type="instanceOf" value="0" field="selections" scope="ancestor" childId="99dc-0f47-85e2-75da" shared="true" includeChildSelections="true"/>
+              </conditions>
+            </modifier>
           </modifiers>
           <profiles>
             <profile name="Fleshmetal Fusion" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="41c9-1420-19bf-0c45">
@@ -7047,6 +7115,11 @@ While using the Houndpack Lance Detachment, the following rules apply:
               </conditionGroups>
             </modifier>
             <modifier type="increment" value="2" field="750a-a2ec-90d3-21fe" scope="parent" affects="self.entries.profiles.Unit"/>
+            <modifier type="set" value="true" field="hidden">
+              <conditions>
+                <condition type="instanceOf" value="0" field="selections" scope="ancestor" childId="99dc-0f47-85e2-75da" shared="true" includeChildSelections="true"/>
+              </conditions>
+            </modifier>
           </modifiers>
           <profiles>
             <profile name="Blasphemous Engine" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="70b1-cb34-0676-3c6a">
@@ -7079,7 +7152,12 @@ While using the Houndpack Lance Detachment, the following rules apply:
                 </conditionGroup>
               </conditionGroups>
             </modifier>
-            <modifier type="append" value="Assault" field="7f1b-8591-2fcf-d01c" scope="parent" affects="self.entries.profiles.Ranged Weapons" join=", "/>
+            <modifier type="append" value="Assault" field="7f1b-8591-2fcf-d01c" scope="parent" affects="self.entries.recursive.profiles.Ranged Weapons" join=", "/>
+            <modifier type="set" value="true" field="hidden">
+              <conditions>
+                <condition type="instanceOf" value="0" field="selections" scope="ancestor" childId="99dc-0f47-85e2-75da" shared="true" includeChildSelections="true"/>
+              </conditions>
+            </modifier>
           </modifiers>
           <profiles>
             <profile name="Bestial Aspect" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="be96-871b-e445-b467">
@@ -7117,6 +7195,11 @@ While using the Houndpack Lance Detachment, the following rules apply:
             </modifier>
             <modifier type="decrement" value="1" field="95d1-95f-45b4-11d6" scope="parent" affects="self.entries.profiles.Melee Weapons"/>
             <modifier type="floor" value="2" field="95d1-95f-45b4-11d6" affects="self.entries.profiles.Melee Weapons" scope="parent"/>
+            <modifier type="set" value="true" field="hidden">
+              <conditions>
+                <condition type="instanceOf" value="0" field="selections" scope="ancestor" childId="99dc-0f47-85e2-75da" shared="true" includeChildSelections="true"/>
+              </conditions>
+            </modifier>
           </modifiers>
           <profiles>
             <profile name="Knight Diabolus" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="128b-1d2f-6361-b2d3">
@@ -7166,6 +7249,11 @@ While using the Houndpack Lance Detachment, the following rules apply:
                 </conditionGroup>
               </conditionGroups>
             </modifier>
+            <modifier type="set" value="true" field="hidden">
+              <conditions>
+                <condition type="instanceOf" value="0" field="selections" scope="ancestor" childId="99dc-0f47-85e2-75da" shared="true" includeChildSelections="true"/>
+              </conditions>
+            </modifier>
           </modifiers>
           <comment>Iconoclast Fiefdom</comment>
         </selectionEntry>
@@ -7197,6 +7285,11 @@ While using the Houndpack Lance Detachment, the following rules apply:
                   </conditions>
                 </conditionGroup>
               </conditionGroups>
+            </modifier>
+            <modifier type="set" value="true" field="hidden">
+              <conditions>
+                <condition type="instanceOf" value="0" field="selections" scope="ancestor" childId="99dc-0f47-85e2-75da" shared="true" includeChildSelections="true"/>
+              </conditions>
             </modifier>
           </modifiers>
           <comment>Iconoclast Fiefdom</comment>
@@ -7230,6 +7323,11 @@ While using the Houndpack Lance Detachment, the following rules apply:
                 </conditionGroup>
               </conditionGroups>
             </modifier>
+            <modifier type="set" value="true" field="hidden">
+              <conditions>
+                <condition type="instanceOf" value="0" field="selections" scope="ancestor" childId="99dc-0f47-85e2-75da" shared="true" includeChildSelections="true"/>
+              </conditions>
+            </modifier>
           </modifiers>
           <comment>Iconoclast Fiefdom</comment>
         </selectionEntry>
@@ -7262,15 +7360,25 @@ While using the Houndpack Lance Detachment, the following rules apply:
                 </conditionGroup>
               </conditionGroups>
             </modifier>
+            <modifier type="set" value="true" field="hidden">
+              <conditions>
+                <condition type="instanceOf" value="0" field="selections" scope="ancestor" childId="99dc-0f47-85e2-75da" shared="true" includeChildSelections="true"/>
+              </conditions>
+            </modifier>
           </modifiers>
           <comment>Iconoclast Fiefdom</comment>
         </selectionEntry>
       </selectionEntries>
       <modifiers>
         <modifier type="set" value="true" field="hidden">
-          <conditions>
-            <condition type="notInstanceOf" value="1" field="selections" scope="ancestor" childId="9cfd-1c32-585f-7d5c" shared="true"/>
-          </conditions>
+          <conditionGroups>
+            <conditionGroup type="and">
+              <conditions>
+                <condition type="notInstanceOf" value="1" field="selections" scope="ancestor" childId="9cfd-1c32-585f-7d5c" shared="true"/>
+                <condition type="notInstanceOf" value="1" field="selections" scope="force" childId="cac3-71d1-ea4b-795d" shared="true" includeChildSelections="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
         </modifier>
         <modifier type="set" value="-1" field="852b-8a29-1fc7-ebc9">
           <conditions>
@@ -7751,6 +7859,13 @@ While using the Houndpack Lance Detachment, the following rules apply:
               <entryLinks>
                 <entryLink import="true" name="Codex Crusade Relics" hidden="false" id="1abd-2bba-a219-6435" type="selectionEntryGroup" targetId="2d68-936c-92cc-20fc"/>
               </entryLinks>
+              <modifiers>
+                <modifier type="set" value="true" field="hidden">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="99dc-0f47-85e2-75da" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
             </entryLink>
             <entryLink import="true" name="Pacts of Damnation" hidden="false" id="c239-cbcf-136a-a9ab" type="selectionEntryGroup" targetId="02f0-7b85-5330-a0fc"/>
             <entryLink import="true" name="Tyrannic War Battle Honours" hidden="false" id="49f4-7d34-7483-ff83" type="selectionEntryGroup" targetId="1927-d905-041e-b914"/>

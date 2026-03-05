@@ -11,41 +11,72 @@ from pathlib import Path
 CAT_NS = 'http://www.battlescribe.net/schema/catalogueSchema'
 NS = {'bs': CAT_NS}
 
-# Maps faction_id -> (filename, display_name, optional_detachment_source_file, filter_detachment_names)
-# If a sub-chapter's detachments live in the parent catalog, specify them explicitly.
+# Tuple format:
+#   (filename, faction_id, faction_name, det_source_file, det_name_filter, unit_types)
+# unit_types defaults to ['unit']; set to ['unit','model'] for Knights factions whose
+# datasheets are stored as selectionEntry[@type="model"] with Unit stat profiles.
+# det_source_file: if detachments live in a different catalog, specify filename here.
+# det_name_filter: optional list of detachment names to include (for sub-chapters).
+
 CATALOG_MAP = [
-    # Some factions store units in a shared Library catalog
-    ('Aeldari - Aeldari Library.cat',            'aeldari-craftworlds',        'Craftworlds (Aeldari)', None, None),
-    ('Chaos - Chaos Daemons Library.cat',        'chaos-daemons',              'Chaos Daemons',         None, None),
-    ('Imperium - Astra Militarum - Library.cat', 'imperium-astra-militarum',   'Astra Militarum',       None, None),
-    # Main factions
-    ('Chaos - Chaos Space Marines.cat',          'chaos-space-marines',        'Chaos Space Marines',   None, None),
-    ('Chaos - Death Guard.cat',                  'chaos-death-guard',          'Death Guard',           None, None),
-    ('Chaos - Thousand Sons.cat',                'chaos-thousand-sons',        'Thousand Sons',         None, None),
-    ('Chaos - World Eaters.cat',                 'chaos-world-eaters',         'World Eaters',          None, None),
-    ('Genestealer Cults.cat',                    'genestealer-cults',          'Genestealer Cults',     None, None),
-    ('Imperium - Adepta Sororitas.cat',          'imperium-adepta-sororitas',  'Adepta Sororitas',      None, None),
-    ('Imperium - Adeptus Custodes.cat',          'imperium-adeptus-custodes',  'Adeptus Custodes',      None, None),
-    ('Imperium - Adeptus Mechanicus.cat',        'imperium-adeptus-mechanicus','Adeptus Mechanicus',    None, None),
-    # Space Marine sub-chapters pull detachments from the parent SM catalog
+    # Library-based factions
+    ('Aeldari - Aeldari Library.cat',            'aeldari-craftworlds',          'Craftworlds (Aeldari)',  None,                              None,   ['unit']),
+    ('Chaos - Chaos Daemons Library.cat',        'chaos-daemons',                'Chaos Daemons',          None,                              None,   ['unit']),
+    ('Imperium - Astra Militarum - Library.cat', 'imperium-astra-militarum',     'Astra Militarum',        None,                              None,   ['unit']),
+    # Knights — units stored as type="model" with Unit stat profiles in library catalogs
+    ('Chaos - Chaos Knights Library.cat',        'chaos-knights',                'Chaos Knights',          None,                              None,   ['model']),
+    ('Imperium - Imperial Knights - Library.cat','imperium-imperial-knights',    'Imperial Knights',       None,                              None,   ['unit', 'model']),
+    # Main Chaos factions
+    ('Chaos - Chaos Space Marines.cat',          'chaos-space-marines',          'Chaos Space Marines',    None,                              None,   ['unit']),
+    ("Chaos - Emperor's Children.cat",           'chaos-emperors-children',      "Emperor's Children",     None,                              None,   ['unit']),
+    ('Chaos - Death Guard.cat',                  'chaos-death-guard',            'Death Guard',            None,                              None,   ['unit']),
+    ('Chaos - Thousand Sons.cat',                'chaos-thousand-sons',          'Thousand Sons',          None,                              None,   ['unit']),
+    ('Chaos - World Eaters.cat',                 'chaos-world-eaters',           'World Eaters',           None,                              None,   ['unit']),
+    # Genestealer Cults — detachments live in Library - Tyranids.cat
+    ('Genestealer Cults.cat',                    'genestealer-cults',            'Genestealer Cults',
+        'Library - Tyranids.cat',
+        ['Host of Ascension', 'Xenocreed Congregation', 'Biosanctic Broodsurge',
+         'Outlander Claw', 'Brood Brother Auxilia', 'Final Day'],
+        ['unit']),
+    # Imperium
+    ('Imperium - Adepta Sororitas.cat',          'imperium-adepta-sororitas',    'Adepta Sororitas',       None,                              None,   ['unit']),
+    ('Imperium - Adeptus Custodes.cat',          'imperium-adeptus-custodes',    'Adeptus Custodes',       None,                              None,   ['unit']),
+    ('Imperium - Adeptus Mechanicus.cat',        'imperium-adeptus-mechanicus',  'Adeptus Mechanicus',     None,                              None,   ['unit']),
+    # Space Marine sub-chapters — detachments pulled from parent SM catalog
     ('Imperium - Blood Angels.cat',   'imperium-blood-angels',  'Blood Angels',
         'Imperium - Space Marines.cat',
-        ['The Angelic Host', 'Liberator Assault Group', 'Angelic Inheritors', 'Wrathful Procession', 'Gladius Task Force']),
+        ['The Angelic Host', 'Liberator Assault Group', 'Angelic Inheritors',
+         'Wrathful Procession', 'Rage-Cursed Onslaught', 'Gladius Task Force'],
+        ['unit']),
     ('Imperium - Dark Angels.cat',    'imperium-dark-angels',   'Dark Angels',
         'Imperium - Space Marines.cat',
         ['Unforgiven Task Force', 'Inner Circle Task Force', "Lion's Blade Task Force",
-         'The Lost Brethren', 'Librarius Conclave', 'Company of Hunters', 'Gladius Task Force']),
-    ('Imperium - Grey Knights.cat',   'imperium-grey-knights',  'Grey Knights',            None, None),
-    ('Imperium - Space Marines.cat',  'imperium-space-marines', 'Space Marines',           None, None),
+         'The Lost Brethren', 'Librarius Conclave', 'Company of Hunters',
+         'Wrath of the Rock', 'Gladius Task Force'],
+        ['unit']),
+    ('Imperium - Grey Knights.cat',   'imperium-grey-knights',  'Grey Knights',            None, None, ['unit']),
+    ('Imperium - Space Marines.cat',  'imperium-space-marines', 'Space Marines',           None, None, ['unit']),
     ('Imperium - Space Wolves.cat',   'imperium-space-wolves',  'Space Wolves',
         'Imperium - Space Marines.cat',
         ['Champions of Fenris', 'Saga of the Hunter', 'Saga of the Bold',
-         'Saga of the Beastslayer', "Emperor's Shield", 'Shadowmark Talon', 'Gladius Task Force']),
-    ('Leagues of Votann.cat',         'leagues-of-votann',      'Leagues of Votann',       None, None),
-    ('Necrons.cat',                   'necrons',                'Necrons',                 None, None),
-    ('Orks.cat',                      'orks',                   'Orks',                    None, None),
-    ("T'au Empire.cat",               'tau-empire',             "T'au Empire",             None, None),
-    ('Tyranids.cat',                  'tyranids',               'Tyranids',                None, None),
+         'Saga of the Beastslayer', "Emperor's Shield", 'Saga of the Great Wolf',
+         'Gladius Task Force'],
+        ['unit']),
+    ('Imperium - Ultramarines.cat',   'imperium-ultramarines',  'Ultramarines',
+        'Imperium - Space Marines.cat',
+        ['Blade of Ultramar', 'Vindication Task Force', 'Bastion Task Force',
+         'Orbital Assault Force', 'Reclamation Force', 'Gladius Task Force'],
+        ['unit']),
+    ('Leagues of Votann.cat',         'leagues-of-votann',      'Leagues of Votann',       None, None, ['unit']),
+    ('Necrons.cat',                   'necrons',                'Necrons',                 None, None, ['unit']),
+    ('Orks.cat',                      'orks',                   'Orks',                    None, None, ['unit']),
+    ("T'au Empire.cat",               'tau-empire',             "T'au Empire",             None, None, ['unit']),
+    # Tyranids — detachments live in Library - Tyranids.cat
+    ('Tyranids.cat',                  'tyranids',               'Tyranids',
+        'Library - Tyranids.cat',
+        ['Invasion Fleet', 'Assimilation Swarm', 'Crusher Stampede', 'Synaptic Nexus',
+         'Unending Swarm', 'Vanguard Onslaught', 'Warrior Bioform Onslaught', 'Subterranean Assault'],
+        ['unit']),
 ]
 
 
@@ -108,34 +139,41 @@ def deduplicate(items, key='name'):
 
 
 def extract_detachments_from_root(root, ns, name_filter=None):
-    """Extract detachment entries with abilities from a parsed catalog root."""
+    """Extract detachment entries with abilities from a parsed catalog root.
+    Handles both 'Detachment' (singular) and 'Detachments' (plural) group names,
+    and both inline selectionEntryGroups and sharedSelectionEntryGroups.
+    """
     detachments = []
     seen = set()
 
-    for seg in root.findall('.//bs:selectionEntryGroup[@name="Detachment"]', ns):
-        for e in seg.findall('bs:selectionEntries/bs:selectionEntry', ns):
-            name = e.get('name', '').strip()
-            if not name or name in seen:
-                continue
-            if name_filter and name not in name_filter:
-                continue
-            seen.add(name)
+    for group_name in ('Detachment', 'Detachments'):
+        for seg in root.findall(f'.//bs:selectionEntryGroup[@name="{group_name}"]', ns):
+            for e in seg.findall('bs:selectionEntries/bs:selectionEntry', ns):
+                name = e.get('name', '').strip()
+                if not name or name in seen:
+                    continue
+                if name_filter and name not in name_filter:
+                    continue
+                seen.add(name)
 
-            abilities = []
-            for p in e.findall('.//bs:profile[@typeName="Abilities"]', ns):
-                aname = p.get('name', '')
-                desc = ''
-                for c in p.findall('.//bs:characteristic[@name="Description"]', ns):
-                    desc = (c.text or '').strip()
-                if aname:
-                    abilities.append({'name': aname, 'desc': desc})
+                abilities = []
+                for p in e.findall('.//bs:profile[@typeName="Abilities"]', ns):
+                    aname = p.get('name', '')
+                    desc = ''
+                    for c in p.findall('.//bs:characteristic[@name="Description"]', ns):
+                        desc = (c.text or '').strip()
+                    if aname:
+                        abilities.append({'name': aname, 'desc': desc})
 
-            detachments.append({'name': name, 'abilities': abilities})
+                detachments.append({'name': name, 'abilities': abilities})
 
     return detachments
 
 
-def parse_catalog(cat_path, det_source_path=None, det_name_filter=None):
+def parse_catalog(cat_path, det_source_path=None, det_name_filter=None, unit_types=None):
+    if unit_types is None:
+        unit_types = ['unit']
+
     try:
         tree = ET.parse(cat_path)
     except ET.ParseError as e:
@@ -148,54 +186,58 @@ def parse_catalog(cat_path, det_source_path=None, det_name_filter=None):
 
     # ── Units ────────────────────────────────────────────────────────────────
     units = []
-    for e in root.findall('.//bs:selectionEntry[@type="unit"]', ns):
-        name = e.get('name', '').strip()
-        if not name:
-            continue
+    seen_names = set()
+    for unit_type in unit_types:
+        for e in root.findall(f'.//bs:selectionEntry[@type="{unit_type}"]', ns):
+            name = e.get('name', '').strip()
+            if not name or name in seen_names:
+                continue
 
-        points = 0
-        for cost in e.findall('.//bs:cost[@name="pts"]', ns):
-            try:
-                points = int(float(cost.get('value', '0')))
-            except ValueError:
-                pass
+            points = 0
+            for cost in e.findall('.//bs:cost[@name="pts"]', ns):
+                try:
+                    points = int(float(cost.get('value', '0')))
+                except ValueError:
+                    pass
 
-        stats = {}
-        for p in e.findall('.//bs:profile[@typeName="Unit"]', ns):
-            for c in p.findall('.//bs:characteristic', ns):
-                key = c.get('name', '')
-                val = (c.text or '').strip()
-                if key and key not in stats:
-                    stats[key] = val
-            if stats:
-                break
+            stats = {}
+            for p in e.findall('.//bs:profile[@typeName="Unit"]', ns):
+                for c in p.findall('.//bs:characteristic', ns):
+                    key = c.get('name', '')
+                    val = (c.text or '').strip()
+                    if key and key not in stats:
+                        stats[key] = val
+                if stats:
+                    break
 
-        if not stats:
-            continue
+            if not stats:
+                continue
 
-        abilities = []
-        for p in e.findall('.//bs:profile[@typeName="Abilities"]', ns):
-            aname = p.get('name', '')
-            desc = ''
-            for c in p.findall('.//bs:characteristic[@name="Description"]', ns):
-                desc = (c.text or '').strip()
-            if aname:
-                abilities.append({'name': aname, 'desc': desc})
+            seen_names.add(name)
 
-        ranged, melee = extract_weapons_from_element(e, ns, shared_map)
+            abilities = []
+            for p in e.findall('.//bs:profile[@typeName="Abilities"]', ns):
+                aname = p.get('name', '')
+                desc = ''
+                for c in p.findall('.//bs:characteristic[@name="Description"]', ns):
+                    desc = (c.text or '').strip()
+                if aname:
+                    abilities.append({'name': aname, 'desc': desc})
 
-        keywords = [cl.get('name', '') for cl in e.findall('.//bs:categoryLinks/bs:categoryLink', ns)
-                    if cl.get('name', '')]
+            ranged, melee = extract_weapons_from_element(e, ns, shared_map)
 
-        units.append({
-            'name': name,
-            'points': points,
-            'stats': stats,
-            'keywords': keywords,
-            'rangedWeapons': deduplicate(ranged),
-            'meleeWeapons': deduplicate(melee),
-            'abilities': abilities,
-        })
+            keywords = [cl.get('name', '') for cl in e.findall('.//bs:categoryLinks/bs:categoryLink', ns)
+                        if cl.get('name', '')]
+
+            units.append({
+                'name': name,
+                'points': points,
+                'stats': stats,
+                'keywords': keywords,
+                'rangedWeapons': deduplicate(ranged),
+                'meleeWeapons': deduplicate(melee),
+                'abilities': abilities,
+            })
 
     # ── Detachments ──────────────────────────────────────────────────────────
     if det_source_path and det_source_path.exists():
@@ -221,7 +263,7 @@ def main():
 
     manifest = []
 
-    for filename, faction_id, faction_name, det_src_file, det_filter in CATALOG_MAP:
+    for filename, faction_id, faction_name, det_src_file, det_filter, unit_types in CATALOG_MAP:
         cat_path = bs_data_dir / filename
         if not cat_path.exists():
             print(f'SKIP (not found): {filename}')
@@ -231,7 +273,7 @@ def main():
         det_filt = set(det_filter) if det_filter else None
 
         print(f'Parsing {faction_name}...', end=' ', flush=True)
-        units, detachments = parse_catalog(cat_path, det_src, det_filt)
+        units, detachments = parse_catalog(cat_path, det_src, det_filt, unit_types)
 
         if not units:
             print('0 units — skipped')
