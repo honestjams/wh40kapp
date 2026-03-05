@@ -3,11 +3,12 @@ import ListBuilder, { Unit } from './ListBuilder'
 import CardCarousel from './CardCarousel'
 import SetupWizard, { GameConfig } from './SetupWizard'
 import BattleTracker from './BattleTracker'
+import StratagemView from './StratagemView'
 
 const ROSTER_KEY = 'wh40k-roster-v2'
 const GAME_KEY   = 'wh40k-active-game'
 
-type View = 'list' | 'setup' | 'battle' | 'cards'
+type View = 'list' | 'cards' | 'strats' | 'setup' | 'battle'
 
 export default function App() {
   const [roster, setRoster] = useState<Unit[]>(() => {
@@ -42,10 +43,7 @@ export default function App() {
   const handleAdd = (unit: Unit) => {
     setRoster(prev => {
       const existing = prev.find(u => u.id === unit.id)
-      if (existing) {
-        // Update count for existing unit
-        return prev.map(u => u.id === unit.id ? { ...u, count: unit.count } : u)
-      }
+      if (existing) return prev.map(u => u.id === unit.id ? { ...u, count: unit.count } : u)
       return [...prev, unit]
     })
   }
@@ -53,9 +51,7 @@ export default function App() {
   const handleRemove = (id: string) => {
     setRoster(prev => {
       const unit = prev.find(u => u.id === id)
-      if (unit && unit.count > 1) {
-        return prev.map(u => u.id === id ? { ...u, count: u.count - 1 } : u)
-      }
+      if (unit && unit.count > 1) return prev.map(u => u.id === id ? { ...u, count: u.count - 1 } : u)
       return prev.filter(u => u.id !== id)
     })
   }
@@ -70,12 +66,17 @@ export default function App() {
     setActiveView('battle')
   }
 
-  const handleNewGame = () => {
-    setGameConfig(null)
-    setActiveView('setup')
-  }
+  const handleNewGame = () => { setGameConfig(null); setActiveView('setup') }
 
   const totalPoints = roster.reduce((s, u) => s + u.points * (u.count ?? 1), 0)
+
+  const NAV_ITEMS: { id: View; icon: string; label: string }[] = [
+    { id: 'list',   icon: '⚔',  label: 'Roster' },
+    { id: 'cards',  icon: '🃏', label: 'Cards' },
+    { id: 'strats', icon: '⚡', label: 'Strats' },
+    { id: 'setup',  icon: '⚙',  label: 'Setup' },
+    { id: 'battle', icon: '🎲', label: gameConfig ? 'Battle•' : 'Battle' },
+  ]
 
   return (
     <div className="app-container">
@@ -98,6 +99,10 @@ export default function App() {
           />
         )}
 
+        {activeView === 'cards' && <CardCarousel items={roster} />}
+
+        {activeView === 'strats' && <StratagemView roster={roster} />}
+
         {activeView === 'setup' && (
           <SetupWizard rosterUnits={roster} onStart={handleGameStart} />
         )}
@@ -114,44 +119,41 @@ export default function App() {
             </button>
           </div>
         )}
-
-        {activeView === 'cards' && (
-          <CardCarousel items={roster} />
-        )}
       </main>
 
+      {/* Bottom navigation */}
       <nav className="nav-container">
         <div className="nav-menu">
-          <button
-            className={`nav-item ${activeView === 'list' ? 'active' : ''}`}
-            onClick={() => setActiveView('list')}
-          >
-            <span className="nav-icon">⚔</span>
-            <span>Roster</span>
-          </button>
-          <button
-            className={`nav-item ${activeView === 'cards' ? 'active' : ''}`}
-            onClick={() => setActiveView('cards')}
-          >
-            <span className="nav-icon">🃏</span>
-            <span>Cards</span>
-          </button>
-          <button
-            className={`nav-item ${activeView === 'setup' ? 'active' : ''}`}
-            onClick={() => setActiveView('setup')}
-          >
-            <span className="nav-icon">⚙</span>
-            <span>Setup</span>
-          </button>
-          <button
-            className={`nav-item ${activeView === 'battle' ? 'active' : ''} ${gameConfig ? 'nav-item-live' : ''}`}
-            onClick={() => setActiveView('battle')}
-          >
-            <span className="nav-icon">🎲</span>
-            <span>Battle{gameConfig ? ' •' : ''}</span>
-          </button>
+          {NAV_ITEMS.map(({ id, icon, label }) => (
+            <button
+              key={id}
+              className={`nav-item ${activeView === id ? 'active' : ''} ${id === 'battle' && gameConfig ? 'nav-item-live' : ''}`}
+              onClick={() => setActiveView(id)}
+            >
+              <span className="nav-icon">{icon}</span>
+              <span>{label}</span>
+            </button>
+          ))}
         </div>
       </nav>
+
+      {/* Footer */}
+      <footer className="app-footer">
+        <div className="footer-inner">
+          <span className="footer-text">Grimdark Companion — free fan tool</span>
+          <a
+            className="footer-paypal"
+            href="https://www.paypal.com/paypalme/joshbe2802"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            ☕ Support the Dev
+          </a>
+        </div>
+        <p className="footer-disclaimer">
+          Not affiliated with Games Workshop. Warhammer 40,000 © Games Workshop Ltd.
+        </p>
+      </footer>
     </div>
   )
 }
