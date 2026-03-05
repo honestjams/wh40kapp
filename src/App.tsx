@@ -143,7 +143,7 @@ export default function App() {
           <span className="footer-text">Grimdark Companion — free fan tool</span>
           <a
             className="footer-paypal"
-            href="https://paypal.me/PLACEHOLDER"
+            href="https://www.paypal.com/paypalme/joshbe2802"
             target="_blank"
             rel="noopener noreferrer"
           >
