@@ -206,7 +206,7 @@ export default function SetupWizard({ rosterUnits, onStart }: Props) {
   const [p2, setP2] = useState<Partial<PlayerConfig>>({ secondaries: [] })
   const [firstPlayer, setFirstPlayer] = useState<0 | 1 | null>(null)
 
-  const rosterArmies = Array.from(new Set(rosterUnits.map(u => u.army).filter(Boolean))) as string[]
+  const rosterArmies = Array.from(new Set(rosterUnits.map(u => u.factionName).filter(Boolean))) as string[]
 
   const updatePlayer = (which: 1 | 2, field: keyof PlayerConfig, value: string) => {
     const setter = which === 1 ? setP1 : setP2

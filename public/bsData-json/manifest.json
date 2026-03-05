@@ -1,0 +1,107 @@
+[
+  {
+    "id": "aeldari-craftworlds",
+    "name": "Craftworlds (Aeldari)",
+    "file": "/bsData-json/aeldari-craftworlds.json"
+  },
+  {
+    "id": "chaos-daemons",
+    "name": "Chaos Daemons",
+    "file": "/bsData-json/chaos-daemons.json"
+  },
+  {
+    "id": "imperium-astra-militarum",
+    "name": "Astra Militarum",
+    "file": "/bsData-json/imperium-astra-militarum.json"
+  },
+  {
+    "id": "chaos-space-marines",
+    "name": "Chaos Space Marines",
+    "file": "/bsData-json/chaos-space-marines.json"
+  },
+  {
+    "id": "chaos-death-guard",
+    "name": "Death Guard",
+    "file": "/bsData-json/chaos-death-guard.json"
+  },
+  {
+    "id": "chaos-thousand-sons",
+    "name": "Thousand Sons",
+    "file": "/bsData-json/chaos-thousand-sons.json"
+  },
+  {
+    "id": "chaos-world-eaters",
+    "name": "World Eaters",
+    "file": "/bsData-json/chaos-world-eaters.json"
+  },
+  {
+    "id": "genestealer-cults",
+    "name": "Genestealer Cults",
+    "file": "/bsData-json/genestealer-cults.json"
+  },
+  {
+    "id": "imperium-adepta-sororitas",
+    "name": "Adepta Sororitas",
+    "file": "/bsData-json/imperium-adepta-sororitas.json"
+  },
+  {
+    "id": "imperium-adeptus-custodes",
+    "name": "Adeptus Custodes",
+    "file": "/bsData-json/imperium-adeptus-custodes.json"
+  },
+  {
+    "id": "imperium-adeptus-mechanicus",
+    "name": "Adeptus Mechanicus",
+    "file": "/bsData-json/imperium-adeptus-mechanicus.json"
+  },
+  {
+    "id": "imperium-blood-angels",
+    "name": "Blood Angels",
+    "file": "/bsData-json/imperium-blood-angels.json"
+  },
+  {
+    "id": "imperium-dark-angels",
+    "name": "Dark Angels",
+    "file": "/bsData-json/imperium-dark-angels.json"
+  },
+  {
+    "id": "imperium-grey-knights",
+    "name": "Grey Knights",
+    "file": "/bsData-json/imperium-grey-knights.json"
+  },
+  {
+    "id": "imperium-space-marines",
+    "name": "Space Marines",
+    "file": "/bsData-json/imperium-space-marines.json"
+  },
+  {
+    "id": "imperium-space-wolves",
+    "name": "Space Wolves",
+    "file": "/bsData-json/imperium-space-wolves.json"
+  },
+  {
+    "id": "leagues-of-votann",
+    "name": "Leagues of Votann",
+    "file": "/bsData-json/leagues-of-votann.json"
+  },
+  {
+    "id": "necrons",
+    "name": "Necrons",
+    "file": "/bsData-json/necrons.json"
+  },
+  {
+    "id": "orks",
+    "name": "Orks",
+    "file": "/bsData-json/orks.json"
+  },
+  {
+    "id": "tau-empire",
+    "name": "T'au Empire",
+    "file": "/bsData-json/tau-empire.json"
+  },
+  {
+    "id": "tyranids",
+    "name": "Tyranids",
+    "file": "/bsData-json/tyranids.json"
+  }
+]
