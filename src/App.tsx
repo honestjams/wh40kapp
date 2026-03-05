@@ -1,61 +1,122 @@
 import React, { useEffect, useState } from 'react'
 import ListBuilder, { Unit } from './ListBuilder'
 import CardCarousel from './CardCarousel'
+import SetupWizard, { GameConfig } from './SetupWizard'
+import BattleTracker from './BattleTracker'
 
-const STORAGE_KEY = 'wh40k-roster'
+const ROSTER_KEY = 'wh40k-roster-v2'
+const GAME_KEY   = 'wh40k-active-game'
+
+type View = 'list' | 'setup' | 'battle' | 'cards'
 
 export default function App() {
-  const [units, setUnits] = useState<Unit[]>(() => {
+  const [roster, setRoster] = useState<Unit[]>(() => {
     try {
-      const saved = localStorage.getItem(STORAGE_KEY)
+      const saved = localStorage.getItem(ROSTER_KEY)
       return saved ? (JSON.parse(saved) as Unit[]) : []
-    } catch {
-      return []
-    }
+    } catch { return [] }
   })
-  const [activeView, setActiveView] = useState<'list' | 'cards'>('list')
+
+  const [gameConfig, setGameConfig] = useState<GameConfig | null>(() => {
+    try {
+      const raw = localStorage.getItem(GAME_KEY)
+      return raw ? (JSON.parse(raw) as { config: GameConfig }).config : null
+    } catch { return null }
+  })
+
+  const [activeView, setActiveView] = useState<View>(() => {
+    try {
+      const raw = localStorage.getItem(GAME_KEY)
+      if (raw) {
+        const g = JSON.parse(raw) as { config: GameConfig; state?: unknown }
+        if (g.config && g.state) return 'battle'
+      }
+    } catch { /* ignore */ }
+    return 'list'
+  })
 
   useEffect(() => {
-    try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(units))
-    } catch {
-      // storage unavailable — silent fail
-    }
-  }, [units])
+    try { localStorage.setItem(ROSTER_KEY, JSON.stringify(roster)) } catch { /* ignore */ }
+  }, [roster])
 
-  const handleUpdate = (u: Unit[] | Unit) => {
-    if (Array.isArray(u)) setUnits(u)
-    else setUnits(prev => [...prev, u])
+  const handleAdd = (unit: Unit) => {
+    setRoster(prev => {
+      const existing = prev.find(u => u.id === unit.id)
+      if (existing) {
+        // Update count for existing unit
+        return prev.map(u => u.id === unit.id ? { ...u, count: unit.count } : u)
+      }
+      return [...prev, unit]
+    })
+  }
+
+  const handleRemove = (id: string) => {
+    setRoster(prev => {
+      const unit = prev.find(u => u.id === id)
+      if (unit && unit.count > 1) {
+        return prev.map(u => u.id === id ? { ...u, count: u.count - 1 } : u)
+      }
+      return prev.filter(u => u.id !== id)
+    })
   }
 
   const handleClear = () => {
-    if (confirm('Clear all units from your roster?')) setUnits([])
+    if (roster.length === 0 || confirm('Clear all units from your roster?')) setRoster([])
   }
 
-  const totalPoints = units.reduce((sum, u) => sum + (u.points ?? 0), 0)
+  const handleGameStart = (config: GameConfig) => {
+    try { localStorage.setItem(GAME_KEY, JSON.stringify({ config })) } catch { /* ignore */ }
+    setGameConfig(config)
+    setActiveView('battle')
+  }
+
+  const handleNewGame = () => {
+    setGameConfig(null)
+    setActiveView('setup')
+  }
+
+  const totalPoints = roster.reduce((s, u) => s + u.points * (u.count ?? 1), 0)
 
   return (
     <div className="app-container">
-      <header>
-        <h1>WH40K Companion</h1>
+      <header className="app-header">
+        <div className="app-header-inner">
+          <span className="app-title">GRIMDARK COMPANION</span>
+          {roster.length > 0 && activeView !== 'list' && (
+            <span className="app-header-pts">{totalPoints}pts</span>
+          )}
+        </div>
       </header>
 
       <main>
-        {activeView === 'list' ? (
-          <section>
-            <ListBuilder onUpdate={handleUpdate} />
-            <div className="roster-count">
-              {units.length} unit{units.length !== 1 ? 's' : ''}
-              {totalPoints > 0 && <span> &mdash; {totalPoints}pts</span>}
-              {units.length > 0 && (
-                <button className="clear-btn" onClick={handleClear}>Clear</button>
-              )}
-            </div>
-          </section>
-        ) : (
-          <section>
-            <CardCarousel items={units} />
-          </section>
+        {activeView === 'list' && (
+          <ListBuilder
+            roster={roster}
+            onAdd={handleAdd}
+            onRemove={handleRemove}
+            onClear={handleClear}
+          />
+        )}
+
+        {activeView === 'setup' && (
+          <SetupWizard rosterUnits={roster} onStart={handleGameStart} />
+        )}
+
+        {activeView === 'battle' && gameConfig && (
+          <BattleTracker config={gameConfig} onNewGame={handleNewGame} />
+        )}
+
+        {activeView === 'battle' && !gameConfig && (
+          <div className="no-game-state">
+            <p>No active game — set up a battle first.</p>
+            <button className="wizard-btn wizard-btn-primary" onClick={() => setActiveView('setup')}>
+              Go to Setup
+            </button>
+          </div>
+        )}
+
+        {activeView === 'cards' && (
+          <CardCarousel items={roster} />
         )}
       </main>
 
@@ -65,13 +126,29 @@ export default function App() {
             className={`nav-item ${activeView === 'list' ? 'active' : ''}`}
             onClick={() => setActiveView('list')}
           >
-            List Builder
+            <span className="nav-icon">⚔</span>
+            <span>Roster</span>
           </button>
           <button
             className={`nav-item ${activeView === 'cards' ? 'active' : ''}`}
             onClick={() => setActiveView('cards')}
           >
-            Game Cards
+            <span className="nav-icon">🃏</span>
+            <span>Cards</span>
+          </button>
+          <button
+            className={`nav-item ${activeView === 'setup' ? 'active' : ''}`}
+            onClick={() => setActiveView('setup')}
+          >
+            <span className="nav-icon">⚙</span>
+            <span>Setup</span>
+          </button>
+          <button
+            className={`nav-item ${activeView === 'battle' ? 'active' : ''} ${gameConfig ? 'nav-item-live' : ''}`}
+            onClick={() => setActiveView('battle')}
+          >
+            <span className="nav-icon">🎲</span>
+            <span>Battle{gameConfig ? ' •' : ''}</span>
           </button>
         </div>
       </nav>
