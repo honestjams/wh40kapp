@@ -1,0 +1,626 @@
+{
+  "core": [
+    {
+      "name": "Command Re-roll",
+      "cp": 1,
+      "phase": "Any",
+      "timing": "Before making a dice roll",
+      "effect": "Re-roll one Hit roll, Wound roll, Damage roll, Saving Throw, or Advance/Charge roll."
+    },
+    {
+      "name": "Counter-offensive",
+      "cp": 2,
+      "phase": "Fight",
+      "timing": "After an enemy unit has fought",
+      "effect": "Select one eligible unit from your army that is within Engagement Range of one or more enemy units, or one that made a Charge move this turn. That unit fights next."
+    },
+    {
+      "name": "Grenade",
+      "cp": 1,
+      "phase": "Shooting",
+      "timing": "Before your unit is selected to shoot",
+      "effect": "One model in the unit can, instead of shooting any of its weapons, make one attack with one Grenade weapon. That Grenade weapon's maximum range for this attack is 6\". Only one Grenade can be used per battle round."
+    },
+    {
+      "name": "Epic Deed",
+      "cp": 1,
+      "phase": "Any",
+      "timing": "Before a CHARACTER model uses a Heroic Intervention ability",
+      "effect": "That CHARACTER model can use one of the Heroic Intervention abilities listed on its datasheet, even if it is not normally able to use it this phase."
+    },
+    {
+      "name": "Insane Bravery",
+      "cp": 1,
+      "phase": "Command",
+      "timing": "Battle-shock step, before taking a Battle-shock test for a unit",
+      "effect": "That unit automatically passes the Battle-shock test."
+    },
+    {
+      "name": "Rapid Ingress",
+      "cp": 1,
+      "phase": "Movement",
+      "timing": "End of your opponent's Movement phase",
+      "effect": "Set up one unit from your army that is in Strategic Reserves anywhere on the battlefield that is more than 9\" horizontally from all enemy models."
+    }
+  ],
+  "factions": {
+    "imperium-space-marines": [
+      {
+        "name": "Adaptive Strategy",
+        "cp": 1,
+        "detachment": "Gladius Task Force",
+        "phase": "Command",
+        "timing": "Before selecting Combat Doctrine",
+        "effect": "You can select a different Combat Doctrine from the one currently active for your army. That doctrine is active for your army until the end of the battle round."
+      },
+      {
+        "name": "Hammer of Wrath",
+        "cp": 1,
+        "detachment": "Gladius Task Force",
+        "phase": "Fight",
+        "timing": "After a friendly unit makes a Charge move",
+        "effect": "Until the end of the phase, each time a model in that unit makes a melee attack, add 1 to the Hit roll."
+      },
+      {
+        "name": "Armour of Contempt",
+        "cp": 1,
+        "detachment": "Gladius Task Force",
+        "phase": "Any",
+        "timing": "After an enemy unit selects a friendly Adeptus Astartes unit as a target",
+        "effect": "Until the end of the phase, each time an attack is made against that unit, worsen the AP of that attack by 1 (e.g. AP -2 becomes AP -1)."
+      },
+      {
+        "name": "Transhuman Physiology",
+        "cp": 1,
+        "detachment": "Gladius Task Force",
+        "phase": "Shooting / Fight",
+        "timing": "Before an enemy makes an attack",
+        "effect": "Until the end of the phase, each time an attack targets that unit, an unmodified Wound roll of 1-3 always fails."
+      },
+      {
+        "name": "Wisdom of the Ancients",
+        "cp": 1,
+        "detachment": "Gladius Task Force",
+        "phase": "Any",
+        "timing": "Start of your turn",
+        "effect": "Select one Dreadnought or Ancient model from your army. Until the end of the turn, that model has the Leader ability. While a friendly unit is within 6\" of that model, models in that unit can re-roll one Hit roll per attack."
+      },
+      {
+        "name": "Only in Death Does Duty End",
+        "cp": 2,
+        "detachment": "Any",
+        "phase": "Fight",
+        "timing": "When a CHARACTER model is destroyed",
+        "effect": "That model can fight before it is removed from play. If that model is also a unit, the whole unit can fight before being removed."
+      }
+    ],
+    "imperium-blood-angels": [
+      {
+        "name": "Descent of Angels",
+        "cp": 1,
+        "detachment": "The Angelic Host",
+        "phase": "Movement",
+        "timing": "When a unit arrives from Deep Strike",
+        "effect": "That unit can be set up anywhere on the battlefield that is more than 3\" horizontally from all enemy models (instead of the normal 9\")."
+      },
+      {
+        "name": "Red Thirst",
+        "cp": 1,
+        "detachment": "The Angelic Host",
+        "phase": "Fight",
+        "timing": "After a Blood Angels unit is selected to fight",
+        "effect": "Until the end of the phase, melee weapons equipped by models in that unit have the [SUSTAINED HITS 1] ability."
+      },
+      {
+        "name": "Savage Echoes",
+        "cp": 1,
+        "detachment": "The Angelic Host",
+        "phase": "Fight",
+        "timing": "After charging",
+        "effect": "Until the end of the phase, add 1 to the Attacks characteristic of melee weapons equipped by models in that unit."
+      },
+      {
+        "name": "Armour of Contempt",
+        "cp": 1,
+        "detachment": "Any",
+        "phase": "Any",
+        "timing": "When targeted by an attack",
+        "effect": "Until the end of the phase, worsen the AP of attacks targeting that unit by 1."
+      }
+    ],
+    "imperium-dark-angels": [
+      {
+        "name": "Death to the Traitors!",
+        "cp": 1,
+        "detachment": "Unforgiven Task Force",
+        "phase": "Shooting / Fight",
+        "timing": "Before a unit is selected to shoot or fight",
+        "effect": "Until the end of the phase, each time a model in that unit makes an attack against a CHAOS unit, you can re-roll the Hit roll."
+      },
+      {
+        "name": "Stubborn Resistance",
+        "cp": 1,
+        "detachment": "Unforgiven Task Force",
+        "phase": "Any",
+        "timing": "When a unit fails a Battle-shock test",
+        "effect": "That unit does not suffer the Battle-shocked penalty to its Objective Control until the end of your next turn."
+      },
+      {
+        "name": "Armour of Contempt",
+        "cp": 1,
+        "detachment": "Any",
+        "phase": "Any",
+        "timing": "When targeted by an attack",
+        "effect": "Worsen the AP of those attacks by 1 until end of phase."
+      }
+    ],
+    "imperium-space-wolves": [
+      {
+        "name": "Savage Strikes",
+        "cp": 1,
+        "detachment": "Champions of Fenris",
+        "phase": "Fight",
+        "timing": "Before a unit is selected to fight",
+        "effect": "Until the end of the phase, melee weapons equipped by models in that unit have the [LETHAL HITS] ability."
+      },
+      {
+        "name": "Pack Hunters",
+        "cp": 1,
+        "detachment": "Champions of Fenris",
+        "phase": "Fight",
+        "timing": "Before a unit is selected to fight",
+        "effect": "Until the end of the phase, each time a model in that unit makes a melee attack, if your unit is within 6\" of another friendly unit, add 1 to the Hit roll."
+      },
+      {
+        "name": "Heroic Charge",
+        "cp": 1,
+        "detachment": "Any",
+        "phase": "Fight",
+        "timing": "After charging",
+        "effect": "Until the end of the phase, add 1 to the Strength and Attacks characteristics of melee weapons equipped by models in that unit."
+      }
+    ],
+    "imperium-grey-knights": [
+      {
+        "name": "Psybolt Ammunition",
+        "cp": 1,
+        "detachment": "Any",
+        "phase": "Shooting",
+        "timing": "Before a unit is selected to shoot",
+        "effect": "Until the end of the phase, each time a model in that unit makes a ranged attack, improve the Strength characteristic of that attack by 2 and the AP by 1."
+      },
+      {
+        "name": "Hammerhand",
+        "cp": 1,
+        "detachment": "Any",
+        "phase": "Fight",
+        "timing": "Before a unit is selected to fight",
+        "effect": "Until the end of the phase, each time a model in that unit makes a melee attack, add 2 to the Strength characteristic of that attack."
+      },
+      {
+        "name": "Warp Shaping",
+        "cp": 1,
+        "detachment": "Any",
+        "phase": "Psychic",
+        "timing": "Before a unit uses a Psychic ability",
+        "effect": "Until the end of the phase, add 1 to the Psychic ability roll for that unit."
+      }
+    ],
+    "necrons": [
+      {
+        "name": "Emergency Protocols",
+        "cp": 1,
+        "detachment": "Awakened Dynasty",
+        "phase": "Any",
+        "timing": "After a unit fails a Battle-shock test",
+        "effect": "That unit does not lose the Living Metal ability this turn. At the end of the phase, remove all Battle-shocked markers from that unit."
+      },
+      {
+        "name": "Disruption Fields",
+        "cp": 1,
+        "detachment": "Awakened Dynasty",
+        "phase": "Fight",
+        "timing": "Before a unit is selected to fight",
+        "effect": "Until the end of the phase, each time a model in that unit makes a melee attack, add 1 to the Strength characteristic of that attack."
+      },
+      {
+        "name": "Quantum Shielding",
+        "cp": 1,
+        "detachment": "Awakened Dynasty",
+        "phase": "Any",
+        "timing": "After a saving throw is failed for a VEHICLE unit",
+        "effect": "Roll one D6: on a 2+, that attack's damage is reduced to 0."
+      },
+      {
+        "name": "My Will Be Done",
+        "cp": 1,
+        "detachment": "Awakened Dynasty",
+        "phase": "Command",
+        "timing": "Command phase",
+        "effect": "Select one friendly unit. Until the end of the turn, each time a model in that unit makes an attack, you can re-roll the Hit roll."
+      },
+      {
+        "name": "Relentless March",
+        "cp": 1,
+        "detachment": "Any",
+        "phase": "Movement",
+        "timing": "Before a unit moves",
+        "effect": "Until the end of the phase, that unit can move an additional 3\"."
+      }
+    ],
+    "tyranids": [
+      {
+        "name": "Voracious Appetite",
+        "cp": 1,
+        "detachment": "Invasion Fleet",
+        "phase": "Fight",
+        "timing": "Before a unit is selected to fight",
+        "effect": "Until the end of the phase, melee weapons equipped by models in that unit have the [DEVASTATING WOUNDS] ability."
+      },
+      {
+        "name": "Spawning",
+        "cp": 1,
+        "detachment": "Invasion Fleet",
+        "phase": "Command",
+        "timing": "Command phase",
+        "effect": "Add up to 10 Termagant models to a Termagant unit from your army (this can take the unit above its Starting Strength). These models must be set up within Synapse range of a friendly Synapse unit and more than 9\" from all enemy models."
+      },
+      {
+        "name": "Metabolic Overdrive",
+        "cp": 2,
+        "detachment": "Invasion Fleet",
+        "phase": "Fight",
+        "timing": "Before a MONSTER unit is selected to fight",
+        "effect": "Until the end of the phase, add 3 to the Attacks characteristic of melee weapons equipped by models in that unit."
+      },
+      {
+        "name": "Hyper-adaption",
+        "cp": 1,
+        "detachment": "Any",
+        "phase": "Command",
+        "timing": "Before Battle-shock tests",
+        "effect": "Select one unit. Until the end of the battle round, each time a model in that unit makes an attack, re-roll a Hit roll of 1."
+      }
+    ],
+    "orks": [
+      {
+        "name": "Waaagh!",
+        "cp": 1,
+        "detachment": "Waaagh! Tribe",
+        "phase": "Fight",
+        "timing": "Before an ORK unit is selected to fight",
+        "effect": "Until the end of the phase, add 1 to the Attacks characteristic of melee weapons equipped by models in that unit."
+      },
+      {
+        "name": "Dakka! Dakka! Dakka!",
+        "cp": 1,
+        "detachment": "Waaagh! Tribe",
+        "phase": "Shooting",
+        "timing": "Before a unit is selected to shoot",
+        "effect": "Until the end of the phase, each time a model in that unit makes a ranged attack, if an unmodified Hit roll of 6 is made, make one additional attack using the same weapon (this attack cannot generate further attacks)."
+      },
+      {
+        "name": "Mob Up!",
+        "cp": 1,
+        "detachment": "Any",
+        "phase": "Command",
+        "timing": "Command phase",
+        "effect": "Merge two BOYZ units that are within 3\" of each other into one combined unit."
+      },
+      {
+        "name": "Ramming Speed",
+        "cp": 1,
+        "detachment": "Any",
+        "phase": "Movement",
+        "timing": "After a VEHICLE unit makes a Normal Move or Advance",
+        "effect": "That unit can move through other models and terrain. Each model it moves through suffers D3 mortal wounds."
+      }
+    ],
+    "tau-empire": [
+      {
+        "name": "Strike and Fade",
+        "cp": 1,
+        "detachment": "Kauyon / Mont'ka",
+        "phase": "Shooting",
+        "timing": "After a unit has finished shooting",
+        "effect": "That unit can make a Normal Move of up to 6\" (it cannot Advance). It cannot shoot again this phase."
+      },
+      {
+        "name": "Point Defence Targeting Relay",
+        "cp": 2,
+        "detachment": "Kauyon",
+        "phase": "Shooting",
+        "timing": "Before an enemy unit is selected to charge your unit",
+        "effect": "Your unit can fire Overwatch as if it were your Shooting phase, even if it has already shot this turn."
+      },
+      {
+        "name": "For the Greater Good",
+        "cp": 1,
+        "detachment": "Any",
+        "phase": "Shooting",
+        "timing": "When an enemy unit declares a charge",
+        "effect": "Select one T'au Empire unit that the charging unit is visible to. That unit can fire Overwatch at the charging unit."
+      },
+      {
+        "name": "Emergency Deployment",
+        "cp": 1,
+        "detachment": "Any",
+        "phase": "Movement",
+        "timing": "Before a unit moves",
+        "effect": "A unit in Reinforcements can be set up anywhere more than 6\" from enemy models."
+      }
+    ],
+    "chaos-space-marines": [
+      {
+        "name": "Dark Pact",
+        "cp": 1,
+        "detachment": "Pactbound Zealots",
+        "phase": "Any",
+        "timing": "Before a unit uses an ability",
+        "effect": "Add 1 to all Hit rolls for that unit until the end of the phase. At the end of the phase, roll one D6 for each model: on a 1, that model suffers 1 mortal wound."
+      },
+      {
+        "name": "Veterans of the Long War",
+        "cp": 1,
+        "detachment": "Any",
+        "phase": "Shooting / Fight",
+        "timing": "Before a unit is selected to shoot or fight",
+        "effect": "Until the end of the phase, each time a model in that unit makes an attack, you can re-roll the Wound roll."
+      },
+      {
+        "name": "Despoilers",
+        "cp": 2,
+        "detachment": "Pactbound Zealots",
+        "phase": "Fight",
+        "timing": "Before a unit is selected to fight",
+        "effect": "Until the end of the phase, add 1 to the Strength and AP of melee weapons equipped by models in that unit."
+      }
+    ],
+    "chaos-death-guard": [
+      {
+        "name": "Putrid Detonation",
+        "cp": 1,
+        "detachment": "Any",
+        "phase": "Fight",
+        "timing": "When a DAEMON model is destroyed in melee",
+        "effect": "Roll one D6. On a 4+, each enemy model within 3\" of the destroyed model suffers 1 mortal wound."
+      },
+      {
+        "name": "Cloud of Flies",
+        "cp": 1,
+        "detachment": "Any",
+        "phase": "Shooting",
+        "timing": "When a unit is selected as a target",
+        "effect": "Until the end of the phase, that unit cannot be selected as a target of ranged attacks unless it is the closest eligible target."
+      },
+      {
+        "name": "Diseased Horde",
+        "cp": 1,
+        "detachment": "Virulent Vectorium",
+        "phase": "Fight",
+        "timing": "Before a unit is selected to fight",
+        "effect": "Until the end of the phase, each time a model in that unit makes a melee attack, the attack has the [PLAGUE WEAPON] ability, inflicting additional mortal wounds on unmodified wound rolls of 6."
+      }
+    ],
+    "chaos-world-eaters": [
+      {
+        "name": "Blood for the Blood God",
+        "cp": 1,
+        "detachment": "Any",
+        "phase": "Fight",
+        "timing": "Before a unit is selected to fight",
+        "effect": "Until the end of the phase, add 1 to the Attacks characteristic of melee weapons equipped by models in that unit."
+      },
+      {
+        "name": "Skulls for the Skull Throne",
+        "cp": 2,
+        "detachment": "Any",
+        "phase": "Fight",
+        "timing": "After a CHARACTER enemy model is destroyed by a melee attack",
+        "effect": "Add 1 to the Attacks characteristic of melee weapons of all friendly WORLD EATERS units within 6\" until the end of the phase."
+      },
+      {
+        "name": "Berzerker Rage",
+        "cp": 1,
+        "detachment": "Eightfold Curse",
+        "phase": "Fight",
+        "timing": "Before a BERZERKERS unit is selected to fight",
+        "effect": "Until the end of the phase, that unit has the FIGHTS FIRST ability."
+      }
+    ],
+    "chaos-thousand-sons": [
+      {
+        "name": "Infernal Fusillade",
+        "cp": 1,
+        "detachment": "Any",
+        "phase": "Shooting",
+        "timing": "Before a unit is selected to shoot",
+        "effect": "Until the end of the phase, ranged weapons equipped by models in that unit have the [PSYCHIC] ability. Each time a model in that unit makes an attack with a Psychic weapon, add 1 to the Damage."
+      },
+      {
+        "name": "Sorcerous Pact",
+        "cp": 1,
+        "detachment": "Arcane Coven",
+        "phase": "Psychic",
+        "timing": "Before a unit uses a Psychic ability",
+        "effect": "Add 1 to the Psychic ability roll, and the ability's range is increased by 6\"."
+      },
+      {
+        "name": "Warped Reality",
+        "cp": 2,
+        "detachment": "Any",
+        "phase": "Movement",
+        "timing": "Before a unit moves",
+        "effect": "That unit can move an additional 3\" and can move through terrain and other models as if they were not there."
+      }
+    ],
+    "chaos-daemons": [
+      {
+        "name": "Daemonic Ritual",
+        "cp": 1,
+        "detachment": "Any",
+        "phase": "Command",
+        "timing": "Command phase",
+        "effect": "Set up one DAEMON unit from your reserves anywhere on the battlefield that is more than 9\" from all enemy units."
+      },
+      {
+        "name": "Warp Surge",
+        "cp": 1,
+        "detachment": "Any",
+        "phase": "Fight",
+        "timing": "Before a unit is selected to fight",
+        "effect": "Until the end of the phase, add 1 to the Attacks and Strength characteristics of melee weapons equipped by models in that unit."
+      }
+    ],
+    "imperium-adepta-sororitas": [
+      {
+        "name": "Act of Faith",
+        "cp": 1,
+        "detachment": "Any",
+        "phase": "Any",
+        "timing": "Before using an Act of Faith",
+        "effect": "Use this Stratagem to perform an Act of Faith as if it were the start of your turn, even if you have already used one this turn."
+      },
+      {
+        "name": "Martyr's Blessing",
+        "cp": 1,
+        "detachment": "Any",
+        "phase": "Fight",
+        "timing": "When a SISTERS unit is destroyed",
+        "effect": "Roll one D6 for each enemy model within 6\" of the destroyed unit. On a 4+, that model's unit suffers 1 mortal wound."
+      }
+    ],
+    "imperium-adeptus-custodes": [
+      {
+        "name": "Burst of Contempt",
+        "cp": 2,
+        "detachment": "Shield Host",
+        "phase": "Fight",
+        "timing": "Before a unit is selected to fight",
+        "effect": "Until the end of the phase, each time a model in that unit makes a melee attack, it targets the lowest Save characteristic model first. Improve the AP by 2."
+      },
+      {
+        "name": "Stoic Defender",
+        "cp": 1,
+        "detachment": "Any",
+        "phase": "Any",
+        "timing": "When an objective marker is contested",
+        "effect": "Until the end of the phase, add 3 to the OC of all friendly ADEPTUS CUSTODES models within range of that objective."
+      }
+    ],
+    "imperium-astra-militarum": [
+      {
+        "name": "Suppressive Fire",
+        "cp": 1,
+        "detachment": "Any",
+        "phase": "Shooting",
+        "timing": "After a unit shoots",
+        "effect": "Select one enemy unit that lost one or more models this phase to attacks from that unit. Until the end of the enemy's next turn, that enemy unit cannot make Overwatch and must subtract 2 from its Advance and Charge rolls."
+      },
+      {
+        "name": "Tank Shock",
+        "cp": 1,
+        "detachment": "Any",
+        "phase": "Movement",
+        "timing": "After a VEHICLE unit makes a Normal Move",
+        "effect": "Each model that your VEHICLE moved over suffers D3 mortal wounds on a 4+."
+      },
+      {
+        "name": "Voice of Command",
+        "cp": 1,
+        "detachment": "Combined Regiment",
+        "phase": "Command",
+        "timing": "Command phase",
+        "effect": "Select one INFANTRY unit within 12\" of a friendly OFFICER model. That unit can make one of the following moves: Normal Move, Advance, or Hold Steady (even if it has already moved)."
+      },
+      {
+        "name": "Overlapping Fields of Fire",
+        "cp": 1,
+        "detachment": "Any",
+        "phase": "Shooting",
+        "timing": "Before a unit is selected to shoot",
+        "effect": "Until the end of the phase, models in that unit can target enemy units that are within Engagement Range of friendly units."
+      }
+    ],
+    "genestealer-cults": [
+      {
+        "name": "Cult Ambush",
+        "cp": 1,
+        "detachment": "Any",
+        "phase": "Movement",
+        "timing": "Before a unit is set up from Ambush",
+        "effect": "That unit can be set up anywhere that is more than 6\" from all enemy models."
+      },
+      {
+        "name": "Tunnelling Claws",
+        "cp": 2,
+        "detachment": "Any",
+        "phase": "Movement",
+        "timing": "Before a unit arrives from underground",
+        "effect": "That unit can be set up anywhere on the battlefield more than 3\" from all enemy models."
+      }
+    ],
+    "leagues-of-votann": [
+      {
+        "name": "Calculated Ferocity",
+        "cp": 1,
+        "detachment": "Any",
+        "phase": "Fight",
+        "timing": "Before a unit is selected to fight",
+        "effect": "Until the end of the phase, each time a model in that unit makes a melee attack against a unit that has one or more Kin Tally tokens, add 1 to the Hit roll."
+      },
+      {
+        "name": "Grimnyr's Curse",
+        "cp": 1,
+        "detachment": "Any",
+        "phase": "Shooting",
+        "timing": "Before a unit is selected to shoot",
+        "effect": "Select one enemy unit visible to that unit. That enemy unit gains one Judgement token."
+      }
+    ],
+    "imperium-adeptus-mechanicus": [
+      {
+        "name": "Protector Doctrina Imperative",
+        "cp": 1,
+        "detachment": "Any",
+        "phase": "Shooting",
+        "timing": "Before a unit is selected to shoot",
+        "effect": "Until the end of the phase, add 1 to the BS of ranged attacks made by models in that unit."
+      },
+      {
+        "name": "Aggressor Doctrina Imperative",
+        "cp": 1,
+        "detachment": "Any",
+        "phase": "Fight",
+        "timing": "Before a unit is selected to fight",
+        "effect": "Until the end of the phase, add 1 to the WS of melee attacks made by models in that unit."
+      }
+    ],
+    "aeldari-craftworlds": [
+      {
+        "name": "Forewarned",
+        "cp": 1,
+        "detachment": "Any",
+        "phase": "Movement",
+        "timing": "When an enemy unit arrives from reserves",
+        "effect": "One AELDARI unit that can shoot can immediately make one ranged attack against the arriving unit, even though it is not your turn."
+      },
+      {
+        "name": "Phantasm",
+        "cp": 1,
+        "detachment": "Any",
+        "phase": "Movement",
+        "timing": "Before an enemy unit declares a charge",
+        "effect": "One friendly AELDARI unit within 9\" of the charging unit can immediately make a Normal Move of up to 6\"."
+      },
+      {
+        "name": "Celestial Shield",
+        "cp": 1,
+        "detachment": "Aspect Host",
+        "phase": "Any",
+        "timing": "When a GUARDIAN DEFENDERS unit is targeted",
+        "effect": "Until the end of the phase, improve the Save of models in that unit by 1."
+      }
+    ]
+  }
+}

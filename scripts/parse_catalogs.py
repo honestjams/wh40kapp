@@ -5,48 +5,56 @@ Outputs one JSON file per faction into public/bsData-json/.
 """
 
 import json
-import os
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
 CAT_NS = 'http://www.battlescribe.net/schema/catalogueSchema'
 NS = {'bs': CAT_NS}
 
+# Maps faction_id -> (filename, display_name, optional_detachment_source_file, filter_detachment_names)
+# If a sub-chapter's detachments live in the parent catalog, specify them explicitly.
 CATALOG_MAP = [
     # Some factions store units in a shared Library catalog
-    ('Aeldari - Aeldari Library.cat',            'aeldari-craftworlds',        'Craftworlds (Aeldari)'),
-    ('Chaos - Chaos Daemons Library.cat',        'chaos-daemons',              'Chaos Daemons'),
-    ('Imperium - Astra Militarum - Library.cat', 'imperium-astra-militarum',   'Astra Militarum'),
-    # Factions with units directly in their catalog
-    ('Chaos - Chaos Space Marines.cat',          'chaos-space-marines',        'Chaos Space Marines'),
-    ('Chaos - Death Guard.cat',                  'chaos-death-guard',          'Death Guard'),
-    ('Chaos - Thousand Sons.cat',                'chaos-thousand-sons',        'Thousand Sons'),
-    ('Chaos - World Eaters.cat',                 'chaos-world-eaters',         'World Eaters'),
-    ('Genestealer Cults.cat',                    'genestealer-cults',          'Genestealer Cults'),
-    ('Imperium - Adepta Sororitas.cat',          'imperium-adepta-sororitas',  'Adepta Sororitas'),
-    ('Imperium - Adeptus Custodes.cat',          'imperium-adeptus-custodes',  'Adeptus Custodes'),
-    ('Imperium - Adeptus Mechanicus.cat',        'imperium-adeptus-mechanicus','Adeptus Mechanicus'),
-    ('Imperium - Blood Angels.cat',              'imperium-blood-angels',      'Blood Angels'),
-    ('Imperium - Dark Angels.cat',               'imperium-dark-angels',       'Dark Angels'),
-    ('Imperium - Grey Knights.cat',              'imperium-grey-knights',      'Grey Knights'),
-    ('Imperium - Space Marines.cat',             'imperium-space-marines',     'Space Marines'),
-    ('Imperium - Space Wolves.cat',              'imperium-space-wolves',      'Space Wolves'),
-    ('Leagues of Votann.cat',                    'leagues-of-votann',          'Leagues of Votann'),
-    ('Necrons.cat',                              'necrons',                    'Necrons'),
-    ('Orks.cat',                                 'orks',                       'Orks'),
-    ("T'au Empire.cat",                          'tau-empire',                 "T'au Empire"),
-    ('Tyranids.cat',                             'tyranids',                   'Tyranids'),
+    ('Aeldari - Aeldari Library.cat',            'aeldari-craftworlds',        'Craftworlds (Aeldari)', None, None),
+    ('Chaos - Chaos Daemons Library.cat',        'chaos-daemons',              'Chaos Daemons',         None, None),
+    ('Imperium - Astra Militarum - Library.cat', 'imperium-astra-militarum',   'Astra Militarum',       None, None),
+    # Main factions
+    ('Chaos - Chaos Space Marines.cat',          'chaos-space-marines',        'Chaos Space Marines',   None, None),
+    ('Chaos - Death Guard.cat',                  'chaos-death-guard',          'Death Guard',           None, None),
+    ('Chaos - Thousand Sons.cat',                'chaos-thousand-sons',        'Thousand Sons',         None, None),
+    ('Chaos - World Eaters.cat',                 'chaos-world-eaters',         'World Eaters',          None, None),
+    ('Genestealer Cults.cat',                    'genestealer-cults',          'Genestealer Cults',     None, None),
+    ('Imperium - Adepta Sororitas.cat',          'imperium-adepta-sororitas',  'Adepta Sororitas',      None, None),
+    ('Imperium - Adeptus Custodes.cat',          'imperium-adeptus-custodes',  'Adeptus Custodes',      None, None),
+    ('Imperium - Adeptus Mechanicus.cat',        'imperium-adeptus-mechanicus','Adeptus Mechanicus',    None, None),
+    # Space Marine sub-chapters pull detachments from the parent SM catalog
+    ('Imperium - Blood Angels.cat',   'imperium-blood-angels',  'Blood Angels',
+        'Imperium - Space Marines.cat',
+        ['The Angelic Host', 'Liberator Assault Group', 'Angelic Inheritors', 'Wrathful Procession', 'Gladius Task Force']),
+    ('Imperium - Dark Angels.cat',    'imperium-dark-angels',   'Dark Angels',
+        'Imperium - Space Marines.cat',
+        ['Unforgiven Task Force', 'Inner Circle Task Force', "Lion's Blade Task Force",
+         'The Lost Brethren', 'Librarius Conclave', 'Company of Hunters', 'Gladius Task Force']),
+    ('Imperium - Grey Knights.cat',   'imperium-grey-knights',  'Grey Knights',            None, None),
+    ('Imperium - Space Marines.cat',  'imperium-space-marines', 'Space Marines',           None, None),
+    ('Imperium - Space Wolves.cat',   'imperium-space-wolves',  'Space Wolves',
+        'Imperium - Space Marines.cat',
+        ['Champions of Fenris', 'Saga of the Hunter', 'Saga of the Bold',
+         'Saga of the Beastslayer', "Emperor's Shield", 'Shadowmark Talon', 'Gladius Task Force']),
+    ('Leagues of Votann.cat',         'leagues-of-votann',      'Leagues of Votann',       None, None),
+    ('Necrons.cat',                   'necrons',                'Necrons',                 None, None),
+    ('Orks.cat',                      'orks',                   'Orks',                    None, None),
+    ("T'au Empire.cat",               'tau-empire',             "T'au Empire",             None, None),
+    ('Tyranids.cat',                  'tyranids',               'Tyranids',                None, None),
 ]
 
 
 def build_shared_map(root, ns):
-    """Build a dict of id -> element for all sharedSelectionEntries."""
     shared = {}
     for e in root.findall('.//bs:sharedSelectionEntries/bs:selectionEntry', ns):
         eid = e.get('id')
         if eid:
             shared[eid] = e
-    # Also sharedSelectionEntryGroups
     for e in root.findall('.//bs:sharedSelectionEntryGroups/bs:selectionEntryGroup', ns):
         eid = e.get('id')
         if eid:
@@ -55,13 +63,10 @@ def build_shared_map(root, ns):
 
 
 def extract_weapons_from_element(elem, ns, shared_map, depth=0):
-    """Recursively extract weapon profiles from an element and its linked shared entries."""
     if depth > 4:
         return [], []
-    ranged = []
-    melee = []
+    ranged, melee = [], []
 
-    # Direct profiles
     for p in elem.findall('bs:profiles/bs:profile', ns):
         type_name = p.get('typeName', '')
         wname = p.get('name', '')
@@ -73,7 +78,6 @@ def extract_weapons_from_element(elem, ns, shared_map, depth=0):
         elif type_name == 'Melee Weapons':
             melee.append(entry)
 
-    # Follow entryLinks to sharedSelectionEntries
     for link in elem.findall('.//bs:entryLinks/bs:entryLink', ns):
         target_id = link.get('targetId')
         if target_id and target_id in shared_map:
@@ -81,7 +85,6 @@ def extract_weapons_from_element(elem, ns, shared_map, depth=0):
             ranged.extend(r2)
             melee.extend(m2)
 
-    # Walk into selectionEntries and selectionEntryGroups
     for child in elem.findall('bs:selectionEntries/bs:selectionEntry', ns):
         r2, m2 = extract_weapons_from_element(child, ns, shared_map, depth + 1)
         ranged.extend(r2)
@@ -94,37 +97,62 @@ def extract_weapons_from_element(elem, ns, shared_map, depth=0):
     return ranged, melee
 
 
-def deduplicate_weapons(weapons):
-    seen = set()
-    out = []
-    for w in weapons:
-        key = w.get('name', '')
-        if key and key not in seen:
-            seen.add(key)
+def deduplicate(items, key='name'):
+    seen, out = set(), []
+    for w in items:
+        k = w.get(key, '')
+        if k and k not in seen:
+            seen.add(k)
             out.append(w)
     return out
 
 
-def parse_catalog(cat_path):
+def extract_detachments_from_root(root, ns, name_filter=None):
+    """Extract detachment entries with abilities from a parsed catalog root."""
+    detachments = []
+    seen = set()
+
+    for seg in root.findall('.//bs:selectionEntryGroup[@name="Detachment"]', ns):
+        for e in seg.findall('bs:selectionEntries/bs:selectionEntry', ns):
+            name = e.get('name', '').strip()
+            if not name or name in seen:
+                continue
+            if name_filter and name not in name_filter:
+                continue
+            seen.add(name)
+
+            abilities = []
+            for p in e.findall('.//bs:profile[@typeName="Abilities"]', ns):
+                aname = p.get('name', '')
+                desc = ''
+                for c in p.findall('.//bs:characteristic[@name="Description"]', ns):
+                    desc = (c.text or '').strip()
+                if aname:
+                    abilities.append({'name': aname, 'desc': desc})
+
+            detachments.append({'name': name, 'abilities': abilities})
+
+    return detachments
+
+
+def parse_catalog(cat_path, det_source_path=None, det_name_filter=None):
     try:
         tree = ET.parse(cat_path)
     except ET.ParseError as e:
         print(f'  XML parse error: {e}')
-        return []
+        return [], []
 
     root = tree.getroot()
     ns = NS
     shared_map = build_shared_map(root, ns)
 
+    # ── Units ────────────────────────────────────────────────────────────────
     units = []
-    entries = root.findall('.//bs:selectionEntry[@type="unit"]', ns)
-
-    for e in entries:
+    for e in root.findall('.//bs:selectionEntry[@type="unit"]', ns):
         name = e.get('name', '').strip()
         if not name:
             continue
 
-        # Points cost
         points = 0
         for cost in e.findall('.//bs:cost[@name="pts"]', ns):
             try:
@@ -132,11 +160,9 @@ def parse_catalog(cat_path):
             except ValueError:
                 pass
 
-        # Unit stats — first profile of typeName="Unit"
         stats = {}
         for p in e.findall('.//bs:profile[@typeName="Unit"]', ns):
-            chars = p.findall('.//bs:characteristic', ns)
-            for c in chars:
+            for c in p.findall('.//bs:characteristic', ns):
                 key = c.get('name', '')
                 val = (c.text or '').strip()
                 if key and key not in stats:
@@ -145,9 +171,8 @@ def parse_catalog(cat_path):
                 break
 
         if not stats:
-            continue  # skip entries with no unit stats (likely upgrades)
+            continue
 
-        # Abilities
         abilities = []
         for p in e.findall('.//bs:profile[@typeName="Abilities"]', ns):
             aname = p.get('name', '')
@@ -157,29 +182,34 @@ def parse_catalog(cat_path):
             if aname:
                 abilities.append({'name': aname, 'desc': desc})
 
-        # Weapons — traverse the full subtree
         ranged, melee = extract_weapons_from_element(e, ns, shared_map)
-        ranged = deduplicate_weapons(ranged)
-        melee = deduplicate_weapons(melee)
 
-        # Keywords from categoryLinks
-        keywords = []
-        for cl in e.findall('.//bs:categoryLinks/bs:categoryLink', ns):
-            kw = cl.get('name', '')
-            if kw:
-                keywords.append(kw)
+        keywords = [cl.get('name', '') for cl in e.findall('.//bs:categoryLinks/bs:categoryLink', ns)
+                    if cl.get('name', '')]
 
         units.append({
             'name': name,
             'points': points,
             'stats': stats,
             'keywords': keywords,
-            'rangedWeapons': ranged,
-            'meleeWeapons': melee,
+            'rangedWeapons': deduplicate(ranged),
+            'meleeWeapons': deduplicate(melee),
             'abilities': abilities,
         })
 
-    return units
+    # ── Detachments ──────────────────────────────────────────────────────────
+    if det_source_path and det_source_path.exists():
+        try:
+            det_tree = ET.parse(det_source_path)
+            det_root = det_tree.getroot()
+        except ET.ParseError:
+            det_root = root
+    else:
+        det_root = root
+
+    detachments = extract_detachments_from_root(det_root, ns, det_name_filter)
+
+    return units, detachments
 
 
 def main():
@@ -191,14 +221,17 @@ def main():
 
     manifest = []
 
-    for filename, faction_id, faction_name in CATALOG_MAP:
+    for filename, faction_id, faction_name, det_src_file, det_filter in CATALOG_MAP:
         cat_path = bs_data_dir / filename
         if not cat_path.exists():
             print(f'SKIP (not found): {filename}')
             continue
 
+        det_src = (bs_data_dir / det_src_file) if det_src_file else None
+        det_filt = set(det_filter) if det_filter else None
+
         print(f'Parsing {faction_name}...', end=' ', flush=True)
-        units = parse_catalog(cat_path)
+        units, detachments = parse_catalog(cat_path, det_src, det_filt)
 
         if not units:
             print('0 units — skipped')
@@ -206,16 +239,20 @@ def main():
 
         out_path = output_dir / f'{faction_id}.json'
         with open(out_path, 'w', encoding='utf-8') as f:
-            json.dump({'id': faction_id, 'name': faction_name, 'units': units}, f, ensure_ascii=False)
+            json.dump({
+                'id': faction_id,
+                'name': faction_name,
+                'units': units,
+                'detachments': detachments,
+            }, f, ensure_ascii=False)
 
-        print(f'{len(units)} units -> {out_path.name}')
+        print(f'{len(units)} units, {len(detachments)} detachments -> {out_path.name}')
         manifest.append({'id': faction_id, 'name': faction_name, 'file': f'/bsData-json/{faction_id}.json'})
 
     manifest_path = output_dir / 'manifest.json'
     with open(manifest_path, 'w', encoding='utf-8') as f:
         json.dump(manifest, f, indent=2)
-    print(f'\nManifest written: {manifest_path}')
-    print(f'Done — {len(manifest)} factions')
+    print(f'\nManifest: {manifest_path}  ({len(manifest)} factions)')
 
 
 if __name__ == '__main__':

@@ -14,12 +14,18 @@ export type WeaponProfile = {
   Keywords?: string
 }
 
+export type Detachment = {
+  name: string
+  abilities: { name: string; desc: string }[]
+}
+
 export type Unit = {
   id: string
   name: string
   points: number
   factionId: string
   factionName: string
+  detachment?: Detachment
   stats: Record<string, string>
   keywords: string[]
   rangedWeapons: WeaponProfile[]
@@ -29,7 +35,7 @@ export type Unit = {
 }
 
 type FactionEntry = { id: string; name: string; file: string }
-type RawUnit = Omit<Unit, 'id' | 'factionId' | 'factionName' | 'count'>
+type RawUnit = Omit<Unit, 'id' | 'factionId' | 'factionName' | 'detachment' | 'count'>
 
 type Props = {
   roster: Unit[]
@@ -64,19 +70,25 @@ const FACTION_COLORS: Record<string, string> = {
   'tyranids':                   '#6a1a7a',
 }
 
-function getFactionColor(id: string) {
+export function getFactionColor(id: string) {
   return FACTION_COLORS[id] ?? '#333'
 }
+
+// ── Steps ─────────────────────────────────────────────────────────────────────
+type Step = 'faction' | 'detachment' | 'units'
 
 // ── Component ────────────────────────────────────────────────────────────────
 
 export default function ListBuilder({ roster, onAdd, onRemove, onClear }: Props) {
   const [factions, setFactions] = useState<FactionEntry[]>([])
   const [selectedFaction, setSelectedFaction] = useState<FactionEntry | null>(null)
+  const [availableDetachments, setAvailableDetachments] = useState<Detachment[]>([])
+  const [selectedDetachment, setSelectedDetachment] = useState<Detachment | null>(null)
   const [factionUnits, setFactionUnits] = useState<RawUnit[]>([])
   const [search, setSearch] = useState('')
   const [loading, setLoading] = useState(false)
   const [preview, setPreview] = useState<RawUnit | null>(null)
+  const [step, setStep] = useState<Step>('faction')
 
   useEffect(() => {
     fetch('/bsData-json/manifest.json')
@@ -85,18 +97,20 @@ export default function ListBuilder({ roster, onAdd, onRemove, onClear }: Props)
       .catch(() => setFactions([]))
   }, [])
 
+  // Load faction data when faction is selected
   useEffect(() => {
-    if (!selectedFaction) { setFactionUnits([]); return }
+    if (!selectedFaction) { setFactionUnits([]); setAvailableDetachments([]); return }
     setLoading(true)
     setPreview(null)
     setSearch('')
     fetch(selectedFaction.file)
       .then(r => r.json())
-      .then((data: { units: RawUnit[] }) => {
+      .then((data: { units: RawUnit[]; detachments: Detachment[] }) => {
         setFactionUnits(data.units ?? [])
+        setAvailableDetachments(data.detachments ?? [])
         setLoading(false)
       })
-      .catch(() => { setFactionUnits([]); setLoading(false) })
+      .catch(() => { setFactionUnits([]); setAvailableDetachments([]); setLoading(false) })
   }, [selectedFaction])
 
   const filtered = factionUnits.filter(u =>
@@ -111,87 +125,160 @@ export default function ListBuilder({ roster, onAdd, onRemove, onClear }: Props)
       r => r.name === raw.name && r.factionId === selectedFaction.id
     )
     if (existing) {
-      // increment count instead of duplicating
       onAdd({ ...existing, count: existing.count + 1 })
     } else {
-      const unit: Unit = {
+      onAdd({
         ...raw,
         id: `${selectedFaction.id}__${raw.name}__${Date.now()}`,
         factionId: selectedFaction.id,
         factionName: selectedFaction.name,
+        detachment: selectedDetachment ?? undefined,
         count: 1,
-      }
-      onAdd(unit)
+      })
     }
   }
 
-  // ── Render: No faction selected — show faction grid ──────────────────────
-  if (!selectedFaction) {
+  const goToFaction = () => { setSelectedFaction(null); setSelectedDetachment(null); setStep('faction') }
+  const goToDetachment = () => setStep('detachment')
+  const goToUnits = () => setStep('units')
+
+  const accentColor = selectedFaction ? getFactionColor(selectedFaction.id) : '#333'
+
+  // ── Roster panel (shared across steps) ───────────────────────────────────
+  const RosterPanel = () => roster.length === 0 ? null : (
+    <div className="lb-roster-list">
+      <div className="lb-roster-header">
+        <span className="lb-section-label">Roster — {totalPoints}pts</span>
+        <button className="lb-clear-btn" onClick={onClear}>Clear</button>
+      </div>
+      {roster.map(u => (
+        <div key={u.id} className="lb-roster-row">
+          <div className="lb-roster-info">
+            <span className="lb-roster-name">{u.name}</span>
+            <span className="lb-roster-faction">{u.factionName}{u.detachment ? ` · ${u.detachment.name}` : ''}</span>
+          </div>
+          <div className="lb-roster-right">
+            {u.count > 1 && <span className="lb-roster-count">×{u.count}</span>}
+            <span className="lb-roster-pts">{u.points * u.count}pts</span>
+            <button className="lb-remove-btn" onClick={() => onRemove(u.id)}>✕</button>
+          </div>
+        </div>
+      ))}
+    </div>
+  )
+
+  // ── Step 1: Faction selection ─────────────────────────────────────────────
+  if (step === 'faction') {
     return (
       <div className="lb-root">
         <div className="lb-header">
           <h2 className="lb-title">Select Faction</h2>
           {roster.length > 0 && (
-            <div className="lb-roster-summary">
-              <span>{roster.length} unit{roster.length !== 1 ? 's' : ''}</span>
-              <span className="lb-pts">{totalPoints} pts</span>
-            </div>
+            <span className="lb-pts">{totalPoints}pts · {roster.length} units</span>
           )}
         </div>
-
-        {factions.length === 0 && (
-          <p className="lb-hint">Loading factions…</p>
-        )}
-
+        {factions.length === 0 && <p className="lb-hint">Loading factions…</p>}
         <div className="faction-grid">
           {factions.map(f => (
             <button
               key={f.id}
               className="faction-card"
               style={{ '--faction-color': getFactionColor(f.id) } as React.CSSProperties}
-              onClick={() => setSelectedFaction(f)}
+              onClick={() => {
+                setSelectedFaction(f)
+                setSelectedDetachment(null)
+                setStep('detachment')
+              }}
             >
               <span className="faction-card-name">{f.name}</span>
             </button>
           ))}
         </div>
-
-        {roster.length > 0 && (
-          <div className="lb-roster-list">
-            <div className="lb-roster-header">
-              <span className="lb-section-label">Your Roster</span>
-              <button className="lb-clear-btn" onClick={onClear}>Clear all</button>
-            </div>
-            {roster.map(u => (
-              <div key={u.id} className="lb-roster-row">
-                <div className="lb-roster-info">
-                  <span className="lb-roster-name">{u.name}</span>
-                  <span className="lb-roster-faction">{u.factionName}</span>
-                </div>
-                <div className="lb-roster-right">
-                  {u.count > 1 && <span className="lb-roster-count">×{u.count}</span>}
-                  <span className="lb-roster-pts">{u.points * u.count}pts</span>
-                  <button className="lb-remove-btn" onClick={() => onRemove(u.id)} title="Remove">✕</button>
-                </div>
-              </div>
-            ))}
-          </div>
-        )}
+        <RosterPanel />
       </div>
     )
   }
 
-  // ── Render: Faction selected — show unit list ────────────────────────────
+  // ── Step 2: Detachment selection ──────────────────────────────────────────
+  if (step === 'detachment') {
+    return (
+      <div className="lb-root">
+        <div
+          className="lb-faction-bar"
+          style={{ '--faction-color': accentColor } as React.CSSProperties}
+        >
+          <button className="lb-back-btn" onClick={goToFaction}>← Factions</button>
+          <span className="lb-faction-name">{selectedFaction?.name}</span>
+        </div>
+
+        {loading && <p className="lb-hint">Loading…</p>}
+
+        {!loading && availableDetachments.length === 0 && (
+          <div className="lb-detachment-empty">
+            <p className="lb-hint">No detachment data found in catalog.</p>
+            <button className="lb-skip-btn" onClick={goToUnits}>Browse Units without Detachment →</button>
+          </div>
+        )}
+
+        {!loading && availableDetachments.length > 0 && (
+          <>
+            <div className="lb-step-label">Choose Detachment</div>
+            <div className="lb-detachment-list">
+              {availableDetachments.map(d => (
+                <button
+                  key={d.name}
+                  className={`lb-detachment-card ${selectedDetachment?.name === d.name ? 'selected' : ''}`}
+                  style={{ '--faction-color': accentColor } as React.CSSProperties}
+                  onClick={() => setSelectedDetachment(d)}
+                >
+                  <div className="lb-det-name">{d.name}</div>
+                  {d.abilities.slice(0, 1).map(a => (
+                    <div key={a.name} className="lb-det-rule">
+                      <span className="lb-det-rule-name">{a.name}: </span>
+                      <span className="lb-det-rule-desc">{a.desc.slice(0, 120)}{a.desc.length > 120 ? '…' : ''}</span>
+                    </div>
+                  ))}
+                </button>
+              ))}
+            </div>
+            <div className="lb-det-nav">
+              <button
+                className="lb-skip-btn"
+                onClick={goToUnits}
+              >
+                Skip (no detachment)
+              </button>
+              <button
+                className="lb-confirm-btn"
+                style={{ background: accentColor }}
+                disabled={!selectedDetachment}
+                onClick={goToUnits}
+              >
+                Confirm: {selectedDetachment?.name ?? 'Select one'} →
+              </button>
+            </div>
+          </>
+        )}
+
+        <RosterPanel />
+      </div>
+    )
+  }
+
+  // ── Step 3: Unit list ─────────────────────────────────────────────────────
   return (
     <div className="lb-root">
       <div
         className="lb-faction-bar"
-        style={{ '--faction-color': getFactionColor(selectedFaction.id) } as React.CSSProperties}
+        style={{ '--faction-color': accentColor } as React.CSSProperties}
       >
-        <button className="lb-back-btn" onClick={() => { setSelectedFaction(null); setPreview(null) }}>
-          ← Factions
-        </button>
-        <span className="lb-faction-name">{selectedFaction.name}</span>
+        <button className="lb-back-btn" onClick={goToDetachment}>← Detachment</button>
+        <div className="lb-faction-bar-info">
+          <span className="lb-faction-name">{selectedFaction?.name}</span>
+          {selectedDetachment && (
+            <span className="lb-detachment-chip">{selectedDetachment.name}</span>
+          )}
+        </div>
       </div>
 
       <div className="lb-search-row">
@@ -211,7 +298,7 @@ export default function ListBuilder({ roster, onAdd, onRemove, onClear }: Props)
         <div className="lb-unit-list">
           {filtered.length === 0 && <p className="lb-hint">No units found.</p>}
           {filtered.map(u => {
-            const inRoster = roster.find(r => r.name === u.name && r.factionId === selectedFaction.id)
+            const inRoster = roster.find(r => r.name === u.name && r.factionId === selectedFaction?.id)
             return (
               <div
                 key={u.name}
@@ -270,32 +357,17 @@ export default function ListBuilder({ roster, onAdd, onRemove, onClear }: Props)
               ))}
             </div>
           )}
-          <button className="lb-add-full-btn" onClick={() => handleAdd(preview)}>
+          <button
+            className="lb-add-full-btn"
+            style={{ background: accentColor, color: '#fff' }}
+            onClick={() => handleAdd(preview)}
+          >
             Add to Roster
           </button>
         </div>
       )}
 
-      {roster.length > 0 && (
-        <div className="lb-roster-list lb-roster-compact">
-          <div className="lb-roster-header">
-            <span className="lb-section-label">Roster ({totalPoints}pts)</span>
-            <button className="lb-clear-btn" onClick={onClear}>Clear</button>
-          </div>
-          {roster.map(u => (
-            <div key={u.id} className="lb-roster-row">
-              <div className="lb-roster-info">
-                <span className="lb-roster-name">{u.name}</span>
-              </div>
-              <div className="lb-roster-right">
-                {u.count > 1 && <span className="lb-roster-count">×{u.count}</span>}
-                <span className="lb-roster-pts">{u.points * u.count}pts</span>
-                <button className="lb-remove-btn" onClick={() => onRemove(u.id)}>✕</button>
-              </div>
-            </div>
-          ))}
-        </div>
-      )}
+      <RosterPanel />
     </div>
   )
 }
