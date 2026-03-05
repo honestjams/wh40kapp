@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" id="1069-10ff-3ba9-873b" name="Chaos - Thousand Sons" revision="92" battleScribeVersion="2.03" library="false" gameSystemId="sys-352e-adc2-7639-d6a9" gameSystemRevision="1" type="catalogue">
+<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" id="1069-10ff-3ba9-873b" name="Chaos - Thousand Sons" revision="101" battleScribeVersion="2.03" library="false" gameSystemId="sys-352e-adc2-7639-d6a9" gameSystemRevision="1" type="catalogue">
   <publications>
     <publication id="015a-6212-d737-9044" name="Index - Thousand Sons"/>
   </publications>
@@ -95,13 +95,13 @@
         <profile id="281a-fced-cb79-1fb1" name="Destiny&apos;s Ruin (Psychic)" hidden="false" typeId="6be6-a982-36ad-841a" typeName="Rituals">
           <characteristics>
             <characteristic name="Warp Charge" typeId="ace0-c8c2-e1fe-18b0">5</characteristic>
-            <characteristic name="Effect" typeId="4e3c-58dd-9e6e-e1f4">Select one enemy unit within 24&quot; of and visible to the manifesting model. Until the end of the phase, each time a ^^**Thousand Sons^^** model from your army makes an attack that targets that unit, re-roll a Hit roll of 1. If the Psychic test result for this Ritual was 10+, you can re-roll the Hit roll instead.</characteristic>
+            <characteristic name="Effect" typeId="4e3c-58dd-9e6e-e1f4">Select one enemy unit within 24&quot; of and visible to the manifesting model. Until the end of the phase, each time a ^^**Thousand Sons^^** or ^^**Scintillating Legion^^** model from your army makes an attack that targets that unit, re-roll a Hit roll of 1. If the Psychic test result for this Ritual was 10+, you can re-roll the Hit roll instead.</characteristic>
           </characteristics>
         </profile>
         <profile id="2b05-d481-749c-5dc2" name="Temporal Surge (Psychic)" hidden="false" typeId="6be6-a982-36ad-841a" typeName="Rituals">
           <characteristics>
             <characteristic name="Warp Charge" typeId="ace0-c8c2-e1fe-18b0">6</characteristic>
-            <characteristic name="Effect" typeId="4e3c-58dd-9e6e-e1f4">Select one friendly ^^**Thousand Sons^^** unit that is not within Engagement Range of one or more enemy units and is within 24&quot; of and visible to the manifesting model. That unit can make a Normal move of up to D6&quot;. If the Psychic test result for this Ritual was 10+, that model can make a Normal move of up to 6&quot; instead. In either case, until the end of the turn, that unit is not eligible to declare a charge.</characteristic>
+            <characteristic name="Effect" typeId="4e3c-58dd-9e6e-e1f4">Select one friendly ^^**Thousand Sons^^** or ^^**Scintillating Legion^^** unit that is not within Engagement Range of one or more enemy units and is within 24&quot; of and visible to the manifesting model. That unit can make a Normal move of up to D6&quot;. If the Psychic test result for this Ritual was 10+, that model can make a Normal move of up to 6&quot; instead. In either case, until the end of the turn, that unit is not eligible to declare a charge.</characteristic>
           </characteristics>
         </profile>
         <profile id="d0ad-643f-41db-76b4" name="Doombolt (Psychic)" hidden="false" typeId="6be6-a982-36ad-841a" typeName="Rituals">
@@ -113,7 +113,7 @@
         <profile id="e595-1ea6-ed77-6206" name="Twist of Fate (Psychic)" hidden="false" typeId="6be6-a982-36ad-841a" typeName="Rituals">
           <characteristics>
             <characteristic name="Warp Charge" typeId="ace0-c8c2-e1fe-18b0">9</characteristic>
-            <characteristic name="Effect" typeId="4e3c-58dd-9e6e-e1f4">Select one enemy unit within 24&quot; of and visible to the manifesting model. Until the end of the phase, each time a ^^**Thousand Sons^^** model from your army makes an attack that targets that unit, improve the Armour Penetration characteristic of that attack by 1. If the Psychic test result for this Ritual was 12+, improve the Armour Penetration characteristic of that attack by 2 instead.</characteristic>
+            <characteristic name="Effect" typeId="4e3c-58dd-9e6e-e1f4">Select one enemy unit within 24&quot; of and visible to the manifesting model. Until the end of the phase, each time a ^^**Thousand Sons^^** or ^^**Scintillating Legion^^** model from your army makes an attack that targets that unit, improve the Armour Penetration characteristic of that attack by 1. If the Psychic test result for this Ritual was 12+, improve the Armour Penetration characteristic of that attack by 2 instead.</characteristic>
           </characteristics>
         </profile>
       </profiles>
@@ -3057,11 +3057,12 @@ Each time a ^^**Thousand Sons Vehicle^^** model from your army with the Deadly D
         <entryLink import="true" name="Crusade" hidden="false" id="07ce-48ad-e04e-4778" type="selectionEntryGroup" targetId="965a-b245-f1be-9dbd" sortIndex="1"/>
       </entryLinks>
       <costs>
-        <cost name="pts" typeId="51b2-306e-1021-d207" value="140"/>
+        <cost name="pts" typeId="51b2-306e-1021-d207" value="130"/>
         <cost name="Crusade Points" typeId="b03b-c239-15a5-da55" value="0"/>
         <cost name="Crusade: Battle Honours" typeId="75bb-ded1-c86d-bdf0" value="0"/>
         <cost name="Crusade: Experience" typeId="a623-fe74-1d33-cddf" value="0"/>
         <cost name="Crusade: Weapon Modifications" typeId="716d-91b7-d55a-1022" value="0"/>
+        <cost name="Blackstone Fragments" typeId="ac6b-ced3-9b5e-9a6e" value="0"/>
       </costs>
       <modifierGroups>
         <modifierGroup type="and">
@@ -4700,11 +4701,12 @@ Each time a ^^**Thousand Sons Vehicle^^** model from your army with the Deadly D
         </selectionEntryGroup>
       </selectionEntryGroups>
       <costs>
-        <cost name="pts" typeId="51b2-306e-1021-d207" value="140"/>
+        <cost name="pts" typeId="51b2-306e-1021-d207" value="130"/>
         <cost name="Crusade Points" typeId="b03b-c239-15a5-da55" value="0"/>
         <cost name="Crusade: Battle Honours" typeId="75bb-ded1-c86d-bdf0" value="0"/>
         <cost name="Crusade: Experience" typeId="a623-fe74-1d33-cddf" value="0"/>
         <cost name="Crusade: Weapon Modifications" typeId="716d-91b7-d55a-1022" value="0"/>
+        <cost name="Blackstone Fragments" typeId="ac6b-ced3-9b5e-9a6e" value="0"/>
       </costs>
       <entryLinks>
         <entryLink import="true" name="Crusade" hidden="false" id="87fd-5be4-41aa-0dde" type="selectionEntryGroup" targetId="965a-b245-f1be-9dbd" sortIndex="1"/>
@@ -6136,11 +6138,12 @@ Each time a ^^**Thousand Sons Vehicle^^** model from your army with the Deadly D
         </selectionEntryGroup>
       </selectionEntryGroups>
       <costs>
-        <cost name="pts" typeId="51b2-306e-1021-d207" value="130"/>
+        <cost name="pts" typeId="51b2-306e-1021-d207" value="120"/>
         <cost name="Crusade Points" typeId="b03b-c239-15a5-da55" value="0"/>
         <cost name="Crusade: Battle Honours" typeId="75bb-ded1-c86d-bdf0" value="0"/>
         <cost name="Crusade: Experience" typeId="a623-fe74-1d33-cddf" value="0"/>
         <cost name="Crusade: Weapon Modifications" typeId="716d-91b7-d55a-1022" value="0"/>
+        <cost name="Blackstone Fragments" typeId="ac6b-ced3-9b5e-9a6e" value="0"/>
       </costs>
       <entryLinks>
         <entryLink import="true" name="Crusade" hidden="false" id="9623-2fb7-508f-48c7" type="selectionEntryGroup" targetId="965a-b245-f1be-9dbd" sortIndex="1"/>
@@ -6237,7 +6240,7 @@ Each time a ^^**Thousand Sons Vehicle^^** model from your army with the Deadly D
         </profile>
         <profile id="4b6d-e4b8-2cfa-42a6" name="Immaterial Flare (Aura)" hidden="false" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities">
           <characteristics>
-            <characteristic name="Description" typeId="9b8f-694b-e5e-b573">While a friendly ^^**Thousand Sons Psyker^^** unit is within 6&quot; of this model, each time that unit Channels the Warp, add 1 to the Psychic test result. This is not cumulative with any other modifiers to the Psychic test result.</characteristic>
+            <characteristic name="Description" typeId="9b8f-694b-e5e-b573">While a friendly ^^**Thousand Sons Psyker^^** model is within 6&quot; of this model, each time that model Channels the Warp, add 1 to the Psychic test result. This is not cumulative with any other modifiers to the Psychic test result.</characteristic>
           </characteristics>
         </profile>
       </profiles>
@@ -6264,7 +6267,7 @@ Each time a ^^**Thousand Sons Vehicle^^** model from your army with the Deadly D
         <categoryLink name="Mutant" hidden="false" id="7c68-29ef-db23-76ce" targetId="24dd-cf44-f6ab-e0e2" primary="false"/>
       </categoryLinks>
       <costs>
-        <cost name="pts" typeId="51b2-306e-1021-d207" value="175"/>
+        <cost name="pts" typeId="51b2-306e-1021-d207" value="170"/>
         <cost name="Crusade Points" typeId="b03b-c239-15a5-da55" value="0"/>
         <cost name="Crusade: Battle Honours" typeId="75bb-ded1-c86d-bdf0" value="0"/>
         <cost name="Crusade: Experience" typeId="a623-fe74-1d33-cddf" value="0"/>
@@ -6457,7 +6460,7 @@ Each time a ^^**Thousand Sons Vehicle^^** model from your army with the Deadly D
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Rubric Marines" hidden="false" id="5d3d-e13b-8b76-dad3">
       <costs>
-        <cost name="pts" typeId="51b2-306e-1021-d207" value="105"/>
+        <cost name="pts" typeId="51b2-306e-1021-d207" value="100"/>
         <cost name="Crusade Points" typeId="b03b-c239-15a5-da55" value="0"/>
         <cost name="Crusade: Battle Honours" typeId="75bb-ded1-c86d-bdf0" value="0"/>
         <cost name="Crusade: Experience" typeId="a623-fe74-1d33-cddf" value="0"/>
@@ -7628,7 +7631,7 @@ Wound roll.</characteristic>
         <entryLink import="true" name="Crusade" hidden="false" id="026d-e392-0b48-4877" type="selectionEntryGroup" targetId="965a-b245-f1be-9dbd" sortIndex="1"/>
       </entryLinks>
       <costs>
-        <cost name="pts" typeId="51b2-306e-1021-d207" value="85"/>
+        <cost name="pts" typeId="51b2-306e-1021-d207" value="80"/>
         <cost name="Crusade Points" typeId="b03b-c239-15a5-da55" value="0"/>
         <cost name="Crusade: Battle Honours" typeId="75bb-ded1-c86d-bdf0" value="0"/>
         <cost name="Crusade: Experience" typeId="a623-fe74-1d33-cddf" value="0"/>
@@ -8605,7 +8608,7 @@ Wound roll.</characteristic>
         </selectionEntryGroup>
       </selectionEntryGroups>
       <costs>
-        <cost name="pts" typeId="51b2-306e-1021-d207" value="55"/>
+        <cost name="pts" typeId="51b2-306e-1021-d207" value="45"/>
         <cost name="Crusade Points" typeId="b03b-c239-15a5-da55" value="0"/>
         <cost name="Crusade: Battle Honours" typeId="75bb-ded1-c86d-bdf0" value="0"/>
         <cost name="Crusade: Experience" typeId="a623-fe74-1d33-cddf" value="0"/>
@@ -10982,7 +10985,7 @@ Wound roll.</characteristic>
         </profile>
       </profiles>
       <costs>
-        <cost name="pts" typeId="51b2-306e-1021-d207" value="60"/>
+        <cost name="pts" typeId="51b2-306e-1021-d207" value="55"/>
         <cost name="Crusade Points" typeId="b03b-c239-15a5-da55" value="0"/>
         <cost name="Crusade: Battle Honours" typeId="75bb-ded1-c86d-bdf0" value="0"/>
         <cost name="Crusade: Experience" typeId="a623-fe74-1d33-cddf" value="0"/>
@@ -11233,8 +11236,8 @@ Wound roll.</characteristic>
                 <characteristic name="A" typeId="3bb-c35f-f54-fb08">D3+6</characteristic>
                 <characteristic name="BS" typeId="94d-8a98-cf90-183e">2+</characteristic>
                 <characteristic name="S" typeId="2229-f494-25db-c5d3">9</characteristic>
-                <characteristic name="AP" typeId="9ead-8a10-520-de15">-3</characteristic>
-                <characteristic name="D" typeId="a354-c1c8-a745-f9e3">D3</characteristic>
+                <characteristic name="AP" typeId="9ead-8a10-520-de15">-2</characteristic>
+                <characteristic name="D" typeId="a354-c1c8-a745-f9e3">3</characteristic>
                 <characteristic name="Keywords" typeId="7f1b-8591-2fcf-d01c">Blast, Hazardous, Indirect Fire, Psychic</characteristic>
               </characteristics>
             </profile>
@@ -11285,11 +11288,12 @@ Wound roll.</characteristic>
         </modifier>
       </modifiers>
       <costs>
-        <cost name="pts" typeId="51b2-306e-1021-d207" value="260"/>
+        <cost name="pts" typeId="51b2-306e-1021-d207" value="285"/>
         <cost name="Crusade Points" typeId="b03b-c239-15a5-da55" value="0"/>
         <cost name="Crusade: Battle Honours" typeId="75bb-ded1-c86d-bdf0" value="0"/>
         <cost name="Crusade: Experience" typeId="a623-fe74-1d33-cddf" value="0"/>
         <cost name="Crusade: Weapon Modifications" typeId="716d-91b7-d55a-1022" value="0"/>
+        <cost name="Blackstone Fragments" typeId="ac6b-ced3-9b5e-9a6e" value="0"/>
       </costs>
       <selectionEntryGroups>
         <selectionEntryGroup name="Crusade" id="dc6f-3c31-de32-f0c8" hidden="false" sortIndex="1">
@@ -11378,7 +11382,7 @@ Wound roll.</characteristic>
                 <characteristic name="BS" typeId="94d-8a98-cf90-183e">2+</characteristic>
                 <characteristic name="S" typeId="2229-f494-25db-c5d3">9</characteristic>
                 <characteristic name="AP" typeId="9ead-8a10-520-de15">-2</characteristic>
-                <characteristic name="D" typeId="a354-c1c8-a745-f9e3">D3</characteristic>
+                <characteristic name="D" typeId="a354-c1c8-a745-f9e3">3</characteristic>
                 <characteristic name="Keywords" typeId="7f1b-8591-2fcf-d01c">Hazardous, Psychic</characteristic>
               </characteristics>
             </profile>
@@ -11418,12 +11422,12 @@ Wound roll.</characteristic>
               <profiles>
                 <profile name="Rod of sorcery" typeId="f77d-b953-8fa4-b762" typeName="Ranged Weapons" hidden="false" id="9da1-3b2c-0886-63ca">
                   <characteristics>
-                    <characteristic name="Range" typeId="9896-9419-16a1-92fc">12&quot;</characteristic>
+                    <characteristic name="Range" typeId="9896-9419-16a1-92fc">18&quot;</characteristic>
                     <characteristic name="A" typeId="3bb-c35f-f54-fb08">6</characteristic>
                     <characteristic name="BS" typeId="94d-8a98-cf90-183e">2+</characteristic>
                     <characteristic name="S" typeId="2229-f494-25db-c5d3">8</characteristic>
                     <characteristic name="AP" typeId="9ead-8a10-520-de15">-1</characteristic>
-                    <characteristic name="D" typeId="a354-c1c8-a745-f9e3">D3</characteristic>
+                    <characteristic name="D" typeId="a354-c1c8-a745-f9e3">2</characteristic>
                     <characteristic name="Keywords" typeId="7f1b-8591-2fcf-d01c">Psychic</characteristic>
                   </characteristics>
                 </profile>
@@ -11484,11 +11488,12 @@ Wound roll.</characteristic>
         </modifier>
       </modifiers>
       <costs>
-        <cost name="pts" typeId="51b2-306e-1021-d207" value="250"/>
+        <cost name="pts" typeId="51b2-306e-1021-d207" value="270"/>
         <cost name="Crusade Points" typeId="b03b-c239-15a5-da55" value="0"/>
         <cost name="Crusade: Battle Honours" typeId="75bb-ded1-c86d-bdf0" value="0"/>
         <cost name="Crusade: Experience" typeId="a623-fe74-1d33-cddf" value="0"/>
         <cost name="Crusade: Weapon Modifications" typeId="716d-91b7-d55a-1022" value="0"/>
+        <cost name="Blackstone Fragments" typeId="ac6b-ced3-9b5e-9a6e" value="0"/>
       </costs>
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Flamers" hidden="false" id="694f-a205-b260-783c">
@@ -11897,10 +11902,10 @@ Wound roll.</characteristic>
             <characteristic name="SV" typeId="450-a17e-9d5e-29da">7+</characteristic>
             <characteristic name="W" typeId="750a-a2ec-90d3-21fe">1</characteristic>
             <characteristic name="LD" typeId="58d2-b879-49c7-43bc">8+</characteristic>
-            <characteristic name="OC" typeId="bef7-942a-1a23-59f8">1</characteristic>
+            <characteristic name="OC" typeId="bef7-942a-1a23-59f8">0</characteristic>
           </characteristics>
         </profile>
-        <profile name="Coruscating Blue flames (ref. only)" typeId="f77d-b953-8fa4-b762" typeName="Ranged Weapons" hidden="false" id="8187-e507-1b3f-bdc8">
+        <profile name="Coruscating blue flames (ref. only)" typeId="f77d-b953-8fa4-b762" typeName="Ranged Weapons" hidden="false" id="8187-e507-1b3f-bdc8">
           <characteristics>
             <characteristic name="Range" typeId="9896-9419-16a1-92fc">18&quot;</characteristic>
             <characteristic name="A" typeId="3bb-c35f-f54-fb08">2</characteristic>
@@ -11911,7 +11916,7 @@ Wound roll.</characteristic>
             <characteristic name="Keywords" typeId="7f1b-8591-2fcf-d01c">Pistol, Psychic</characteristic>
           </characteristics>
         </profile>
-        <profile name="Coruscating Yellow flames (ref. only)" typeId="f77d-b953-8fa4-b762" typeName="Ranged Weapons" hidden="false" id="c6e3-f9a4-bd8b-7404">
+        <profile name="Coruscating yellow flames (ref. only)" typeId="f77d-b953-8fa4-b762" typeName="Ranged Weapons" hidden="false" id="c6e3-f9a4-bd8b-7404">
           <characteristics>
             <characteristic name="Range" typeId="9896-9419-16a1-92fc">18&quot;</characteristic>
             <characteristic name="A" typeId="3bb-c35f-f54-fb08">2</characteristic>
@@ -11926,8 +11931,7 @@ Wound roll.</characteristic>
           <characteristics>
             <characteristic name="Description" typeId="9b8f-694b-e5e-b573">If, at any point, this unit contains no ^^Pink Horrors^^ models, use the ^^Blue Horrors^^ datasheet for this unit. 
 
-
-_Designer’s Note: While this unit contains one or more ^^Pink Horrors^^ models, the Cackling Horrors and Exploding Horrors abilities from the Blue Horrors datasheet do not apply to this unit._</characteristic>
+_Designer’s Note: While this unit contains one or more ^^Pink Horrors^^ models, the Sullen Malevolence and Exploding Horrors abilities from the Blue Horrors datasheet do not apply to this unit._</characteristic>
           </characteristics>
         </profile>
         <profile name="Yellow claws (ref. only)" typeId="8a40-4aaa-c780-9046" typeName="Melee Weapons" hidden="false" id="4c00-2b76-ac5d-a2c3">
@@ -11981,6 +11985,7 @@ _Designer’s Note: While this unit contains one or more ^^Pink Horrors^^ models
           <characteristics>
             <characteristic name="Description" typeId="9b8f-694b-e5e-b573">While an enemy unit is within 6&quot; of this unit, if this unit contains one or more ^^**Blue Horror^^** models, worsen the Leadership characteristic of models in that enemy unit by 1.</characteristic>
           </characteristics>
+          <alias>Sullen Malevolence</alias>
         </profile>
         <profile name="Exploding Horrors" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="d214-12b7-8993-e6f7">
           <characteristics>
@@ -12036,7 +12041,7 @@ _Designer’s Note: While this unit contains one or more ^^Pink Horrors^^ models
               <characteristics>
                 <characteristic name="M" typeId="e703-ecb6-5ce7-aec1">6&quot;</characteristic>
                 <characteristic name="T" typeId="d29d-cf75-fc2d-34a4">3</characteristic>
-                <characteristic name="SV" typeId="450-a17e-9d5e-29da">8+</characteristic>
+                <characteristic name="SV" typeId="450-a17e-9d5e-29da">7+</characteristic>
                 <characteristic name="W" typeId="750a-a2ec-90d3-21fe">1</characteristic>
                 <characteristic name="LD" typeId="58d2-b879-49c7-43bc">8+</characteristic>
                 <characteristic name="OC" typeId="bef7-942a-1a23-59f8">0</characteristic>
@@ -12301,10 +12306,17 @@ _Designer’s Note: While this unit contains one or more ^^Pink Horrors^^ models
           <modifiers>
             <modifier type="set" value="true" field="hidden">
               <conditionGroups>
-                <conditionGroup type="and">
+                <conditionGroup type="or">
+                  <conditionGroups>
+                    <conditionGroup type="and">
+                      <conditions>
+                        <condition type="lessThan" value="1" field="forces" scope="roster" childId="cac3-71d1-ea4b-795d" shared="true" includeChildSelections="true" includeChildForces="true"/>
+                        <condition type="equalTo" value="0" field="selections" scope="roster" childId="9aba-cb08-cd38-9e01" shared="true" includeChildSelections="true"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
                   <conditions>
-                    <condition type="lessThan" value="1" field="forces" scope="roster" childId="cac3-71d1-ea4b-795d" shared="true" includeChildSelections="true" includeChildForces="true"/>
-                    <condition type="equalTo" value="0" field="selections" scope="roster" childId="9aba-cb08-cd38-9e01" shared="true" includeChildSelections="true"/>
+                    <condition type="notInstanceOf" value="1" field="selections" scope="ancestor" childId="7002-1fbb-7571-e8e7" shared="true"/>
                   </conditions>
                 </conditionGroup>
               </conditionGroups>
@@ -12346,10 +12358,17 @@ _Designer’s Note: While this unit contains one or more ^^Pink Horrors^^ models
           <modifiers>
             <modifier type="set" value="true" field="hidden">
               <conditionGroups>
-                <conditionGroup type="and">
+                <conditionGroup type="or">
+                  <conditionGroups>
+                    <conditionGroup type="and">
+                      <conditions>
+                        <condition type="lessThan" value="1" field="forces" scope="roster" childId="cac3-71d1-ea4b-795d" shared="true" includeChildSelections="true" includeChildForces="true"/>
+                        <condition type="equalTo" value="0" field="selections" scope="roster" childId="9aba-cb08-cd38-9e01" shared="true" includeChildSelections="true"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
                   <conditions>
-                    <condition type="lessThan" value="1" field="forces" scope="roster" childId="cac3-71d1-ea4b-795d" shared="true" includeChildSelections="true" includeChildForces="true"/>
-                    <condition type="equalTo" value="0" field="selections" scope="roster" childId="9aba-cb08-cd38-9e01" shared="true" includeChildSelections="true"/>
+                    <condition type="notInstanceOf" value="1" field="selections" scope="ancestor" childId="7002-1fbb-7571-e8e7" shared="true"/>
                   </conditions>
                 </conditionGroup>
               </conditionGroups>
@@ -12379,10 +12398,17 @@ _Designer’s Note: While this unit contains one or more ^^Pink Horrors^^ models
           <modifiers>
             <modifier type="set" value="true" field="hidden">
               <conditionGroups>
-                <conditionGroup type="and">
+                <conditionGroup type="or">
+                  <conditionGroups>
+                    <conditionGroup type="and">
+                      <conditions>
+                        <condition type="lessThan" value="1" field="forces" scope="roster" childId="cac3-71d1-ea4b-795d" shared="true" includeChildSelections="true" includeChildForces="true"/>
+                        <condition type="equalTo" value="0" field="selections" scope="roster" childId="9aba-cb08-cd38-9e01" shared="true" includeChildSelections="true"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
                   <conditions>
-                    <condition type="lessThan" value="1" field="forces" scope="roster" childId="cac3-71d1-ea4b-795d" shared="true" includeChildSelections="true" includeChildForces="true"/>
-                    <condition type="equalTo" value="0" field="selections" scope="roster" childId="9aba-cb08-cd38-9e01" shared="true" includeChildSelections="true"/>
+                    <condition type="notInstanceOf" value="1" field="selections" scope="ancestor" childId="7002-1fbb-7571-e8e7" shared="true"/>
                   </conditions>
                 </conditionGroup>
               </conditionGroups>
@@ -12460,10 +12486,17 @@ _Designer’s Note: While this unit contains one or more ^^Pink Horrors^^ models
           <modifiers>
             <modifier type="set" value="true" field="hidden">
               <conditionGroups>
-                <conditionGroup type="and">
+                <conditionGroup type="or">
+                  <conditionGroups>
+                    <conditionGroup type="and">
+                      <conditions>
+                        <condition type="lessThan" value="1" field="forces" scope="roster" childId="cac3-71d1-ea4b-795d" shared="true" includeChildSelections="true" includeChildForces="true"/>
+                        <condition type="equalTo" value="0" field="selections" scope="roster" childId="7b92-cca6-0617-1b6d" shared="true" includeChildSelections="true"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
                   <conditions>
-                    <condition type="lessThan" value="1" field="forces" scope="roster" childId="cac3-71d1-ea4b-795d" shared="true" includeChildSelections="true" includeChildForces="true"/>
-                    <condition type="equalTo" value="0" field="selections" scope="roster" childId="7b92-cca6-0617-1b6d" shared="true" includeChildSelections="true"/>
+                    <condition type="notInstanceOf" value="1" field="selections" scope="ancestor" childId="7002-1fbb-7571-e8e7" shared="true"/>
                   </conditions>
                 </conditionGroup>
               </conditionGroups>
@@ -12492,10 +12525,17 @@ _Designer’s Note: While this unit contains one or more ^^Pink Horrors^^ models
           <modifiers>
             <modifier type="set" value="true" field="hidden">
               <conditionGroups>
-                <conditionGroup type="and">
+                <conditionGroup type="or">
+                  <conditionGroups>
+                    <conditionGroup type="and">
+                      <conditions>
+                        <condition type="lessThan" value="1" field="forces" scope="roster" childId="cac3-71d1-ea4b-795d" shared="true" includeChildSelections="true" includeChildForces="true"/>
+                        <condition type="equalTo" value="0" field="selections" scope="roster" childId="7b92-cca6-0617-1b6d" shared="true" includeChildSelections="true"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
                   <conditions>
-                    <condition type="lessThan" value="1" field="forces" scope="roster" childId="cac3-71d1-ea4b-795d" shared="true" includeChildSelections="true" includeChildForces="true"/>
-                    <condition type="equalTo" value="0" field="selections" scope="roster" childId="7b92-cca6-0617-1b6d" shared="true" includeChildSelections="true"/>
+                    <condition type="notInstanceOf" value="1" field="selections" scope="ancestor" childId="7002-1fbb-7571-e8e7" shared="true"/>
                   </conditions>
                 </conditionGroup>
               </conditionGroups>
@@ -12524,10 +12564,17 @@ _Designer’s Note: While this unit contains one or more ^^Pink Horrors^^ models
           <modifiers>
             <modifier type="set" value="true" field="hidden">
               <conditionGroups>
-                <conditionGroup type="and">
+                <conditionGroup type="or">
+                  <conditionGroups>
+                    <conditionGroup type="and">
+                      <conditions>
+                        <condition type="lessThan" value="1" field="forces" scope="roster" childId="cac3-71d1-ea4b-795d" shared="true" includeChildSelections="true" includeChildForces="true"/>
+                        <condition type="equalTo" value="0" field="selections" scope="roster" childId="7b92-cca6-0617-1b6d" shared="true" includeChildSelections="true"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
                   <conditions>
-                    <condition type="lessThan" value="1" field="forces" scope="roster" childId="cac3-71d1-ea4b-795d" shared="true" includeChildSelections="true" includeChildForces="true"/>
-                    <condition type="equalTo" value="0" field="selections" scope="roster" childId="7b92-cca6-0617-1b6d" shared="true" includeChildSelections="true"/>
+                    <condition type="notInstanceOf" value="1" field="selections" scope="ancestor" childId="7002-1fbb-7571-e8e7" shared="true"/>
                   </conditions>
                 </conditionGroup>
               </conditionGroups>
@@ -12556,10 +12603,17 @@ _Designer’s Note: While this unit contains one or more ^^Pink Horrors^^ models
           <modifiers>
             <modifier type="set" value="true" field="hidden">
               <conditionGroups>
-                <conditionGroup type="and">
+                <conditionGroup type="or">
+                  <conditionGroups>
+                    <conditionGroup type="and">
+                      <conditions>
+                        <condition type="lessThan" value="1" field="forces" scope="roster" childId="cac3-71d1-ea4b-795d" shared="true" includeChildSelections="true" includeChildForces="true"/>
+                        <condition type="equalTo" value="0" field="selections" scope="roster" childId="7b92-cca6-0617-1b6d" shared="true" includeChildSelections="true"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
                   <conditions>
-                    <condition type="lessThan" value="1" field="forces" scope="roster" childId="cac3-71d1-ea4b-795d" shared="true" includeChildSelections="true" includeChildForces="true"/>
-                    <condition type="equalTo" value="0" field="selections" scope="roster" childId="7b92-cca6-0617-1b6d" shared="true" includeChildSelections="true"/>
+                    <condition type="notInstanceOf" value="1" field="selections" scope="ancestor" childId="7002-1fbb-7571-e8e7" shared="true"/>
                   </conditions>
                 </conditionGroup>
               </conditionGroups>
@@ -12885,10 +12939,17 @@ _Designer’s Note: While this unit contains one or more ^^Pink Horrors^^ models
           <modifiers>
             <modifier type="set" value="true" field="hidden">
               <conditionGroups>
-                <conditionGroup type="and">
+                <conditionGroup type="or">
+                  <conditionGroups>
+                    <conditionGroup type="and">
+                      <conditions>
+                        <condition type="lessThan" value="1" field="forces" scope="roster" childId="cac3-71d1-ea4b-795d" shared="true" includeChildSelections="true" includeChildForces="true"/>
+                        <condition type="equalTo" value="0" field="selections" scope="roster" childId="7510-5cb8-60fe-61a0" shared="true" includeChildSelections="true"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
                   <conditions>
-                    <condition type="lessThan" value="1" field="forces" scope="roster" childId="cac3-71d1-ea4b-795d" shared="true" includeChildSelections="true" includeChildForces="true"/>
-                    <condition type="equalTo" value="0" field="selections" scope="roster" childId="7510-5cb8-60fe-61a0" shared="true" includeChildSelections="true"/>
+                    <condition type="notInstanceOf" value="1" field="selections" scope="ancestor" childId="7002-1fbb-7571-e8e7" shared="true"/>
                   </conditions>
                 </conditionGroup>
               </conditionGroups>
@@ -12917,10 +12978,17 @@ _Designer’s Note: While this unit contains one or more ^^Pink Horrors^^ models
           <modifiers>
             <modifier type="set" value="true" field="hidden">
               <conditionGroups>
-                <conditionGroup type="and">
+                <conditionGroup type="or">
+                  <conditionGroups>
+                    <conditionGroup type="and">
+                      <conditions>
+                        <condition type="lessThan" value="1" field="forces" scope="roster" childId="cac3-71d1-ea4b-795d" shared="true" includeChildSelections="true" includeChildForces="true"/>
+                        <condition type="equalTo" value="0" field="selections" scope="roster" childId="7510-5cb8-60fe-61a0" shared="true" includeChildSelections="true"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
                   <conditions>
-                    <condition type="lessThan" value="1" field="forces" scope="roster" childId="cac3-71d1-ea4b-795d" shared="true" includeChildSelections="true" includeChildForces="true"/>
-                    <condition type="equalTo" value="0" field="selections" scope="roster" childId="7510-5cb8-60fe-61a0" shared="true" includeChildSelections="true"/>
+                    <condition type="notInstanceOf" value="1" field="selections" scope="ancestor" childId="7002-1fbb-7571-e8e7" shared="true"/>
                   </conditions>
                 </conditionGroup>
               </conditionGroups>
@@ -12949,10 +13017,17 @@ _Designer’s Note: While this unit contains one or more ^^Pink Horrors^^ models
           <modifiers>
             <modifier type="set" value="true" field="hidden">
               <conditionGroups>
-                <conditionGroup type="and">
+                <conditionGroup type="or">
+                  <conditionGroups>
+                    <conditionGroup type="and">
+                      <conditions>
+                        <condition type="lessThan" value="1" field="forces" scope="roster" childId="cac3-71d1-ea4b-795d" shared="true" includeChildSelections="true" includeChildForces="true"/>
+                        <condition type="equalTo" value="0" field="selections" scope="roster" childId="7510-5cb8-60fe-61a0" shared="true" includeChildSelections="true"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
                   <conditions>
-                    <condition type="lessThan" value="1" field="forces" scope="roster" childId="cac3-71d1-ea4b-795d" shared="true" includeChildSelections="true" includeChildForces="true"/>
-                    <condition type="equalTo" value="0" field="selections" scope="roster" childId="7510-5cb8-60fe-61a0" shared="true" includeChildSelections="true"/>
+                    <condition type="notInstanceOf" value="1" field="selections" scope="ancestor" childId="7002-1fbb-7571-e8e7" shared="true"/>
                   </conditions>
                 </conditionGroup>
               </conditionGroups>
@@ -13019,11 +13094,18 @@ _Designer’s Note: While this unit contains one or more ^^Pink Horrors^^ models
           <modifiers>
             <modifier type="set" value="true" field="hidden">
               <conditionGroups>
-                <conditionGroup type="and">
+                <conditionGroup type="or">
                   <conditions>
-                    <condition type="lessThan" value="1" field="forces" scope="roster" childId="cac3-71d1-ea4b-795d" shared="true" includeChildSelections="true" includeChildForces="true"/>
-                    <condition type="equalTo" value="0" field="selections" scope="roster" childId="8839-1789-36e7-b66a" shared="true" includeChildSelections="true"/>
+                    <condition type="notInstanceOf" value="1" field="selections" scope="ancestor" childId="7002-1fbb-7571-e8e7" shared="true"/>
                   </conditions>
+                  <conditionGroups>
+                    <conditionGroup type="and">
+                      <conditions>
+                        <condition type="lessThan" value="1" field="forces" scope="roster" childId="cac3-71d1-ea4b-795d" shared="true" includeChildSelections="true" includeChildForces="true"/>
+                        <condition type="equalTo" value="0" field="selections" scope="roster" childId="8839-1789-36e7-b66a" shared="true" includeChildSelections="true"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
                 </conditionGroup>
               </conditionGroups>
             </modifier>
@@ -13088,10 +13170,17 @@ _Designer’s Note: While this unit contains one or more ^^Pink Horrors^^ models
           <modifiers>
             <modifier type="set" value="true" field="hidden">
               <conditionGroups>
-                <conditionGroup type="and">
+                <conditionGroup type="or">
+                  <conditionGroups>
+                    <conditionGroup type="and">
+                      <conditions>
+                        <condition type="lessThan" value="1" field="forces" scope="roster" childId="cac3-71d1-ea4b-795d" shared="true" includeChildSelections="true" includeChildForces="true"/>
+                        <condition type="equalTo" value="0" field="selections" scope="roster" childId="8839-1789-36e7-b66a" shared="true" includeChildSelections="true"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
                   <conditions>
-                    <condition type="lessThan" value="1" field="forces" scope="roster" childId="cac3-71d1-ea4b-795d" shared="true" includeChildSelections="true" includeChildForces="true"/>
-                    <condition type="equalTo" value="0" field="selections" scope="roster" childId="8839-1789-36e7-b66a" shared="true" includeChildSelections="true"/>
+                    <condition type="notInstanceOf" value="1" field="selections" scope="ancestor" childId="7002-1fbb-7571-e8e7" shared="true"/>
                   </conditions>
                 </conditionGroup>
               </conditionGroups>
@@ -13120,10 +13209,17 @@ _Designer’s Note: While this unit contains one or more ^^Pink Horrors^^ models
           <modifiers>
             <modifier type="set" value="true" field="hidden">
               <conditionGroups>
-                <conditionGroup type="and">
+                <conditionGroup type="or">
+                  <conditionGroups>
+                    <conditionGroup type="and">
+                      <conditions>
+                        <condition type="lessThan" value="1" field="forces" scope="roster" childId="cac3-71d1-ea4b-795d" shared="true" includeChildSelections="true" includeChildForces="true"/>
+                        <condition type="equalTo" value="0" field="selections" scope="roster" childId="8839-1789-36e7-b66a" shared="true" includeChildSelections="true"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
                   <conditions>
-                    <condition type="lessThan" value="1" field="forces" scope="roster" childId="cac3-71d1-ea4b-795d" shared="true" includeChildSelections="true" includeChildForces="true"/>
-                    <condition type="equalTo" value="0" field="selections" scope="roster" childId="8839-1789-36e7-b66a" shared="true" includeChildSelections="true"/>
+                    <condition type="notInstanceOf" value="1" field="selections" scope="ancestor" childId="7002-1fbb-7571-e8e7" shared="true"/>
                   </conditions>
                 </conditionGroup>
               </conditionGroups>
@@ -13719,10 +13815,13 @@ _Designer’s Note: While this unit contains one or more ^^Pink Horrors^^ models
                             <condition type="lessThan" value="1" field="selections" scope="parent" childId="ffda-ad50-fc24-ddba" shared="true" includeChildForces="true" includeChildSelections="true"/>
                           </conditions>
                         </conditionGroup>
+                        <conditionGroup type="and">
+                          <conditions>
+                            <condition type="lessThan" value="1" field="selections" scope="parent" childId="b372-fd9b-7b0e-9a55" shared="true" includeChildSelections="true"/>
+                            <condition type="lessThan" value="31" field="a623-fe74-1d33-cddf" scope="root-entry" childId="any" shared="true" includeChildSelections="true"/>
+                          </conditions>
+                        </conditionGroup>
                       </conditionGroups>
-                      <conditions>
-                        <condition type="lessThan" value="31" field="a623-fe74-1d33-cddf" scope="root-entry" childId="any" shared="true" includeChildSelections="true"/>
-                      </conditions>
                     </conditionGroup>
                   </conditionGroups>
                 </modifier>
@@ -13762,10 +13861,13 @@ _Designer’s Note: While this unit contains one or more ^^Pink Horrors^^ models
                             <condition type="lessThan" value="1" field="selections" scope="parent" childId="2056-ce2a-41b6-b6cc" shared="true" includeChildForces="true" includeChildSelections="true"/>
                           </conditions>
                         </conditionGroup>
+                        <conditionGroup type="and">
+                          <conditions>
+                            <condition type="lessThan" value="1" field="selections" scope="parent" childId="b372-fd9b-7b0e-9a55" shared="true" includeChildSelections="true"/>
+                            <condition type="lessThan" value="31" field="a623-fe74-1d33-cddf" scope="root-entry" childId="any" shared="true" includeChildSelections="true"/>
+                          </conditions>
+                        </conditionGroup>
                       </conditionGroups>
-                      <conditions>
-                        <condition type="lessThan" value="31" field="a623-fe74-1d33-cddf" scope="root-entry" childId="any" shared="true" includeChildSelections="true"/>
-                      </conditions>
                     </conditionGroup>
                   </conditionGroups>
                 </modifier>
@@ -13805,10 +13907,13 @@ _Designer’s Note: While this unit contains one or more ^^Pink Horrors^^ models
                             <condition type="lessThan" value="1" field="selections" scope="parent" childId="f639-2139-924d-19f7" shared="true" includeChildForces="true" includeChildSelections="true"/>
                           </conditions>
                         </conditionGroup>
+                        <conditionGroup type="and">
+                          <conditions>
+                            <condition type="lessThan" value="1" field="selections" scope="parent" childId="b372-fd9b-7b0e-9a55" shared="true" includeChildSelections="true"/>
+                            <condition type="lessThan" value="31" field="a623-fe74-1d33-cddf" scope="root-entry" childId="any" shared="true" includeChildSelections="true"/>
+                          </conditions>
+                        </conditionGroup>
                       </conditionGroups>
-                      <conditions>
-                        <condition type="lessThan" value="31" field="a623-fe74-1d33-cddf" scope="root-entry" childId="any" shared="true" includeChildSelections="true"/>
-                      </conditions>
                     </conditionGroup>
                   </conditionGroups>
                 </modifier>
@@ -14089,7 +14194,7 @@ _Designer’s Note: While this unit contains one or more ^^Pink Horrors^^ models
                     <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="ead9-8f3c-ce9c-dd3c" includeChildSelections="false"/>
                   </constraints>
                   <profiles>
-                    <profile name="Aelementus" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="78ae-01d8-7206-d6c0">
+                    <profile name="Malevolence" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="78ae-01d8-7206-d6c0" noindex="false">
                       <characteristics>
                         <characteristic name="Description" typeId="9b8f-694b-e5e-b573">At the end of the battle, this model gains 1XP and 1 Lore or Arcana point (your choice) for each different Agenda your opponent selected at the start of the battle that one or more of their units subsequently gained XP from.</characteristic>
                       </characteristics>
@@ -14181,6 +14286,13 @@ _Designer’s Note: While this unit contains one or more ^^Pink Horrors^^ models
                   <constraints>
                     <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="abf9-2033-d468-f990" includeChildSelections="false"/>
                   </constraints>
+                  <profiles>
+                    <profile name="Exalted Mutation (Instant)" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="f67d-169a-1ab5-5e0e">
+                      <characteristics>
+                        <characteristic name="Description" typeId="9b8f-694b-e5e-b573">This model gains one Boon of Tzeentch of your choosing, or two randomly determined Boons of Tzeentch.</characteristic>
+                      </characteristics>
+                    </profile>
+                  </profiles>
                 </selectionEntry>
                 <selectionEntry type="upgrade" import="true" name="Esoterist" hidden="false" id="394b-bcbe-e233-c4a1">
                   <constraints>
@@ -14364,6 +14476,14 @@ _Designer’s Note: While this unit contains one or more ^^Pink Horrors^^ models
                     <cost name="Crusade: Experience" typeId="a623-fe74-1d33-cddf" value="0"/>
                     <cost name="Crusade: Weapon Modifications" typeId="716d-91b7-d55a-1022" value="0"/>
                   </costs>
+                  <profiles>
+                    <profile name="Time Flux (Instant)" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="6d5b-e97d-bb1e-cac6">
+                      <characteristics>
+                        <characteristic name="Description" typeId="9b8f-694b-e5e-b573">You can either remove all Battle Scars this model has, or select one other ^^**Thousand Sons**^^ unit on your Order &amp;
+of Battle and remove one Battle Scar from that unit.</characteristic>
+                      </characteristics>
+                    </profile>
+                  </profiles>
                 </selectionEntry>
                 <selectionEntry type="upgrade" import="true" name="Esoterist" hidden="false" id="0a7b-b428-cb42-4335">
                   <constraints>
@@ -14449,6 +14569,13 @@ _Designer’s Note: While this unit contains one or more ^^Pink Horrors^^ models
                     <cost name="Crusade: Experience" typeId="a623-fe74-1d33-cddf" value="0"/>
                     <cost name="Crusade: Weapon Modifications" typeId="716d-91b7-d55a-1022" value="0"/>
                   </costs>
+                  <profiles>
+                    <profile name="Grand Schemer (Instant)" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="36bf-a0e8-4fdc-d872">
+                      <characteristics>
+                        <characteristic name="Description" typeId="9b8f-694b-e5e-b573">Roll one D6: on a 1-3, you gain 1RP;on a 4-6, you gain D3RP.</characteristic>
+                      </characteristics>
+                    </profile>
+                  </profiles>
                 </selectionEntry>
                 <selectionEntry type="upgrade" import="true" name="Esoterist" hidden="false" id="4747-f243-5e49-5762">
                   <constraints>
@@ -14534,6 +14661,13 @@ _Designer’s Note: While this unit contains one or more ^^Pink Horrors^^ models
                     <cost name="Crusade: Experience" typeId="a623-fe74-1d33-cddf" value="0"/>
                     <cost name="Crusade: Weapon Modifications" typeId="716d-91b7-d55a-1022" value="0"/>
                   </costs>
+                  <profiles>
+                    <profile name="Opus Arcana (Instant)" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="e111-1e23-5c0c-60f3">
+                      <characteristics>
+                        <characteristic name="Description" typeId="9b8f-694b-e5e-b573">You can deduct 1 or 2 Lore points from this model: if you deduct 1, this model gains D3 Arcana points; if you deduct 2, this model gains 3 Arcana points.</characteristic>
+                      </characteristics>
+                    </profile>
+                  </profiles>
                 </selectionEntry>
                 <selectionEntry type="upgrade" import="true" name="Esoterist" hidden="false" id="8028-37be-eafa-4e7d">
                   <constraints>
@@ -14650,6 +14784,13 @@ _Designer’s Note: While this unit contains one or more ^^Pink Horrors^^ models
                     <cost name="Crusade: Experience" typeId="a623-fe74-1d33-cddf" value="0"/>
                     <cost name="Crusade: Weapon Modifications" typeId="716d-91b7-d55a-1022" value="0"/>
                   </costs>
+                  <profiles>
+                    <profile name="Sacrificial Grimoire (Instant)" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="e2c2-839a-c530-f80a">
+                      <characteristics>
+                        <characteristic name="Description" typeId="9b8f-694b-e5e-b573">You can deduct 1 or 2 Arcana points from this model: if you deduct 1, this model gains D3 Lore points; if you deduct 2, this model gains 3 Lore points.</characteristic>
+                      </characteristics>
+                    </profile>
+                  </profiles>
                 </selectionEntry>
                 <selectionEntry type="upgrade" import="true" name="Magister Templi" hidden="false" id="5c08-5aa5-7d41-f089">
                   <constraints>
@@ -14704,6 +14845,13 @@ _Designer’s Note: While this unit contains one or more ^^Pink Horrors^^ models
                     <cost name="Crusade: Experience" typeId="a623-fe74-1d33-cddf" value="0"/>
                     <cost name="Crusade: Weapon Modifications" typeId="716d-91b7-d55a-1022" value="0"/>
                   </costs>
+                  <profiles>
+                    <profile name="Destiny&apos;s Aberration (Instant)" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="4617-45d5-ede1-3704">
+                      <characteristics>
+                        <characteristic name="Description" typeId="9b8f-694b-e5e-b573">Select either this model or one other ^^**Thousand Sons^^** unit (excluding ^^**Characters^^**) from your Crusade army that has one or more Battle Traits, then select one Battle Trait the selected model/unit has and replace it with one new ^^**Thousand Sons^^** Battle Trait (this must be one it can have).</characteristic>
+                      </characteristics>
+                    </profile>
+                  </profiles>
                 </selectionEntry>
                 <selectionEntry type="upgrade" import="true" name="Esoterist" hidden="false" id="8ac2-40f6-c3ce-a170">
                   <constraints>
@@ -14805,6 +14953,13 @@ _Designer’s Note: While this unit contains one or more ^^Pink Horrors^^ models
                     <cost name="Crusade: Experience" typeId="a623-fe74-1d33-cddf" value="0"/>
                     <cost name="Crusade: Weapon Modifications" typeId="716d-91b7-d55a-1022" value="0"/>
                   </costs>
+                  <profiles>
+                    <profile name="Artful Dualism (Instant)" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="be74-f93f-c271-2835">
+                      <characteristics>
+                        <characteristic name="Description" typeId="9b8f-694b-e5e-b573">This model can either use the Renowned Heroes Requisition once, for 0RP (even if it has not gained a Crusade rank), or it can gain one Artificer or Antiquity Crusade Relic of your choice.</characteristic>
+                      </characteristics>
+                    </profile>
+                  </profiles>
                 </selectionEntry>
                 <selectionEntry type="upgrade" import="true" name="Esoterist" hidden="false" id="5ac3-cd9d-0d36-4e78">
                   <constraints>
@@ -14823,7 +14978,7 @@ _Designer’s Note: While this unit contains one or more ^^Pink Horrors^^ models
                     </modifier>
                   </modifiers>
                   <profiles>
-                    <profile name="Misinformator" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="192b-da91-e299-6c39">
+                    <profile name="Misinformator (Battle Honour)" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="192b-da91-e299-6c39">
                       <characteristics>
                         <characteristic name="Description" typeId="9b8f-694b-e5e-b573">After both players have deployed their armies, you can select one **^^Thousand Sons^^** unit from your Crusade army and redeploy it. When doing so, you can set that unit up in Strategic Reserves if you wish, regardless of how many units are already in Strategic Reserves.</characteristic>
                       </characteristics>

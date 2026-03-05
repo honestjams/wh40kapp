@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="b39e-4401-8f3e-fdf7" name="Imperium - Adepta Sororitas" gameSystemId="sys-352e-adc2-7639-d6a9" gameSystemRevision="1" revision="94" battleScribeVersion="2.03" authorName="CrusherJoe" type="catalogue" authorContact="@CrusherJoe on Discord" authorUrl="Sometimes GitHub blows">
+<catalogue xmlns="http://www.battlescribe.net/schema/catalogueSchema" library="false" id="b39e-4401-8f3e-fdf7" name="Imperium - Adepta Sororitas" gameSystemId="sys-352e-adc2-7639-d6a9" gameSystemRevision="1" revision="103" battleScribeVersion="2.03" authorName="CrusherJoe" type="catalogue" authorContact="@CrusherJoe on Discord">
   <categoryEntries>
     <categoryEntry name="Aestred Thurga and Agathae Dolan" hidden="false" id="c8ba-2b2d-e47f-d7a6"/>
     <categoryEntry name="Arco-flagellants" hidden="false" id="63f8-3a5d-ef9c-d86e"/>
@@ -31,13 +31,16 @@
     <categoryEntry name="Sororitas Rhino" hidden="false" id="57d4-7917-5095-e513"/>
     <categoryEntry name="Triumph of Saint Katherine" hidden="false" id="3c49-c2db-485e-fe2e"/>
     <categoryEntry name="Zephyrim Squad" hidden="false" id="7561-4439-4420-e104"/>
-    <categoryEntry name="Jump Pack" hidden="false" id="8615-573f-681a-78e8"/>
     <categoryEntry name="Repressor" hidden="false" id="7ed3-a1f4-c6f6-22c6"/>
     <categoryEntry name="Penitent" id="e2c8-1479-a7c4-228e" hidden="false"/>
     <categoryEntry name="Battle Sanctum" id="4b49-98f3-035c-23b0" hidden="false"/>
     <categoryEntry name="Celestian Sacresant Aveline" id="95ea-3d17-1b12-a7c1" hidden="false"/>
     <categoryEntry name="Saint Potentia" id="99d5-9e0b-2853-ed23" hidden="false"/>
     <categoryEntry name="Living Saint" id="5f9f-ac8a-b212-77fb" hidden="false"/>
+    <categoryEntry name="Blessed Orator" id="268e-1f79-b070-6e03" hidden="false">
+      <comment>Crusade content - White Dwarf</comment>
+    </categoryEntry>
+    <categoryEntry name="Celestian Insidiants" id="9fe5-ee8a-b4c8-646a" hidden="false"/>
   </categoryEntries>
   <sharedSelectionEntries>
     <selectionEntry type="unit" import="true" name="Aestred Thurga and Agathae Dolan" hidden="false" id="4b94-c22e-84f9-8d32" publicationId="7d85-6d0f-57e0-5dea">
@@ -1343,7 +1346,12 @@
         </infoGroup>
       </infoGroups>
       <costs>
-        <cost name="pts" typeId="51b2-306e-1021-d207" value="50"/>
+        <cost name="pts" typeId="51b2-306e-1021-d207" value="60"/>
+        <cost name="Crusade Points" typeId="b03b-c239-15a5-da55" value="0"/>
+        <cost name="Crusade: Battle Honours" typeId="75bb-ded1-c86d-bdf0" value="0"/>
+        <cost name="Crusade: Experience" typeId="a623-fe74-1d33-cddf" value="0"/>
+        <cost name="Crusade: Weapon Modifications" typeId="716d-91b7-d55a-1022" value="0"/>
+        <cost name="Blackstone Fragments" typeId="ac6b-ced3-9b5e-9a6e" value="0"/>
       </costs>
       <entryLinks>
         <entryLink import="true" name="Warlord" hidden="false" type="selectionEntry" id="4726-99a0-3226-1849" targetId="66c6-be4b-a1dc-10d0" sortIndex="2"/>
@@ -1412,6 +1420,11 @@
             <modifier type="append" value="(Legendary)" field="name">
               <conditions>
                 <condition type="greaterThan" value="50" field="selections" scope="self" childId="2dbf-4d49-5d74-85c9" shared="true" includeChildSelections="true"/>
+              </conditions>
+            </modifier>
+            <modifier type="increment" value="1" field="0437-77bf-8759-e40e">
+              <conditions>
+                <condition type="atLeast" value="1" field="selections" scope="root-entry" childId="eebe-2ebf-2664-e637" shared="true" includeChildSelections="true"/>
               </conditions>
             </modifier>
           </modifiers>
@@ -1762,7 +1775,7 @@
     </selectionEntry>
     <selectionEntry id="f1af-4984-1a52-c5" name="Celestian Sacresants" hidden="false" collective="false" import="true" type="unit" publicationId="7d85-6d0f-57e0-5dea">
       <modifiers>
-        <modifier type="set" field="51b2-306e-1021-d207" value="130">
+        <modifier type="set" field="51b2-306e-1021-d207" value="140">
           <conditions>
             <condition field="selections" scope="f1af-4984-1a52-c5" value="6" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="model" type="atLeast"/>
           </conditions>
@@ -2283,6 +2296,11 @@ This model can be attached to a Battle Sisters Squad, even if one Canoness, Pala
                 <condition type="greaterThan" value="50" field="selections" scope="self" childId="2dbf-4d49-5d74-85c9" shared="true" includeChildSelections="true"/>
               </conditions>
             </modifier>
+            <modifier type="increment" value="1" field="a06d-19bf-a710-d834">
+              <conditions>
+                <condition type="atLeast" value="1" field="selections" scope="root-entry" childId="eebe-2ebf-2664-e637" shared="true" includeChildSelections="true"/>
+              </conditions>
+            </modifier>
           </modifiers>
           <comment>Crusade modifiers</comment>
         </modifierGroup>
@@ -2470,6 +2488,11 @@ This model can be attached to a Battle Sisters Squad, even if one Canoness, Pala
                 <condition type="greaterThan" value="50" field="selections" scope="self" childId="2dbf-4d49-5d74-85c9" shared="true" includeChildSelections="true"/>
               </conditions>
             </modifier>
+            <modifier type="increment" value="1" field="e16e-7484-d30f-27ed">
+              <conditions>
+                <condition type="atLeast" value="1" field="selections" scope="root-entry" childId="eebe-2ebf-2664-e637" shared="true" includeChildSelections="true"/>
+              </conditions>
+            </modifier>
           </modifiers>
           <comment>Crusade modifiers</comment>
         </modifierGroup>
@@ -2477,11 +2500,12 @@ This model can be attached to a Battle Sisters Squad, even if one Canoness, Pala
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Dominion Squad" hidden="false" id="d929-b22d-3040-9707" publicationId="7d85-6d0f-57e0-5dea">
       <costs>
-        <cost name="pts" typeId="51b2-306e-1021-d207" value="115"/>
+        <cost name="pts" typeId="51b2-306e-1021-d207" value="120"/>
         <cost name="Crusade Points" typeId="b03b-c239-15a5-da55" value="0"/>
         <cost name="Crusade: Battle Honours" typeId="75bb-ded1-c86d-bdf0" value="0"/>
         <cost name="Crusade: Experience" typeId="a623-fe74-1d33-cddf" value="0"/>
         <cost name="Crusade: Weapon Modifications" typeId="716d-91b7-d55a-1022" value="0"/>
+        <cost name="Blackstone Fragments" typeId="ac6b-ced3-9b5e-9a6e" value="0"/>
       </costs>
       <categoryLinks>
         <categoryLink targetId="cf47-a0d7-7207-29dc" id="910b-1a80-6e65-4326" primary="true" name="Infantry"/>
@@ -3045,7 +3069,12 @@ This model can be attached to a Battle Sisters Squad, even if one Canoness, Pala
     </selectionEntry>
     <selectionEntry type="model" import="true" name="Hospitaller" hidden="false" id="938e-1c24-4e63-4cf3" publicationId="7d85-6d0f-57e0-5dea">
       <costs>
-        <cost name="pts" typeId="51b2-306e-1021-d207" value="50"/>
+        <cost name="pts" typeId="51b2-306e-1021-d207" value="60"/>
+        <cost name="Crusade Points" typeId="b03b-c239-15a5-da55" value="0"/>
+        <cost name="Crusade: Battle Honours" typeId="75bb-ded1-c86d-bdf0" value="0"/>
+        <cost name="Crusade: Experience" typeId="a623-fe74-1d33-cddf" value="0"/>
+        <cost name="Crusade: Weapon Modifications" typeId="716d-91b7-d55a-1022" value="0"/>
+        <cost name="Blackstone Fragments" typeId="ac6b-ced3-9b5e-9a6e" value="0"/>
       </costs>
       <categoryLinks>
         <categoryLink targetId="cf47-a0d7-7207-29dc" id="3415-7fe8-25a-36d0" primary="false" name="Infantry"/>
@@ -3228,6 +3257,11 @@ This model can be attached to a Battle Sisters Squad, even if one Canoness, Pala
             <modifier type="append" value="(Legendary)" field="name">
               <conditions>
                 <condition type="greaterThan" value="50" field="selections" scope="self" childId="2dbf-4d49-5d74-85c9" shared="true" includeChildSelections="true"/>
+              </conditions>
+            </modifier>
+            <modifier type="increment" value="1" field="b6e5-67b3-8dca-79a4">
+              <conditions>
+                <condition type="atLeast" value="1" field="selections" scope="root-entry" childId="eebe-2ebf-2664-e637" shared="true" includeChildSelections="true"/>
               </conditions>
             </modifier>
           </modifiers>
@@ -3431,6 +3465,11 @@ This model can be attached to a Battle Sisters Squad, even if one Canoness, Pala
                 <condition type="greaterThan" value="50" field="selections" scope="self" childId="2dbf-4d49-5d74-85c9" shared="true" includeChildSelections="true"/>
               </conditions>
             </modifier>
+            <modifier type="increment" value="1" field="bd5c-4b26-7c11-7c51">
+              <conditions>
+                <condition type="atLeast" value="1" field="selections" scope="root-entry" childId="eebe-2ebf-2664-e637" shared="true" includeChildSelections="true"/>
+              </conditions>
+            </modifier>
           </modifiers>
           <comment>Crusade modifiers</comment>
         </modifierGroup>
@@ -3469,7 +3508,7 @@ This model can be attached to a Battle Sisters Squad, even if one Canoness, Pala
           <characteristics>
             <characteristic name="Description" typeId="9b8f-694b-e5e-b573">This model has a transport capacity of 6 ADEPTA SORORITAS INFANTRY models. It cannot transport JUMP PACK models or the Triumph of Saint Katherine.
 
-At the start of the Declare Battle Formations step, you can select one BATTLE SISTERS SQUAD, DOMINION SQUAD or SISTERS NOVIATIATE SQUAD from your army. If you do, that unit is split into two units, each containing as equal a number of models as possible (when splitting a unit in this way, make a note of which models form each of the two new units. If you are splitting a unit that has the Cherub ability, only one of the new units can use that ability during the battle – make a note of which of the new units this will be). One of these units must start the battle embarked within this TRANSPORT; the other can start the battle embarked within another TRANSPORT, or it can be deployed as a separate unit.</characteristic>
+At the start of the Declare Battle Formations step, you can select one BATTLE SISTERS SQUAD, DOMINION SQUAD or SISTERS NOVITIATE SQUAD from your army. If you do, that unit is split into two units, each containing as equal a number of models as possible (when splitting a unit in this way, make a note of which models form each of the two new units. If you are splitting a unit that has the Cherub ability, only one of the new units can use that ability during the battle – make a note of which of the new units this will be). One of these units must start the battle embarked within this TRANSPORT; the other can start the battle embarked within another TRANSPORT, or it can be deployed as a separate unit.</characteristic>
           </characteristics>
         </profile>
         <profile name="Purge and Cleanse" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="5def-c759-39f-94ca">
@@ -3740,7 +3779,7 @@ At the start of the Declare Battle Formations step, you can select one BATTLE SI
 ■ Celestian Sacresants
 ■ Dominion Squad
 ■ Retributor Squad
-■ Sisters Noviatiate Squad</characteristic>
+■ Sisters Novitiate Squad</characteristic>
               </characteristics>
             </profile>
           </profiles>
@@ -4051,9 +4090,9 @@ of your Command phase, you can choose one of the following:
                             <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="85c9-9d17-cb2c-69fd"/>
                           </constraints>
                           <selectionEntries>
-                            <selectionEntry type="upgrade" import="true" name="Mortifier Heavy Flamer" hidden="false" id="cf0b-c709-aa1a-966f">
+                            <selectionEntry type="upgrade" import="true" name="Mortifier flamer" hidden="false" id="cf0b-c709-aa1a-966f">
                               <profiles>
-                                <profile name="Mortimer Heavy Flamer" typeId="f77d-b953-8fa4-b762" typeName="Ranged Weapons" hidden="false" id="fb7-b143-3cca-fd51">
+                                <profile name="Mortifier flamer" typeId="f77d-b953-8fa4-b762" typeName="Ranged Weapons" hidden="false" id="fb7-b143-3cca-fd51">
                                   <characteristics>
                                     <characteristic name="Range" typeId="9896-9419-16a1-92fc">12&quot;</characteristic>
                                     <characteristic name="A" typeId="3bb-c35f-f54-fb08">D6</characteristic>
@@ -4105,13 +4144,13 @@ of your Command phase, you can choose one of the following:
                                 <entryLink import="true" name="Weapon Modifications" hidden="false" id="d5f0-8ec9-1fb8-51e1" type="selectionEntryGroup" targetId="f9da-852a-d7f0-92e9"/>
                               </entryLinks>
                             </selectionEntry>
-                            <selectionEntry type="upgrade" import="true" name="Mortimer Flamer" hidden="false" id="7e7f-3571-bd82-ce9d">
+                            <selectionEntry type="upgrade" import="true" name="Mortifier flamer" hidden="false" id="7e7f-3571-bd82-ce9d">
                               <constraints>
                                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="65c6-a659-3b35-f947"/>
                                 <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="17a4-8cde-a4d9-604d"/>
                               </constraints>
                               <profiles>
-                                <profile name="Mortimer Heavy Flamer" typeId="f77d-b953-8fa4-b762" typeName="Ranged Weapons" hidden="false" id="bfc9-fe69-8219-a216">
+                                <profile name="Mortifier flamer" typeId="f77d-b953-8fa4-b762" typeName="Ranged Weapons" hidden="false" id="bfc9-fe69-8219-a216">
                                   <characteristics>
                                     <characteristic name="Range" typeId="9896-9419-16a1-92fc">12&quot;</characteristic>
                                     <characteristic name="A" typeId="3bb-c35f-f54-fb08">D6</characteristic>
@@ -4158,7 +4197,7 @@ of your Command phase, you can choose one of the following:
       <profiles>
         <profile name="Anguish of the Unredeemed" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="b337-3b2d-d22b-9ca9">
           <characteristics>
-            <characteristic name="Description" typeId="9b8f-694b-e5e-b573">Each time a model in this unit is destroyed by a melee attack, if that model has not fought this phase, roll one D6. One a 2+, do not remove it from play; that destroyed model can fight after attacking unit has finished making its attacks, and is then removed from play.</characteristic>
+            <characteristic name="Description" typeId="9b8f-694b-e5e-b573">Each time a model in this unit is destroyed by a melee attack, if that model has not fought this phase, roll one D6. On a 2+, do not remove it from play; that destroyed model can fight after attacking unit has finished making its attacks, and is then removed from play.</characteristic>
           </characteristics>
         </profile>
         <profile name="Invulnerable Save" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="a6d5-54f2-962a-7371">
@@ -4253,11 +4292,12 @@ of your Command phase, you can choose one of the following:
     </selectionEntry>
     <selectionEntry type="model" import="true" name="Morvenn Vahl" hidden="false" id="7188-4d20-8216-c68a" publicationId="7d85-6d0f-57e0-5dea">
       <costs>
-        <cost name="pts" typeId="51b2-306e-1021-d207" value="170"/>
+        <cost name="pts" typeId="51b2-306e-1021-d207" value="185"/>
         <cost name="Crusade Points" typeId="b03b-c239-15a5-da55" value="0"/>
         <cost name="Crusade: Battle Honours" typeId="75bb-ded1-c86d-bdf0" value="0"/>
         <cost name="Crusade: Experience" typeId="a623-fe74-1d33-cddf" value="0"/>
         <cost name="Crusade: Weapon Modifications" typeId="716d-91b7-d55a-1022" value="0"/>
+        <cost name="Blackstone Fragments" typeId="ac6b-ced3-9b5e-9a6e" value="0"/>
       </costs>
       <categoryLinks>
         <categoryLink targetId="dbd4-63-af05-998" id="d333-a966-2a02-7d86" primary="false" name="Vehicle"/>
@@ -4668,6 +4708,11 @@ of your Command phase, you can choose one of the following:
             <modifier type="append" value="(Legendary)" field="name">
               <conditions>
                 <condition type="greaterThan" value="50" field="selections" scope="self" childId="2dbf-4d49-5d74-85c9" shared="true" includeChildSelections="true"/>
+              </conditions>
+            </modifier>
+            <modifier type="increment" value="1" field="bd86-f072-607c-65a3">
+              <conditions>
+                <condition type="atLeast" value="1" field="selections" scope="root-entry" childId="eebe-2ebf-2664-e637" shared="true" includeChildSelections="true"/>
               </conditions>
             </modifier>
           </modifiers>
@@ -5963,7 +6008,7 @@ of your Command phase, you can choose one of the following:
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Retributor Squad" hidden="false" id="c49d-f150-4b3-c118" publicationId="7d85-6d0f-57e0-5dea">
       <costs>
-        <cost name="pts" typeId="51b2-306e-1021-d207" value="105"/>
+        <cost name="pts" typeId="51b2-306e-1021-d207" value="120"/>
         <cost name="Crusade Points" typeId="b03b-c239-15a5-da55" value="0"/>
         <cost name="Crusade: Battle Honours" typeId="75bb-ded1-c86d-bdf0" value="0"/>
         <cost name="Crusade: Experience" typeId="a623-fe74-1d33-cddf" value="0"/>
@@ -6204,11 +6249,11 @@ of your Command phase, you can choose one of the following:
       <categoryLinks>
         <categoryLink targetId="fd71-afa6-b13b-7fda" id="d3a5-b1a3-71e3-187a" primary="false" name="Faction: Adepta Sororitas"/>
         <categoryLink targetId="cf47-a0d7-7207-29dc" id="abf4-b366-3ba5-a029" primary="false" name="Infantry"/>
-        <categoryLink targetId="8615-573f-681a-78e8" id="d960-baf3-3934-93ae" primary="false" name="Jump Pack"/>
         <categoryLink targetId="c619-2086-bbcf-69c9" id="b780-d19c-b6c8-7931" primary="false" name="Fly"/>
         <categoryLink targetId="5a61-81ac-eb7c-a87e" id="9338-0094-4121-6341" primary="false" name="Grenades"/>
         <categoryLink targetId="aff3-d6a3-2a95-9dc" id="88b7-9fd1-7430-b5d9" primary="false" name="Imperium"/>
         <categoryLink targetId="4f3a-f0f7-6647-348d" id="7f76-897f-da35-9818" primary="true" name="Epic Hero"/>
+        <categoryLink name="Jump Pack" hidden="false" id="b1a9-ab9b-2274-f814" targetId="dda2-bb0a-215e-ad9c" primary="false"/>
       </categoryLinks>
       <infoLinks>
         <infoLink name="Acts of Faith" hidden="false" type="rule" id="8a42-880d-706a-6a1f" targetId="7ef7-dca6-e2ea-ecc8"/>
@@ -6251,12 +6296,12 @@ of your Command phase, you can choose one of the following:
           <categoryLinks>
             <categoryLink targetId="4f3a-f0f7-6647-348d" id="d739-512b-3f52-8dc3" primary="true" name="Epic Hero"/>
             <categoryLink targetId="cf47-a0d7-7207-29dc" id="b00b-7e55-42f0-d7a" primary="false" name="Infantry"/>
-            <categoryLink targetId="8615-573f-681a-78e8" id="25cb-4be4-ef7d-436f" primary="false" name="Jump Pack"/>
             <categoryLink targetId="c619-2086-bbcf-69c9" id="a784-d484-f3f9-5879" primary="false" name="Fly"/>
             <categoryLink targetId="5a61-81ac-eb7c-a87e" id="1376-ebd7-7e62-873" primary="false" name="Grenades"/>
             <categoryLink targetId="aff3-d6a3-2a95-9dc" id="91ec-c60f-3419-f850" primary="false" name="Imperium"/>
             <categoryLink targetId="9cfd-1c32-585f-7d5c" id="9f4d-85bb-c329-6560" primary="false" name="Character"/>
             <categoryLink targetId="b49f-43b8-5fac-d769" id="23ec-a1fa-9277-3b06" primary="false" name="Saint Celestine"/>
+            <categoryLink name="Jump Pack" hidden="false" id="0b37-c2cb-7c6f-d239" targetId="dda2-bb0a-215e-ad9c" primary="false"/>
           </categoryLinks>
           <selectionEntries>
             <selectionEntry type="upgrade" import="true" name="The Ardent Blade" hidden="false" id="11d9-3548-8ffd-f118">
@@ -6342,12 +6387,12 @@ of your Command phase, you can choose one of the following:
     <selectionEntry type="unit" import="true" name="Seraphim Squad" hidden="false" id="bee9-172b-7db7-f748" publicationId="7d85-6d0f-57e0-5dea">
       <categoryLinks>
         <categoryLink targetId="cf47-a0d7-7207-29dc" id="5343-66f3-7154-d404" primary="true" name="Infantry"/>
-        <categoryLink targetId="8615-573f-681a-78e8" id="a7b5-9c27-995c-1dc7" primary="false" name="Jump Pack"/>
         <categoryLink targetId="c619-2086-bbcf-69c9" id="8fe0-7f5f-7d7e-3502" primary="false" name="Fly"/>
         <categoryLink targetId="5a61-81ac-eb7c-a87e" id="fd3b-a8c-7b22-bd0" primary="false" name="Grenades"/>
         <categoryLink targetId="aff3-d6a3-2a95-9dc" id="4b4-30b0-e0f7-9cc5" primary="false" name="Imperium"/>
         <categoryLink targetId="40db-f0a8-b5fd-d21d" id="9888-d6c-308f-832c" primary="false" name="Seraphim Squad"/>
         <categoryLink targetId="fd71-afa6-b13b-7fda" id="465e-239c-b170-7887" primary="false" name="Faction: Adepta Sororitas"/>
+        <categoryLink name="Jump Pack" hidden="false" id="9032-aa09-7fb0-96a1" targetId="dda2-bb0a-215e-ad9c" primary="false"/>
       </categoryLinks>
       <infoLinks>
         <infoLink name="Acts of Faith" hidden="false" type="rule" id="82fb-2447-f7a8-6056" targetId="7ef7-dca6-e2ea-ecc8"/>
@@ -7451,12 +7496,12 @@ of your Command phase, you can choose one of the following:
     <selectionEntry type="unit" import="true" name="Zephyrim Squad" hidden="false" id="22f0-a7d8-b2b6-e26" publicationId="7d85-6d0f-57e0-5dea">
       <categoryLinks>
         <categoryLink targetId="cf47-a0d7-7207-29dc" id="56ca-6000-4c16-bfdc" primary="true" name="Infantry"/>
-        <categoryLink targetId="8615-573f-681a-78e8" id="f048-507a-e50b-5b27" primary="false" name="Jump Pack"/>
         <categoryLink targetId="c619-2086-bbcf-69c9" id="9b7a-f8f6-f46e-d7aa" primary="false" name="Fly"/>
         <categoryLink targetId="5a61-81ac-eb7c-a87e" id="a6d8-aa4e-6c1c-2068" primary="false" name="Grenades"/>
         <categoryLink targetId="aff3-d6a3-2a95-9dc" id="961e-f8e4-ca98-6f97" primary="false" name="Imperium"/>
         <categoryLink targetId="7561-4439-4420-e104" id="fba-b0b6-e3e0-2e2b" primary="false" name="Zephyrim Squad"/>
         <categoryLink targetId="fd71-afa6-b13b-7fda" id="bb61-e6b8-6127-57e6" primary="false" name="Faction: Adepta Sororitas"/>
+        <categoryLink name="Jump Pack" hidden="false" id="dd0b-d237-3cf3-eb93" targetId="dda2-bb0a-215e-ad9c" primary="false"/>
       </categoryLinks>
       <infoLinks>
         <infoLink name="Acts of Faith" hidden="false" type="rule" id="be83-de98-1be9-eec5" targetId="7ef7-dca6-e2ea-ecc8"/>
@@ -7744,10 +7789,10 @@ If this unit made a Charge move this turn, until the end of the phase, select bo
       </selectionEntries>
       <categoryLinks>
         <categoryLink targetId="cf47-a0d7-7207-29dc" id="b0db-3679-2a36-fb67" primary="false" name="Infantry"/>
-        <categoryLink targetId="8615-573f-681a-78e8" id="7c81-aa7b-4030-de03" primary="false" name="Jump Pack"/>
         <categoryLink targetId="c619-2086-bbcf-69c9" id="13b6-c318-6b40-ac55" primary="false" name="Fly"/>
         <categoryLink targetId="5a61-81ac-eb7c-a87e" id="c03d-25b0-de76-a0ab" primary="false" name="Grenades"/>
         <categoryLink targetId="aff3-d6a3-2a95-9dc" id="74c4-112c-7cf5-1dbd" primary="false" name="Imperium"/>
+        <categoryLink name="Jump Pack" hidden="false" id="3fcb-9e2e-ae0d-d4b1" targetId="dda2-bb0a-215e-ad9c" primary="false"/>
       </categoryLinks>
     </selectionEntry>
     <selectionEntry type="upgrade" import="true" name="Armoured tracks" hidden="false" id="c16b-804f-46cb-2256">
@@ -8144,6 +8189,9 @@ If this unit made a Charge move this turn, until the end of the phase, select bo
         <categoryLink name="Grenades" hidden="false" id="8e01-48e9-73dd-0d6c" targetId="5a61-81ac-eb7c-a87e" primary="false"/>
         <categoryLink name="Canoness" hidden="false" id="ab01-4a84-fcaf-8e63" targetId="fef8-7c60-b716-cf27" primary="false"/>
         <categoryLink name="Faction: Adepta Sororitas" hidden="false" id="f2ec-8e06-1638-5e86" targetId="fd71-afa6-b13b-7fda" primary="false"/>
+        <categoryLink name="Jump Pack" hidden="false" id="0eb5-ce0c-2e87-bb65" targetId="dda2-bb0a-215e-ad9c" primary="false"/>
+        <categoryLink name="Fly" hidden="false" id="01d2-a487-a0c9-44ad" targetId="c619-2086-bbcf-69c9" primary="false"/>
+        <categoryLink name="Imperium" hidden="false" id="ae42-22bc-25e5-9ea4" targetId="aff3-d6a3-2a95-9dc" primary="false"/>
       </categoryLinks>
       <selectionEntryGroups>
         <selectionEntryGroup name="Wargear" id="2833-389c-0abe-6312" hidden="false" collective="false" import="true" defaultSelectionEntryId="fb6e-064f-ad86-d2d7" sortIndex="4">
@@ -8377,6 +8425,11 @@ If this unit made a Charge move this turn, until the end of the phase, select bo
             <modifier type="append" value="(Legendary)" field="name">
               <conditions>
                 <condition type="greaterThan" value="50" field="selections" scope="self" childId="2dbf-4d49-5d74-85c9" shared="true" includeChildSelections="true"/>
+              </conditions>
+            </modifier>
+            <modifier type="increment" value="1" field="b7cb-9853-17c0-54ae">
+              <conditions>
+                <condition type="atLeast" value="1" field="selections" scope="root-entry" childId="eebe-2ebf-2664-e637" shared="true" includeChildSelections="true"/>
               </conditions>
             </modifier>
           </modifiers>
@@ -8851,11 +8904,12 @@ If this unit made a Charge move this turn, until the end of the phase, select bo
     </selectionEntry>
     <selectionEntry type="unit" import="true" name="Sanctifiers" hidden="false" id="eade-6ec7-7236-bfdb">
       <costs>
-        <cost name="pts" typeId="51b2-306e-1021-d207" value="100"/>
+        <cost name="pts" typeId="51b2-306e-1021-d207" value="110"/>
         <cost name="Crusade Points" typeId="b03b-c239-15a5-da55" value="0"/>
         <cost name="Crusade: Battle Honours" typeId="75bb-ded1-c86d-bdf0" value="0"/>
         <cost name="Crusade: Experience" typeId="a623-fe74-1d33-cddf" value="0"/>
         <cost name="Crusade: Weapon Modifications" typeId="716d-91b7-d55a-1022" value="0"/>
+        <cost name="Blackstone Fragments" typeId="ac6b-ced3-9b5e-9a6e" value="0"/>
       </costs>
       <profiles>
         <profile name="Sanctifiers" typeId="c547-1836-d8a-ff4f" typeName="Unit" hidden="false" id="23fb-147f-f4ce-ef6d">
@@ -8958,7 +9012,7 @@ If this unit made a Charge move this turn, until the end of the phase, select bo
                 </selectionEntry>
               </selectionEntries>
               <entryLinks>
-                <entryLink import="true" name="Ministorum hand flamer" hidden="false" id="6fbb-9be5-ceda-18e7" type="selectionEntry" targetId="3035-91a8-7c70-8f9c">
+                <entryLink import="true" name="Ministorum hand flamer" hidden="false" id="6fbb-9be5-ceda-18e7" type="selectionEntry" targetId="c462-3995-88b0-200c">
                   <constraints>
                     <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="e999-adc0-5610-5434-min" includeChildSelections="false"/>
                     <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="e999-adc0-5610-5434-max" includeChildSelections="false"/>
@@ -8998,7 +9052,7 @@ If this unit made a Charge move this turn, until the end of the phase, select bo
                 </selectionEntry>
               </selectionEntries>
               <entryLinks>
-                <entryLink import="true" name="Ministorum hand flamer" hidden="false" id="9ddd-c47a-b04d-84cd" type="selectionEntry" targetId="3035-91a8-7c70-8f9c">
+                <entryLink import="true" name="Ministorum hand flamer" hidden="false" id="9ddd-c47a-b04d-84cd" type="selectionEntry" targetId="c462-3995-88b0-200c">
                   <constraints>
                     <constraint type="min" value="2" field="selections" scope="parent" shared="true" id="3d3f-7c59-a393-317a-min" includeChildSelections="false"/>
                     <constraint type="max" value="2" field="selections" scope="parent" shared="true" id="3d3f-7c59-a393-317a-max" includeChildSelections="false"/>
@@ -9082,7 +9136,7 @@ If this unit made a Charge move this turn, until the end of the phase, select bo
                 </selectionEntryGroup>
               </selectionEntryGroups>
               <entryLinks>
-                <entryLink import="true" name="Sanctifier melee weapon" hidden="false" id="c77b-cf0d-8612-97fa" type="selectionEntry" targetId="e56f-68cb-9b0c-0e28">
+                <entryLink import="true" name="Sanctifier melee weapon" hidden="false" id="c77b-cf0d-8612-97fa" type="selectionEntry" targetId="15b9-156b-aca3-6474">
                   <entryLinks>
                     <entryLink import="true" name="Weapon Modifications" hidden="false" id="3ef1-cc9a-9b9f-ad46" type="selectionEntryGroup" targetId="f9da-852a-d7f0-92e9"/>
                   </entryLinks>
@@ -9140,12 +9194,12 @@ If this unit made a Charge move this turn, until the end of the phase, select bo
                 <constraint type="max" value="4" field="selections" scope="parent" shared="true" id="7a00-fa7b-b8cf-4c01" includeChildSelections="false" automatic="true"/>
               </constraints>
               <entryLinks>
-                <entryLink import="true" name="Sanctifier melee weapon" hidden="false" id="1363-20ce-1aab-6565" type="selectionEntry" targetId="e56f-68cb-9b0c-0e28">
+                <entryLink import="true" name="Sanctifier melee weapon" hidden="false" id="1363-20ce-1aab-6565" type="selectionEntry" targetId="15b9-156b-aca3-6474">
                   <entryLinks>
                     <entryLink import="true" name="Weapon Modifications" hidden="false" id="a7b0-bfa3-4f61-9c8b" type="selectionEntryGroup" targetId="f9da-852a-d7f0-92e9"/>
                   </entryLinks>
                 </entryLink>
-                <entryLink import="true" name="Ministorum hand flamer" hidden="false" id="0754-1520-a739-9ff9" type="selectionEntry" targetId="3035-91a8-7c70-8f9c">
+                <entryLink import="true" name="Ministorum hand flamer" hidden="false" id="0754-1520-a739-9ff9" type="selectionEntry" targetId="c462-3995-88b0-200c">
                   <constraints>
                     <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="7ff2-3ed2-fc98-a7da" includeChildSelections="false"/>
                     <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="52f8-6d70-cbc4-c35e" includeChildSelections="false"/>
@@ -9272,7 +9326,7 @@ If this unit made a Charge move this turn, until the end of the phase, select bo
                 <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="9947-4b92-ea9e-9f13" includeChildSelections="false"/>
               </constraints>
               <entryLinks>
-                <entryLink import="true" name="Sanctifier melee weapon" hidden="false" id="cdcf-d108-ae4b-f777" type="selectionEntry" targetId="e56f-68cb-9b0c-0e28">
+                <entryLink import="true" name="Sanctifier melee weapon" hidden="false" id="cdcf-d108-ae4b-f777" type="selectionEntry" targetId="15b9-156b-aca3-6474">
                   <entryLinks>
                     <entryLink import="true" name="Weapon Modifications" hidden="false" id="0a17-23bc-74e3-23ec" type="selectionEntryGroup" targetId="f9da-852a-d7f0-92e9"/>
                   </entryLinks>
@@ -9413,6 +9467,406 @@ If this unit made a Charge move this turn, until the end of the phase, select bo
         <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="0c26-aebc-9a03-bbca"/>
         <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="2aab-ebca-c0de-d940"/>
       </constraints>
+    </selectionEntry>
+    <selectionEntry type="unit" import="true" name="Celestian Insidiants" hidden="false" id="e286-849d-8f74-75e6">
+      <costs>
+        <cost name="pts" typeId="51b2-306e-1021-d207" value="120"/>
+        <cost name="Crusade Points" typeId="b03b-c239-15a5-da55" value="0"/>
+        <cost name="Crusade: Battle Honours" typeId="75bb-ded1-c86d-bdf0" value="0"/>
+        <cost name="Crusade: Experience" typeId="a623-fe74-1d33-cddf" value="0"/>
+        <cost name="Crusade: Weapon Modifications" typeId="716d-91b7-d55a-1022" value="0"/>
+        <cost name="Blackstone Fragments" typeId="ac6b-ced3-9b5e-9a6e" value="0"/>
+      </costs>
+      <categoryLinks>
+        <categoryLink name="Faction: Adepta Sororitas" hidden="false" id="b0aa-a1e7-92c8-b341" targetId="fd71-afa6-b13b-7fda" primary="false"/>
+        <categoryLink name="Infantry" hidden="false" id="474b-e077-94cd-bb02" targetId="cf47-a0d7-7207-29dc" primary="true"/>
+        <categoryLink name="Grenades" hidden="false" id="cdda-9973-c168-41ed" targetId="5a61-81ac-eb7c-a87e" primary="false"/>
+        <categoryLink name="Imperium" hidden="false" id="c836-b4b0-a8dc-f76d" targetId="aff3-d6a3-2a95-9dc" primary="false"/>
+        <categoryLink name="Celestian Insidiants" hidden="false" id="63bc-f97f-ef04-31a4" targetId="9fe5-ee8a-b4c8-646a" primary="false"/>
+      </categoryLinks>
+      <entryLinks>
+        <entryLink import="true" name="Crusade" hidden="false" id="29cf-470b-b58f-10da" type="selectionEntryGroup" targetId="b0df-6a60-8561-efde" sortIndex="1"/>
+      </entryLinks>
+      <constraints>
+        <constraint type="max" value="3" field="selections" scope="force" shared="true" id="4e70-e4e0-3aa2-b4e4" includeChildSelections="false"/>
+        <constraint type="max" value="3" field="75bb-ded1-c86d-bdf0" scope="self" shared="true" id="970c-a1e2-48eb-1a23" includeChildSelections="false"/>
+        <constraint type="max" value="0" field="716d-91b7-d55a-1022" scope="self" shared="true" id="fb16-ad3d-c40d-8b98" includeChildSelections="true"/>
+        <constraint type="min" value="0" field="716d-91b7-d55a-1022" scope="self" shared="true" id="4815-1612-c64b-832e" includeChildSelections="true"/>
+      </constraints>
+      <profiles>
+        <profile name="Invulnerable Save" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="0052-2c5c-6221-266a">
+          <characteristics>
+            <characteristic name="Description" typeId="9b8f-694b-e5e-b573">Models in this unit have an Invulnerable save of 5+.</characteristic>
+          </characteristics>
+        </profile>
+        <profile name="Rituale Nullificatus" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="26d9-e27b-c1cb-8ecb">
+          <characteristics>
+            <characteristic name="Description" typeId="9b8f-694b-e5e-b573">Models in this unit have the Feel No Pain 4+ ability against Psychic Attacks and mortal wounds.</characteristic>
+          </characteristics>
+        </profile>
+        <profile name="Celestian Insidiants" typeId="c547-1836-d8a-ff4f" typeName="Unit" hidden="false" id="6b6a-f710-8f71-dad0">
+          <characteristics>
+            <characteristic name="M" typeId="e703-ecb6-5ce7-aec1">6&quot;</characteristic>
+            <characteristic name="T" typeId="d29d-cf75-fc2d-34a4">3</characteristic>
+            <characteristic name="SV" typeId="450-a17e-9d5e-29da">3+</characteristic>
+            <characteristic name="W" typeId="750a-a2ec-90d3-21fe">1</characteristic>
+            <characteristic name="LD" typeId="58d2-b879-49c7-43bc">7+</characteristic>
+            <characteristic name="OC" typeId="bef7-942a-1a23-59f8">1</characteristic>
+          </characteristics>
+        </profile>
+        <profile name="Virtue of Intolerance" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="76e2-fa16-cbc9-d420">
+          <characteristics>
+            <characteristic name="Description" typeId="9b8f-694b-e5e-b573">At the start of the battle, select one unit from your opponent’s army to be this unit’s quarry. Each time a model in this unit makes an attack that targets its quarry, that attack has the ^^**[Precision]^^** ability and you can re‑roll the Hit roll. This ability can be used even if this unit is embarked within a ^^**Transport**^^.</characteristic>
+          </characteristics>
+        </profile>
+        <profile name="Attached Unit" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="d4e9-0707-582f-0385">
+          <characteristics>
+            <characteristic name="Description" typeId="9b8f-694b-e5e-b573">If a ^^**Character^^** unit from your army can be attached to a ^^**Dominion Squad^^** unit, it can be attached to this unit instead.</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+      <infoLinks>
+        <infoLink name="Acts of Faith" id="f7e8-614b-e6bd-9b0d" hidden="false" type="rule" targetId="7ef7-dca6-e2ea-ecc8"/>
+      </infoLinks>
+      <modifierGroups>
+        <modifierGroup type="and">
+          <modifiers>
+            <modifier type="set" value="6" field="970c-a1e2-48eb-1a23">
+              <conditions>
+                <condition type="atLeast" value="1" field="selections" scope="self" childId="1511-18fe-f51e-7b9d" shared="true" includeChildSelections="true"/>
+              </conditions>
+            </modifier>
+            <modifier type="increment" value="2" field="fb16-ad3d-c40d-8b98">
+              <repeats>
+                <repeat value="1" repeats="1" field="selections" scope="self" childId="d1a5-4297-168b-11cd" shared="true" roundUp="false" includeChildSelections="true"/>
+              </repeats>
+            </modifier>
+            <modifier type="increment" value="2" field="4815-1612-c64b-832e">
+              <repeats>
+                <repeat value="1" repeats="1" field="selections" scope="self" childId="d1a5-4297-168b-11cd" shared="true" roundUp="false" includeChildSelections="true"/>
+              </repeats>
+            </modifier>
+            <modifier type="append" value="(Battle-ready)" field="name">
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition type="atMost" value="5" field="selections" scope="self" childId="2dbf-4d49-5d74-85c9" shared="true" includeChildSelections="true"/>
+                    <condition type="atLeast" value="1" field="forces" scope="roster" childId="cac3-71d1-ea4b-795d" shared="true" includeChildSelections="true" includeChildForces="true"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+            <modifier type="append" value="(Blooded)" field="name">
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition type="greaterThan" value="5" field="selections" scope="self" childId="2dbf-4d49-5d74-85c9" shared="true" includeChildSelections="true"/>
+                    <condition type="atMost" value="15" field="selections" scope="self" childId="2dbf-4d49-5d74-85c9" shared="true" includeChildSelections="true"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+            <modifier type="append" value="(Battle-hardened)" field="name">
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition type="greaterThan" value="15" field="selections" scope="self" childId="2dbf-4d49-5d74-85c9" shared="true" includeChildSelections="true"/>
+                    <condition type="atMost" value="30" field="selections" scope="self" childId="2dbf-4d49-5d74-85c9" shared="true" includeChildSelections="true"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+            <modifier type="append" value="(Heroic)" field="name">
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition type="greaterThan" value="30" field="selections" scope="self" childId="2dbf-4d49-5d74-85c9" shared="true" includeChildSelections="true"/>
+                    <condition type="atMost" value="50" field="selections" scope="self" childId="2dbf-4d49-5d74-85c9" shared="true" includeChildSelections="true"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+            <modifier type="append" value="(Legendary)" field="name">
+              <conditions>
+                <condition type="greaterThan" value="50" field="selections" scope="self" childId="2dbf-4d49-5d74-85c9" shared="true" includeChildSelections="true"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+          <comment>Crusade modifiers</comment>
+        </modifierGroup>
+      </modifierGroups>
+      <selectionEntries>
+        <selectionEntry type="model" import="true" name="Celestian Insidiant Superior" hidden="false" id="5260-6d8b-bebd-6378" sortIndex="2">
+          <constraints>
+            <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="dc9b-d049-4d82-0446-min" includeChildSelections="false"/>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="dc9b-d049-4d82-0446-max" includeChildSelections="false"/>
+          </constraints>
+          <profiles>
+            <profile name="Celestian Insidiant Superior" typeId="c547-1836-d8a-ff4f" typeName="Unit" hidden="false" id="e286-1277-0e4c-afff">
+              <characteristics>
+                <characteristic name="M" typeId="e703-ecb6-5ce7-aec1">6&quot;</characteristic>
+                <characteristic name="T" typeId="d29d-cf75-fc2d-34a4">3</characteristic>
+                <characteristic name="SV" typeId="450-a17e-9d5e-29da">3+</characteristic>
+                <characteristic name="W" typeId="750a-a2ec-90d3-21fe">1</characteristic>
+                <characteristic name="LD" typeId="58d2-b879-49c7-43bc">7+</characteristic>
+                <characteristic name="OC" typeId="bef7-942a-1a23-59f8">1</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+          <entryLinks>
+            <entryLink import="true" name="Null mace" hidden="false" id="d18e-6640-dc69-0a29" type="selectionEntry" targetId="0c2d-0fea-e434-a32e">
+              <entryLinks>
+                <entryLink import="true" name="Weapon Modifications" hidden="false" id="d403-5219-cebf-cee2" type="selectionEntryGroup" targetId="f9da-852a-d7f0-92e9"/>
+              </entryLinks>
+            </entryLink>
+          </entryLinks>
+          <selectionEntryGroups>
+            <selectionEntryGroup name="Pistol" id="2b34-903b-8ebc-57b6" hidden="false" defaultSelectionEntryId="765d-1c24-9a42-16ef">
+              <constraints>
+                <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="c31e-7105-1d8e-7341-min" includeChildSelections="false"/>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="c31e-7105-1d8e-7341-max" includeChildSelections="false"/>
+              </constraints>
+              <entryLinks>
+                <entryLink import="true" name="Inferno pistol" hidden="false" id="a49b-13a8-6e5d-2800" type="selectionEntry" targetId="3cef-a2a4-8354-6103">
+                  <entryLinks>
+                    <entryLink import="true" name="Weapon Modifications" hidden="false" id="4dfb-c166-f5f2-67bc" type="selectionEntryGroup" targetId="f9da-852a-d7f0-92e9"/>
+                  </entryLinks>
+                </entryLink>
+                <entryLink import="true" name="Condemnor bolt pistol" hidden="false" id="765d-1c24-9a42-16ef" type="selectionEntry" targetId="6060-41bc-087d-70f4">
+                  <entryLinks>
+                    <entryLink import="true" name="Weapon Modifications" hidden="false" id="3378-dd62-80e9-766e" type="selectionEntryGroup" targetId="f9da-852a-d7f0-92e9"/>
+                  </entryLinks>
+                </entryLink>
+              </entryLinks>
+            </selectionEntryGroup>
+          </selectionEntryGroups>
+        </selectionEntry>
+      </selectionEntries>
+      <selectionEntryGroups>
+        <selectionEntryGroup name="9 Insidiants" id="a5f2-3b3e-bd6b-60ab" hidden="false" defaultSelectionEntryId="e035-fad9-edcc-8faf">
+          <selectionEntries>
+            <selectionEntry type="model" import="true" name="Insidiant" hidden="false" id="e035-fad9-edcc-8faf" sortIndex="1">
+              <entryLinks>
+                <entryLink import="true" name="Condemnor bolt pistol" hidden="false" id="82fa-fd71-fc0c-2443" type="selectionEntry" targetId="6060-41bc-087d-70f4">
+                  <constraints>
+                    <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="2101-e1dc-35b4-6ca6-min" includeChildSelections="false"/>
+                    <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="2101-e1dc-35b4-6ca6-max" includeChildSelections="false"/>
+                  </constraints>
+                </entryLink>
+                <entryLink import="true" name="Null mace" hidden="false" id="0bf4-11ee-c109-f911" type="selectionEntry" targetId="0c2d-0fea-e434-a32e"/>
+              </entryLinks>
+              <constraints>
+                <constraint type="max" value="9" field="selections" scope="parent" shared="true" id="4a7f-0a75-7c89-a82b" includeChildSelections="false" automatic="true"/>
+                <constraint type="min" value="2" field="selections" scope="parent" shared="true" id="66c5-bf40-adcf-c98d" includeChildSelections="false"/>
+              </constraints>
+              <modifiers>
+                <modifier type="decrement" value="1" field="4a7f-0a75-7c89-a82b">
+                  <repeats>
+                    <repeat value="1" repeats="1" field="selections" scope="e286-849d-8f74-75e6" childId="6da6-6fed-44a2-3475" shared="true" roundUp="false"/>
+                    <repeat value="1" repeats="1" field="selections" scope="e286-849d-8f74-75e6" childId="dfc9-3074-4b0b-9966" shared="true" roundUp="false"/>
+                    <repeat value="1" repeats="1" field="selections" scope="e286-849d-8f74-75e6" childId="a990-deb8-0471-a9d1" shared="true" roundUp="false"/>
+                    <repeat value="1" repeats="1" field="selections" scope="e286-849d-8f74-75e6" childId="ac73-bb9b-f1f2-eeb7" shared="true" roundUp="false"/>
+                    <repeat value="1" repeats="1" field="selections" scope="e286-849d-8f74-75e6" childId="f780-8fc0-e9b7-7050" shared="true" roundUp="false"/>
+                  </repeats>
+                </modifier>
+              </modifiers>
+            </selectionEntry>
+            <selectionEntry type="model" import="true" name="Insidiant w/ hand flamer" hidden="false" id="6da6-6fed-44a2-3475" sortIndex="2">
+              <entryLinks>
+                <entryLink import="true" name="Ministorum hand flamer" hidden="false" id="0d0a-026e-86d2-67ec" type="selectionEntry" targetId="c462-3995-88b0-200c">
+                  <constraints>
+                    <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="6a1c-0502-b6db-e255-min" includeChildSelections="false"/>
+                    <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="6a1c-0502-b6db-e255-max" includeChildSelections="false"/>
+                  </constraints>
+                </entryLink>
+                <entryLink import="true" name="Null mace" hidden="false" id="528b-a8fe-d4e7-6bc7" type="selectionEntry" targetId="0c2d-0fea-e434-a32e"/>
+              </entryLinks>
+              <constraints>
+                <constraint type="max" value="2" field="selections" scope="parent" shared="true" id="23d0-0a83-587a-3f34" includeChildSelections="false"/>
+              </constraints>
+            </selectionEntry>
+            <selectionEntry type="model" import="true" name="Insidiant w/ blessed sword" hidden="false" id="dfc9-3074-4b0b-9966" sortIndex="3">
+              <constraints>
+                <constraint type="max" value="2" field="selections" scope="parent" shared="true" id="0b91-633d-abff-3f07" includeChildSelections="false"/>
+              </constraints>
+              <selectionEntries>
+                <selectionEntry type="upgrade" import="true" name="Blessed sword" hidden="false" id="38ed-3581-e1fa-885c">
+                  <constraints>
+                    <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="08e3-49c1-9af3-5de9-min" includeChildSelections="false"/>
+                    <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="08e3-49c1-9af3-5de9-max" includeChildSelections="false"/>
+                  </constraints>
+                  <profiles>
+                    <profile name="Blessed sword" typeId="8a40-4aaa-c780-9046" typeName="Melee Weapons" hidden="false" id="0309-259a-8221-a8fc">
+                      <characteristics>
+                        <characteristic name="Range" typeId="914c-b413-91e3-a132">Melee</characteristic>
+                        <characteristic name="A" typeId="2337-daa1-6682-b110">3</characteristic>
+                        <characteristic name="WS" typeId="95d1-95f-45b4-11d6">3+</characteristic>
+                        <characteristic name="S" typeId="ab33-d393-96ce-ccba">4</characteristic>
+                        <characteristic name="AP" typeId="41a0-1301-112a-e2f2">-2</characteristic>
+                        <characteristic name="D" typeId="3254-9fe6-d824-513e">2</characteristic>
+                        <characteristic name="Keywords" typeId="893f-9000-ccf7-648e">Lethal Hits</characteristic>
+                      </characteristics>
+                    </profile>
+                  </profiles>
+                  <infoLinks>
+                    <infoLink name="Lethal Hits" id="da94-f1fc-14e9-216a" hidden="false" type="rule" targetId="d1d1-611e-5191-1095"/>
+                  </infoLinks>
+                </selectionEntry>
+              </selectionEntries>
+            </selectionEntry>
+            <selectionEntry type="model" import="true" name="Insidiant w/ virge of admonition" hidden="false" id="a990-deb8-0471-a9d1" sortIndex="4">
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="7198-d755-9986-05b0" includeChildSelections="false"/>
+              </constraints>
+              <selectionEntries>
+                <selectionEntry type="upgrade" import="true" name="Virge of admonition" hidden="false" id="e21f-27a9-9998-16c9">
+                  <constraints>
+                    <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="1f8b-f6ed-3224-e92c-min" includeChildSelections="false"/>
+                    <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="1f8b-f6ed-3224-e92c-max" includeChildSelections="false"/>
+                  </constraints>
+                  <profiles>
+                    <profile name="Virge of Admonition" typeId="8a40-4aaa-c780-9046" typeName="Melee Weapons" hidden="false" id="7663-be63-a93c-61e1">
+                      <characteristics>
+                        <characteristic name="Range" typeId="914c-b413-91e3-a132">Melee</characteristic>
+                        <characteristic name="A" typeId="2337-daa1-6682-b110">3</characteristic>
+                        <characteristic name="WS" typeId="95d1-95f-45b4-11d6">4+</characteristic>
+                        <characteristic name="S" typeId="ab33-d393-96ce-ccba">6</characteristic>
+                        <characteristic name="AP" typeId="41a0-1301-112a-e2f2">-2</characteristic>
+                        <characteristic name="D" typeId="3254-9fe6-d824-513e">3</characteristic>
+                        <characteristic name="Keywords" typeId="893f-9000-ccf7-648e">Anti-PSYKER 4+, Devastating Wounds</characteristic>
+                      </characteristics>
+                    </profile>
+                  </profiles>
+                  <infoLinks>
+                    <infoLink name="Devastating Wounds" id="260a-3310-a994-5d0d" hidden="false" type="rule" targetId="be1e-ac8e-1e2c-3528"/>
+                    <infoLink name="Anti-" id="60fd-3f87-4186-d5a3" hidden="false" type="rule" targetId="4111-82e3-9444-e942"/>
+                  </infoLinks>
+                </selectionEntry>
+              </selectionEntries>
+            </selectionEntry>
+            <selectionEntry type="model" import="true" name="Insidiant w/ denuncia" hidden="false" id="ac73-bb9b-f1f2-eeb7" sortIndex="5">
+              <entryLinks>
+                <entryLink import="true" name="Null mace" hidden="false" id="de53-c6c6-0f11-b4ef" type="selectionEntry" targetId="0c2d-0fea-e434-a32e"/>
+              </entryLinks>
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="f998-1519-5489-4a52" includeChildSelections="false"/>
+              </constraints>
+              <selectionEntries>
+                <selectionEntry type="upgrade" import="true" name="Denuncia Oratory" hidden="false" id="6b64-a791-434a-882b">
+                  <constraints>
+                    <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="b8fb-6fb4-09c5-7845-min" includeChildSelections="false"/>
+                    <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="b8fb-6fb4-09c5-7845-max" includeChildSelections="false"/>
+                  </constraints>
+                  <profiles>
+                    <profile name="Denuncia Oratory" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="0d79-8c08-81a5-8b90">
+                      <characteristics>
+                        <characteristic name="Description" typeId="9b8f-694b-e5e-b573">Each time the bearer’s unit’s quarry is destroyed, you can select a new unit from your opponent’s army to be its quarry.</characteristic>
+                      </characteristics>
+                    </profile>
+                  </profiles>
+                </selectionEntry>
+              </selectionEntries>
+            </selectionEntry>
+            <selectionEntry type="model" import="true" name="Insidiant w/ simulacrum" hidden="false" id="f780-8fc0-e9b7-7050" sortIndex="6">
+              <entryLinks>
+                <entryLink import="true" name="Null mace" hidden="false" id="1f8a-803b-5fcc-08db" type="selectionEntry" targetId="0c2d-0fea-e434-a32e"/>
+                <entryLink import="true" name="Condemnor bolt pistol" hidden="false" id="d4a2-2213-43dc-f47e" type="selectionEntry" targetId="6060-41bc-087d-70f4">
+                  <constraints>
+                    <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="f98f-9378-d93e-cca4-min" includeChildSelections="false"/>
+                    <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="f98f-9378-d93e-cca4-max" includeChildSelections="false"/>
+                  </constraints>
+                </entryLink>
+              </entryLinks>
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="604a-0202-ad8e-8433" includeChildSelections="false"/>
+              </constraints>
+              <selectionEntries>
+                <selectionEntry type="upgrade" import="true" name="Simulacrum imperialis" hidden="false" id="da06-14e8-a52b-db3b">
+                  <constraints>
+                    <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="7553-a0c6-425b-70ea-min" includeChildSelections="false"/>
+                    <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="7553-a0c6-425b-70ea-max" includeChildSelections="false"/>
+                  </constraints>
+                  <profiles>
+                    <profile name="Simulacrum Imperialis" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="6894-ba17-e451-a786">
+                      <characteristics>
+                        <characteristic name="Description" typeId="9b8f-694b-e5e-b573">At the end of your Command phase, for each objective marker you control that has one or more units from your army with this ability within range of it, roll one D6: on a 4+, you gain 1 Miracle dice showing a value equal to that result.</characteristic>
+                      </characteristics>
+                    </profile>
+                  </profiles>
+                </selectionEntry>
+              </selectionEntries>
+            </selectionEntry>
+          </selectionEntries>
+          <constraints>
+            <constraint type="min" value="9" field="selections" scope="parent" shared="true" id="e0fb-36fa-d955-18c9-min" includeChildSelections="false"/>
+            <constraint type="max" value="9" field="selections" scope="parent" shared="true" id="e0fb-36fa-d955-18c9-max" includeChildSelections="false"/>
+          </constraints>
+        </selectionEntryGroup>
+      </selectionEntryGroups>
+    </selectionEntry>
+    <selectionEntry type="upgrade" import="true" name="Null mace" hidden="false" id="0c2d-0fea-e434-a32e">
+      <comment>Insidiants</comment>
+      <profiles>
+        <profile name="Null mace" typeId="8a40-4aaa-c780-9046" typeName="Melee Weapons" hidden="false" id="a6f7-d975-6ed7-9262">
+          <characteristics>
+            <characteristic name="Range" typeId="914c-b413-91e3-a132">Melee</characteristic>
+            <characteristic name="A" typeId="2337-daa1-6682-b110">3</characteristic>
+            <characteristic name="WS" typeId="95d1-95f-45b4-11d6">3+</characteristic>
+            <characteristic name="S" typeId="ab33-d393-96ce-ccba">4</characteristic>
+            <characteristic name="AP" typeId="41a0-1301-112a-e2f2">-1</characteristic>
+            <characteristic name="D" typeId="3254-9fe6-d824-513e">1</characteristic>
+            <characteristic name="Keywords" typeId="893f-9000-ccf7-648e">Anti-PSYKER 4+, Devastating Wounds</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+      <infoLinks>
+        <infoLink name="Devastating Wounds" id="e907-1c3a-d432-3e3c" hidden="false" type="rule" targetId="be1e-ac8e-1e2c-3528"/>
+        <infoLink name="Anti-" id="f6ad-0b21-422c-486b" hidden="false" type="rule" targetId="4111-82e3-9444-e942"/>
+      </infoLinks>
+      <constraints>
+        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="f986-c040-75d3-5341-min" includeChildSelections="false"/>
+        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="f986-c040-75d3-5341-max" includeChildSelections="false"/>
+      </constraints>
+    </selectionEntry>
+    <selectionEntry type="upgrade" import="true" name="Condemnor bolt pistol" hidden="false" id="6060-41bc-087d-70f4" collective="true">
+      <comment>Insidiants</comment>
+      <profiles>
+        <profile name="Condemnor bolt pistol" typeId="f77d-b953-8fa4-b762" typeName="Ranged Weapons" hidden="false" id="9459-40e8-a99c-8d8a">
+          <characteristics>
+            <characteristic name="Range" typeId="9896-9419-16a1-92fc">12&quot;</characteristic>
+            <characteristic name="A" typeId="3bb-c35f-f54-fb08">1</characteristic>
+            <characteristic name="BS" typeId="94d-8a98-cf90-183e">3+</characteristic>
+            <characteristic name="S" typeId="2229-f494-25db-c5d3">4</characteristic>
+            <characteristic name="AP" typeId="9ead-8a10-520-de15">0</characteristic>
+            <characteristic name="D" typeId="a354-c1c8-a745-f9e3">1</characteristic>
+            <characteristic name="Keywords" typeId="7f1b-8591-2fcf-d01c">Anti-PSYKER 4+, Devastating Wounds, Pistol</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+      <infoLinks>
+        <infoLink name="Anti-" id="5d24-1c79-66a2-f473" hidden="false" type="rule" targetId="4111-82e3-9444-e942"/>
+        <infoLink name="Devastating Wounds" id="0453-3e4d-6761-5257" hidden="false" type="rule" targetId="be1e-ac8e-1e2c-3528"/>
+        <infoLink name="Pistol" id="75d3-fba3-b32d-10eb" hidden="false" type="rule" targetId="8bf7-8812-923d-29e4"/>
+      </infoLinks>
+    </selectionEntry>
+    <selectionEntry type="upgrade" import="true" name="Sanctifier melee weapon" hidden="false" id="15b9-156b-aca3-6474">
+      <constraints>
+        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="eba7-c668-af82-08a1" includeChildSelections="false"/>
+        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="2346-d485-c459-5424" includeChildSelections="false"/>
+      </constraints>
+      <profiles>
+        <profile name="Sanctifier melee weapon" typeId="8a40-4aaa-c780-9046" typeName="Melee Weapons" hidden="false" id="2c56-82e2-5355-7a27">
+          <characteristics>
+            <characteristic name="Range" typeId="914c-b413-91e3-a132">Melee</characteristic>
+            <characteristic name="A" typeId="2337-daa1-6682-b110">3</characteristic>
+            <characteristic name="WS" typeId="95d1-95f-45b4-11d6">3+</characteristic>
+            <characteristic name="S" typeId="ab33-d393-96ce-ccba">3</characteristic>
+            <characteristic name="AP" typeId="41a0-1301-112a-e2f2">0</characteristic>
+            <characteristic name="D" typeId="3254-9fe6-d824-513e">1</characteristic>
+            <characteristic name="Keywords" typeId="893f-9000-ccf7-648e">-</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
     </selectionEntry>
   </sharedSelectionEntries>
   <sharedProfiles>
@@ -11392,7 +11846,8 @@ Death Before Disgrace: Each time a PENITENT model from your army is destroyed by
         <entryLink import="true" name="Experience Points" hidden="false" id="d04e-b64a-19b1-6142" type="selectionEntry" targetId="2dbf-4d49-5d74-85c9" sortIndex="1"/>
         <entryLink import="true" name="Legendary Veterans" hidden="false" id="31f3-9d76-5a8f-173b" type="selectionEntry" targetId="1511-18fe-f51e-7b9d" sortIndex="2"/>
         <entryLink import="true" name="Battle Scars" hidden="false" id="5761-3aa3-7ae2-caa2" type="selectionEntryGroup" targetId="1576-e816-033f-828d" collapsible="true" sortIndex="5"/>
-        <entryLink import="true" name="Trials of a Living Saint" hidden="false" id="10b1-20a4-7419-4dd4" type="selectionEntryGroup" targetId="4118-1b13-e630-7a9a" sortIndex="6"/>
+        <entryLink import="true" name="Trials of a Living Saint" hidden="false" id="10b1-20a4-7419-4dd4" type="selectionEntryGroup" targetId="4118-1b13-e630-7a9a" sortIndex="7"/>
+        <entryLink import="true" name="Hymns of Battle" hidden="false" id="5e56-67d0-2eb7-6831" type="selectionEntryGroup" targetId="26c7-61e7-4507-7859" sortIndex="6" collapsible="true"/>
       </entryLinks>
       <modifiers>
         <modifier type="set" value="true" field="hidden">
@@ -11422,16 +11877,49 @@ Death Before Disgrace: Each time a PENITENT model from your army is destroyed by
             <entryLink import="true" name="Battle Traits" hidden="false" id="9662-2de2-5f72-52c9" type="selectionEntryGroup" targetId="0511-d9ad-2978-2234">
               <entryLinks>
                 <entryLink import="true" name="Codex Battle Traits" hidden="false" id="3a06-b647-627c-5236" type="selectionEntryGroup" targetId="de9c-0fc7-5b8d-b3da"/>
+                <entryLink import="true" name="White Dwarf Battle Traits" hidden="false" id="29eb-8010-e532-4448" type="selectionEntryGroup" targetId="3362-e04a-f739-6f95"/>
               </entryLinks>
             </entryLink>
             <entryLink import="true" name="Crusade Relics" hidden="false" id="ec72-ef66-9577-f09c" type="selectionEntryGroup" targetId="e919-5b46-974d-a5b1">
               <entryLinks>
                 <entryLink import="true" name="Codex Crusade Relics" hidden="false" id="20cb-6334-e49d-a78f" type="selectionEntryGroup" targetId="aa40-ace7-beb9-4435"/>
+                <entryLink import="true" name="White Dwarf Crusade Relics" hidden="false" id="f201-064c-0e83-6ddf" type="selectionEntryGroup" targetId="55a0-b71f-ced0-e346"/>
               </entryLinks>
             </entryLink>
             <entryLink import="true" name="Tyrannic War Battle Honours" hidden="false" id="6e3a-67c0-3efc-a3db" type="selectionEntryGroup" targetId="1927-d905-041e-b914"/>
             <entryLink import="true" name="Pariah Nexus Blackstone Upgrades" hidden="false" id="6d5d-6654-0285-3525" type="selectionEntryGroup" targetId="66c2-2a46-e7ed-a935"/>
           </entryLinks>
+          <selectionEntries>
+            <selectionEntry type="upgrade" import="true" name="Devout Warrior" hidden="false" id="eebe-2ebf-2664-e637">
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="d31d-a2e9-7cb0-d283" includeChildSelections="false"/>
+              </constraints>
+              <costs>
+                <cost name="pts" typeId="51b2-306e-1021-d207" value="0"/>
+                <cost name="Crusade Points" typeId="b03b-c239-15a5-da55" value="0"/>
+                <cost name="Crusade: Battle Honours" typeId="75bb-ded1-c86d-bdf0" value="0"/>
+                <cost name="Crusade: Experience" typeId="a623-fe74-1d33-cddf" value="0"/>
+                <cost name="Crusade: Weapon Modifications" typeId="716d-91b7-d55a-1022" value="0"/>
+              </costs>
+              <modifiers>
+                <modifier type="set" value="true" field="hidden">
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition type="lessThan" value="71" field="selections" scope="parent" childId="2dbf-4d49-5d74-85c9" shared="true" includeChildSelections="true"/>
+                        <condition type="notInstanceOf" value="1" field="selections" scope="ancestor" childId="9cfd-1c32-585f-7d5c" shared="true"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </modifier>
+                <modifier type="set" value="true" field="hidden">
+                  <conditions>
+                    <condition type="lessThan" value="1" field="selections" scope="roster" childId="c00c-b9d6-e0f7-4c37" shared="true" includeChildSelections="true" includeChildForces="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </selectionEntry>
+          </selectionEntries>
         </selectionEntryGroup>
       </selectionEntryGroups>
     </selectionEntryGroup>
@@ -11709,6 +12197,713 @@ Death Before Disgrace: Each time a PENITENT model from your army is destroyed by
         </selectionEntryGroup>
       </selectionEntryGroups>
     </selectionEntryGroup>
+    <selectionEntryGroup name="Hymns of Battle" id="26c7-61e7-4507-7859" hidden="false">
+      <comment>Crusade content - White Dwarf</comment>
+      <modifiers>
+        <modifier type="set" value="true" field="hidden">
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition type="notInstanceOf" value="1" field="selections" scope="ancestor" childId="9cfd-1c32-585f-7d5c" shared="true" includeChildSelections="true" includeChildForces="true"/>
+                <condition type="notInstanceOf" value="1" field="selections" scope="ancestor" childId="fd71-afa6-b13b-7fda" shared="true" includeChildSelections="true" includeChildForces="true"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+        <modifier type="set" value="true" field="hidden">
+          <conditions>
+            <condition type="lessThan" value="1" field="selections" scope="roster" childId="c00c-b9d6-e0f7-4c37" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+      <selectionEntries>
+        <selectionEntry type="upgrade" import="true" name="Lead Army in Prayer" hidden="false" id="f9fa-081a-d563-8ff5">
+          <categoryLinks>
+            <categoryLink name="Blessed Orator" hidden="false" id="808d-5a6e-0f94-4b77" targetId="268e-1f79-b070-6e03" primary="false"/>
+          </categoryLinks>
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="5e84-f58d-cc86-2191" includeChildSelections="true"/>
+          </constraints>
+          <costs>
+            <cost name="pts" typeId="51b2-306e-1021-d207" value="0"/>
+            <cost name="Crusade Points" typeId="b03b-c239-15a5-da55" value="1"/>
+            <cost name="Crusade: Battle Honours" typeId="75bb-ded1-c86d-bdf0" value="0"/>
+            <cost name="Crusade: Experience" typeId="a623-fe74-1d33-cddf" value="0"/>
+            <cost name="Crusade: Weapon Modifications" typeId="716d-91b7-d55a-1022" value="0"/>
+            <cost name="Blackstone Fragments" typeId="ac6b-ced3-9b5e-9a6e" value="0"/>
+          </costs>
+          <profiles>
+            <profile name="Intoning Hymns of Battle" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="e386-9fc2-6ec5-e877">
+              <characteristics>
+                <characteristic name="Description" typeId="9b8f-694b-e5e-b573">Once per battle, at the start of the battle round, if you have one or more **^^Adepta Sororitas Character^^** units on the battlefield and if your Crusade army was led in prayer before this battle, you can discard two Miracle dice. If you do, you intone the Hymns of Battle that battle round and, until the start of the next battle round, all **^^Adepta Sororitas Character^^** units in your army gain bonus depending on which Hymns of Battle you select. While a unit is Battle-shocked, it loses the bonus of any Hymns that would apply to it (if a rule would cause such a unit to no longer be Battle-shocked, any bonuses from Hymns that would apply to it apply once again).
+
+When you intone Hymns of Battle, you can either select one Hymn to apply to units from your army from the list, or you can randomly select two by rolling two D6 and consulting the table (if a double is rolled, roll both dice again until two different results are rolled).</characteristic>
+              </characteristics>
+            </profile>
+            <profile name="Litany of the Emperor&apos;s Will" typeId="080e-29ff-c83f-bc44" typeName="Hymn of Battle" hidden="false" id="91c3-71f9-2e44-f475">
+              <characteristics>
+                <characteristic name="Description" typeId="3699-66b5-01a3-2f9b">Add 2&quot; to the Move characteristic of models in this unit and add 1 to Advance and Charge rolls made for this unit.</characteristic>
+                <characteristic name="D6" typeId="4ab8-4478-7f0c-099d">1</characteristic>
+              </characteristics>
+            </profile>
+            <profile name="Verse of Divine Protection" typeId="080e-29ff-c83f-bc44" typeName="Hymn of Battle" hidden="false" id="2795-adca-932c-b294">
+              <characteristics>
+                <characteristic name="Description" typeId="3699-66b5-01a3-2f9b">Each time an attack with an unmodified Damage characteristic of 1 is allocated to a model in this unit, add 1 to any armour saving throw made against that attack.</characteristic>
+                <characteristic name="D6" typeId="4ab8-4478-7f0c-099d">2</characteristic>
+              </characteristics>
+            </profile>
+            <profile name="Chorus of Perfervid Belief" typeId="080e-29ff-c83f-bc44" typeName="Hymn of Battle" hidden="false" id="44f1-935f-eb2c-3171">
+              <characteristics>
+                <characteristic name="Description" typeId="3699-66b5-01a3-2f9b">Each time this unit performs an Act of Faith, add 1 to the result of the dice being substituted (to a maximum of 6). Each time a Miracle dice with an unmodified result of a 6 is used when such a unit performs an Act of Faith, you gain 1 Miracle dice.</characteristic>
+                <characteristic name="D6" typeId="4ab8-4478-7f0c-099d">3</characteristic>
+              </characteristics>
+            </profile>
+            <profile name="Refrain of Righteous Guidance" typeId="080e-29ff-c83f-bc44" typeName="Hymn of Battle" hidden="false" id="6f61-ea81-c00d-f55e">
+              <characteristics>
+                <characteristic name="Description" typeId="3699-66b5-01a3-2f9b">Improve the Armour Penetration characteristic of ranged weapons equipped by models in this unit by 1.</characteristic>
+                <characteristic name="D6" typeId="4ab8-4478-7f0c-099d">4</characteristic>
+              </characteristics>
+            </profile>
+            <profile name="Catechism of Holy Wrath" typeId="080e-29ff-c83f-bc44" typeName="Hymn of Battle" hidden="false" id="d580-4871-ea52-3b06">
+              <characteristics>
+                <characteristic name="Description" typeId="3699-66b5-01a3-2f9b">Improve the Attacks and Strength characteristics of melee weapons equipped by models in this unit by 1.</characteristic>
+                <characteristic name="D6" typeId="4ab8-4478-7f0c-099d">5</characteristic>
+              </characteristics>
+            </profile>
+            <profile name="Vow of Unbridled Valour" typeId="080e-29ff-c83f-bc44" typeName="Hymn of Battle" hidden="false" id="2a1c-b7af-c731-738a">
+              <characteristics>
+                <characteristic name="Description" typeId="3699-66b5-01a3-2f9b">Improve the Leadership and Objective Control characteristics of models in this unit by 1.</characteristic>
+                <characteristic name="D6" typeId="4ab8-4478-7f0c-099d">6</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+        </selectionEntry>
+      </selectionEntries>
+    </selectionEntryGroup>
+    <selectionEntryGroup name="White Dwarf Battle Traits" id="3362-e04a-f739-6f95" hidden="false" collapsible="true">
+      <comment>Crusade content</comment>
+      <selectionEntries>
+        <selectionEntry type="upgrade" import="true" name="Word of the Emperor" hidden="false" id="206d-eecb-7c30-b83d">
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="0f35-f968-445f-46a8" includeChildSelections="true"/>
+          </constraints>
+          <costs>
+            <cost name="pts" typeId="51b2-306e-1021-d207" value="0"/>
+            <cost name="Crusade Points" typeId="b03b-c239-15a5-da55" value="1"/>
+            <cost name="Crusade: Battle Honours" typeId="75bb-ded1-c86d-bdf0" value="1"/>
+            <cost name="Crusade: Experience" typeId="a623-fe74-1d33-cddf" value="0"/>
+            <cost name="Diplomatic Power" typeId="4d7c-04b6-8a79-837f" value="0"/>
+            <cost name="Military Power" typeId="1cbe-d9c9-86a8-2d41" value="0"/>
+          </costs>
+          <modifiers>
+            <modifier type="set" value="true" field="hidden">
+              <conditions>
+                <condition type="notInstanceOf" value="1" field="selections" scope="parent" childId="c22d-ed31-bda4-79d6" shared="true" includeChildSelections="false" includeChildForces="false"/>
+              </conditions>
+            </modifier>
+            <modifier type="set" value="2" field="b03b-c239-15a5-da55">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="5929-ad51-d006-e008" shared="true"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+          <profiles>
+            <profile name="Word of the Emperor" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="048b-7166-acee-21da">
+              <characteristics>
+                <characteristic name="Description" typeId="9b8f-694b-e5e-b573">**^^Dialogus^^** only. Each time your opponent targets a unit from their army with a Stratagem, if that unit is within 12&quot; of this model, increase the cost of that use if that Stratagem by 1CP.</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+          <comment>Unique in Crusade Force</comment>
+        </selectionEntry>
+        <selectionEntry type="upgrade" import="true" name="Conviction of Faith" hidden="false" id="e0f9-3072-9c45-b061">
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="3c47-edd6-3b58-44bf" includeChildSelections="false"/>
+          </constraints>
+          <costs>
+            <cost name="pts" typeId="51b2-306e-1021-d207" value="0"/>
+            <cost name="Crusade Points" typeId="b03b-c239-15a5-da55" value="1"/>
+            <cost name="Crusade: Battle Honours" typeId="75bb-ded1-c86d-bdf0" value="1"/>
+            <cost name="Crusade: Experience" typeId="a623-fe74-1d33-cddf" value="0"/>
+            <cost name="Diplomatic Power" typeId="4d7c-04b6-8a79-837f" value="0"/>
+            <cost name="Military Power" typeId="1cbe-d9c9-86a8-2d41" value="0"/>
+          </costs>
+          <modifiers>
+            <modifier type="set" value="true" field="hidden">
+              <conditions>
+                <condition type="notInstanceOf" value="1" field="selections" scope="parent" childId="9cfd-1c32-585f-7d5c" shared="true" includeChildSelections="false" includeChildForces="false"/>
+              </conditions>
+            </modifier>
+            <modifier type="set" value="2" field="b03b-c239-15a5-da55">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="5929-ad51-d006-e008" shared="true"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+          <profiles>
+            <profile name="Conviction of Faith" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="346b-786c-5847-b29b">
+              <characteristics>
+                <characteristic name="Description" typeId="9b8f-694b-e5e-b573">At the start of the battle, you gain 1 miracle dice. If this model is your **^^Blessed Orator^^**, then you start the battle with 2 Miracle dice instead.</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+        </selectionEntry>
+        <selectionEntry type="upgrade" import="true" name="Inspiring Orator" hidden="false" id="d88f-096e-7c6f-126e">
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="fca6-0d37-1efc-7eff" includeChildSelections="false"/>
+          </constraints>
+          <costs>
+            <cost name="pts" typeId="51b2-306e-1021-d207" value="0"/>
+            <cost name="Crusade Points" typeId="b03b-c239-15a5-da55" value="1"/>
+            <cost name="Crusade: Battle Honours" typeId="75bb-ded1-c86d-bdf0" value="1"/>
+            <cost name="Crusade: Experience" typeId="a623-fe74-1d33-cddf" value="0"/>
+            <cost name="Diplomatic Power" typeId="4d7c-04b6-8a79-837f" value="0"/>
+            <cost name="Military Power" typeId="1cbe-d9c9-86a8-2d41" value="0"/>
+          </costs>
+          <modifiers>
+            <modifier type="set" value="true" field="hidden">
+              <conditions>
+                <condition type="notInstanceOf" value="1" field="selections" scope="parent" childId="9cfd-1c32-585f-7d5c" shared="true" includeChildSelections="false" includeChildForces="false"/>
+              </conditions>
+            </modifier>
+            <modifier type="set" value="2" field="b03b-c239-15a5-da55">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="5929-ad51-d006-e008" shared="true"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+          <profiles>
+            <profile name="Inspiring Orator" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="159a-6683-6836-05e9">
+              <characteristics>
+                <characteristic name="Description" typeId="9b8f-694b-e5e-b573">At the start of each battle round, roll one D6 and consult the Hymns of Battle table. If you wish, you can then choose to discard 1 Miracle dice; if you do, then until the end of the battle round, that Hymn applies to this model&apos;s unit (duplicated Hymns of Battle are not cumulative, and have no additional effect).</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+        </selectionEntry>
+        <selectionEntry type="upgrade" import="true" name="Raging Fervour" hidden="false" id="adbe-fb88-ef1a-b917">
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="e624-3aef-1076-e093" includeChildSelections="false"/>
+          </constraints>
+          <costs>
+            <cost name="pts" typeId="51b2-306e-1021-d207" value="0"/>
+            <cost name="Crusade Points" typeId="b03b-c239-15a5-da55" value="1"/>
+            <cost name="Crusade: Battle Honours" typeId="75bb-ded1-c86d-bdf0" value="1"/>
+            <cost name="Crusade: Experience" typeId="a623-fe74-1d33-cddf" value="0"/>
+            <cost name="Diplomatic Power" typeId="4d7c-04b6-8a79-837f" value="0"/>
+            <cost name="Military Power" typeId="1cbe-d9c9-86a8-2d41" value="0"/>
+          </costs>
+          <modifiers>
+            <modifier type="set" value="true" field="hidden">
+              <conditions>
+                <condition type="notInstanceOf" value="1" field="selections" scope="parent" childId="9cfd-1c32-585f-7d5c" shared="true" includeChildSelections="false" includeChildForces="false"/>
+              </conditions>
+            </modifier>
+            <modifier type="set" value="2" field="b03b-c239-15a5-da55">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="5929-ad51-d006-e008" shared="true"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+          <profiles>
+            <profile name="Raging Fervour" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="6073-c1ae-e3d3-2311">
+              <characteristics>
+                <characteristic name="Description" typeId="9b8f-694b-e5e-b573">While the bearer is leading a unit, each time a model in that unit makes an attack, re-roll a Hit roll of 1. If your army is Intoning Hymns of Battle, then while the bearer is leading a unit, each time a model in that unit makes an attack, you can re-roll a Wound roll of 1 as well.</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+        </selectionEntry>
+        <selectionEntry type="upgrade" import="true" name="Solemn in Prayer" hidden="false" id="d066-5d6f-9c94-face">
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="ad46-2693-00b0-3ae2" includeChildSelections="false"/>
+          </constraints>
+          <costs>
+            <cost name="pts" typeId="51b2-306e-1021-d207" value="0"/>
+            <cost name="Crusade Points" typeId="b03b-c239-15a5-da55" value="1"/>
+            <cost name="Crusade: Battle Honours" typeId="75bb-ded1-c86d-bdf0" value="1"/>
+            <cost name="Crusade: Experience" typeId="a623-fe74-1d33-cddf" value="0"/>
+            <cost name="Diplomatic Power" typeId="4d7c-04b6-8a79-837f" value="0"/>
+            <cost name="Military Power" typeId="1cbe-d9c9-86a8-2d41" value="0"/>
+          </costs>
+          <modifiers>
+            <modifier type="set" value="true" field="hidden">
+              <conditions>
+                <condition type="notInstanceOf" value="1" field="selections" scope="parent" childId="9cfd-1c32-585f-7d5c" shared="true" includeChildSelections="false" includeChildForces="false"/>
+              </conditions>
+            </modifier>
+            <modifier type="set" value="2" field="b03b-c239-15a5-da55">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="5929-ad51-d006-e008" shared="true"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+          <profiles>
+            <profile name="Solemn in Prayer" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="3734-4085-c0e6-bba4">
+              <characteristics>
+                <characteristic name="Description" typeId="9b8f-694b-e5e-b573">At the end of your Command phase, if this model is on the battlefield, you can re-roll one Miracle dice from your Miracle dice pool and return it to your Miracle dice pool with the new result you rolled.</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+        </selectionEntry>
+        <selectionEntry type="upgrade" import="true" name="Bombastic Projection (Aura)" hidden="false" id="6491-c6b4-224a-c643">
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="e218-feeb-7374-4d3c" includeChildSelections="false"/>
+          </constraints>
+          <costs>
+            <cost name="pts" typeId="51b2-306e-1021-d207" value="0"/>
+            <cost name="Crusade Points" typeId="b03b-c239-15a5-da55" value="1"/>
+            <cost name="Crusade: Battle Honours" typeId="75bb-ded1-c86d-bdf0" value="1"/>
+            <cost name="Crusade: Experience" typeId="a623-fe74-1d33-cddf" value="0"/>
+            <cost name="Diplomatic Power" typeId="4d7c-04b6-8a79-837f" value="0"/>
+            <cost name="Military Power" typeId="1cbe-d9c9-86a8-2d41" value="0"/>
+          </costs>
+          <modifiers>
+            <modifier type="set" value="true" field="hidden">
+              <conditions>
+                <condition type="notInstanceOf" value="1" field="selections" scope="parent" childId="9cfd-1c32-585f-7d5c" shared="true" includeChildSelections="false" includeChildForces="false"/>
+              </conditions>
+            </modifier>
+            <modifier type="set" value="2" field="b03b-c239-15a5-da55">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="5929-ad51-d006-e008" shared="true"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+          <profiles>
+            <profile name="Bombastic Projection (Aura)" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="fbb8-64ff-1702-2eed">
+              <characteristics>
+                <characteristic name="Description" typeId="9b8f-694b-e5e-b573">While a friendly **^^Adepta Sororitas^^** unit is within 6&quot; of this model, that unit is considered to be a **^^Character^^** unit for the purposes of gaining bonuses for the Hymns of Battle rule.</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+        </selectionEntry>
+        <selectionEntry type="upgrade" import="true" name="Faithful Devotee (Aura)" hidden="false" id="1821-5e13-b074-f43e">
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="de88-04b9-52a1-520b" includeChildSelections="false"/>
+          </constraints>
+          <costs>
+            <cost name="pts" typeId="51b2-306e-1021-d207" value="0"/>
+            <cost name="Crusade Points" typeId="b03b-c239-15a5-da55" value="1"/>
+            <cost name="Crusade: Battle Honours" typeId="75bb-ded1-c86d-bdf0" value="1"/>
+            <cost name="Crusade: Experience" typeId="a623-fe74-1d33-cddf" value="0"/>
+            <cost name="Diplomatic Power" typeId="4d7c-04b6-8a79-837f" value="0"/>
+            <cost name="Military Power" typeId="1cbe-d9c9-86a8-2d41" value="0"/>
+          </costs>
+          <modifiers>
+            <modifier type="set" value="true" field="hidden">
+              <conditions>
+                <condition type="notInstanceOf" value="1" field="selections" scope="parent" childId="9cfd-1c32-585f-7d5c" shared="true" includeChildSelections="false" includeChildForces="false"/>
+              </conditions>
+            </modifier>
+            <modifier type="set" value="2" field="b03b-c239-15a5-da55">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="5929-ad51-d006-e008" shared="true"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+          <profiles>
+            <profile name="Faithful Devotee (Aura)" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="6bd3-aebd-01be-5606">
+              <characteristics>
+                <characteristic name="Description" typeId="9b8f-694b-e5e-b573">While a friendly **^^Adepta Sororitas^^** unit is within 6&quot; of this model, each time that unit performs an Act of Faith, roll one D6: one a 6, you gain 1 Miracle dice.</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+        </selectionEntry>
+        <selectionEntry type="upgrade" import="true" name="In The Footsteps of Saints" hidden="false" id="8ce1-65e6-a10f-6d39">
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="56da-9a7b-ed0b-235c" includeChildSelections="true"/>
+          </constraints>
+          <costs>
+            <cost name="pts" typeId="51b2-306e-1021-d207" value="0"/>
+            <cost name="Crusade Points" typeId="b03b-c239-15a5-da55" value="1"/>
+            <cost name="Crusade: Battle Honours" typeId="75bb-ded1-c86d-bdf0" value="1"/>
+            <cost name="Crusade: Experience" typeId="a623-fe74-1d33-cddf" value="0"/>
+            <cost name="Diplomatic Power" typeId="4d7c-04b6-8a79-837f" value="0"/>
+            <cost name="Military Power" typeId="1cbe-d9c9-86a8-2d41" value="0"/>
+          </costs>
+          <modifiers>
+            <modifier type="set" value="true" field="hidden">
+              <conditions>
+                <condition type="notInstanceOf" value="1" field="selections" scope="parent" childId="27a5-f3c8-a520-edd9" shared="true" includeChildSelections="false" includeChildForces="false"/>
+              </conditions>
+            </modifier>
+            <modifier type="set" value="2" field="b03b-c239-15a5-da55">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="5929-ad51-d006-e008" shared="true"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+          <profiles>
+            <profile name="In The Footsteps of Saints" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="3821-a809-df19-6a52">
+              <characteristics>
+                <characteristic name="Description" typeId="9b8f-694b-e5e-b573">**^^Imagifier^^** only. At the end of the battle, if this model is on the battlefield, you can select one additional **^^Adepta Sororitas^^** unit in your army to be Marked for Greatness.</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+          <comment>Unique in Crusade Force</comment>
+        </selectionEntry>
+        <selectionEntry type="upgrade" import="true" name="Final Rites" hidden="false" id="6087-4992-8ba1-8e50">
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="e9bc-fcc3-2603-aeaa" includeChildSelections="true"/>
+          </constraints>
+          <costs>
+            <cost name="pts" typeId="51b2-306e-1021-d207" value="0"/>
+            <cost name="Crusade Points" typeId="b03b-c239-15a5-da55" value="1"/>
+            <cost name="Crusade: Battle Honours" typeId="75bb-ded1-c86d-bdf0" value="1"/>
+            <cost name="Crusade: Experience" typeId="a623-fe74-1d33-cddf" value="0"/>
+            <cost name="Diplomatic Power" typeId="4d7c-04b6-8a79-837f" value="0"/>
+            <cost name="Military Power" typeId="1cbe-d9c9-86a8-2d41" value="0"/>
+          </costs>
+          <modifiers>
+            <modifier type="set" value="true" field="hidden">
+              <conditions>
+                <condition type="notInstanceOf" value="1" field="selections" scope="parent" childId="3fd9-a95e-b442-9a77" shared="true" includeChildSelections="false" includeChildForces="false"/>
+              </conditions>
+            </modifier>
+            <modifier type="set" value="2" field="b03b-c239-15a5-da55">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="5929-ad51-d006-e008" shared="true"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+          <profiles>
+            <profile name="Final Rites" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="d114-0224-b3b4-3a54">
+              <characteristics>
+                <characteristic name="Description" typeId="9b8f-694b-e5e-b573">**^^Hospitaller^^** only. Once per battle, if this model is on the battlefield when an **^^Adepta Sororitas^^** unit from your army fails an Out of Action test, all **^^Adepta Sororitas^^** units from your army that are on the battlefield gain 1XP.</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+          <comment>Unique in Crusade Force</comment>
+        </selectionEntry>
+        <selectionEntry type="upgrade" import="true" name="Corrective Penance" hidden="false" id="b2f7-8016-aed0-8552">
+          <constraints>
+            <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="62a2-d699-830f-6f90" includeChildSelections="true"/>
+          </constraints>
+          <costs>
+            <cost name="pts" typeId="51b2-306e-1021-d207" value="0"/>
+            <cost name="Crusade Points" typeId="b03b-c239-15a5-da55" value="1"/>
+            <cost name="Crusade: Battle Honours" typeId="75bb-ded1-c86d-bdf0" value="1"/>
+            <cost name="Crusade: Experience" typeId="a623-fe74-1d33-cddf" value="0"/>
+            <cost name="Diplomatic Power" typeId="4d7c-04b6-8a79-837f" value="0"/>
+            <cost name="Military Power" typeId="1cbe-d9c9-86a8-2d41" value="0"/>
+          </costs>
+          <modifiers>
+            <modifier type="set" value="true" field="hidden">
+              <conditions>
+                <condition type="notInstanceOf" value="1" field="selections" scope="parent" childId="6b73-a2e7-f47-5af9" shared="true" includeChildSelections="false" includeChildForces="false"/>
+              </conditions>
+            </modifier>
+            <modifier type="set" value="2" field="b03b-c239-15a5-da55">
+              <conditions>
+                <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="5929-ad51-d006-e008" shared="true"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+          <profiles>
+            <profile name="Corrective Penance" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="27b9-b1bf-c64b-de86">
+              <characteristics>
+                <characteristic name="Description" typeId="9b8f-694b-e5e-b573">**^^Dogmata^^** only. Once per battle, at the end of the battle, if this model is on the battlefield, you can select one other **^^Adepta Sororitas^^** unit from your Crusade army that has one or more Battle Traits and spend 1RP. If you do, select one Battle Trait that the unit has and replace it with a new Adepta Sororitas Battle Trait that the unit could have.</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+          <comment>Unique in Crusade Force</comment>
+        </selectionEntry>
+      </selectionEntries>
+      <modifiers>
+        <modifier type="set" value="true" field="hidden">
+          <conditions>
+            <condition type="lessThan" value="1" field="selections" scope="roster" childId="c00c-b9d6-e0f7-4c37" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+    </selectionEntryGroup>
+    <selectionEntryGroup name="White Dwarf Crusade Relics" id="55a0-b71f-ced0-e346" hidden="false" collapsible="true">
+      <selectionEntryGroups>
+        <selectionEntryGroup name="Antiquity Relics" id="de7f-1078-e368-6309" hidden="false" sortIndex="2">
+          <selectionEntries>
+            <selectionEntry type="upgrade" import="true" name="Triptych of the Macharian Crusade" hidden="false" id="896e-68fb-cf54-7337">
+              <profiles>
+                <profile name="Triptych of the Macharian Crusade" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="3ea7-e149-640a-ad40">
+                  <characteristics>
+                    <characteristic name="Description" typeId="9b8f-694b-e5e-b573">While the bearer is leading a unit, models in that unit have a 5+ invulnerable save. Once per phase, when an attack is allocated to a model in the bearer&apos;s unit, you can discard 1 Miracle dice; if you do, the Damage characteristic of that attack is changed to 0.</characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="efe8-d002-c83a-c365" includeChildForces="true" includeChildSelections="true"/>
+              </constraints>
+              <modifiers>
+                <modifier type="set" value="true" field="hidden">
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditionGroups>
+                        <conditionGroup type="and">
+                          <conditions>
+                            <condition type="atLeast" value="1" field="selections" scope="roster" childId="896e-68fb-cf54-7337" shared="true" includeChildForces="true" includeChildSelections="true"/>
+                            <condition type="lessThan" value="1" field="selections" scope="parent" childId="896e-68fb-cf54-7337" shared="true" includeChildForces="true" includeChildSelections="true"/>
+                          </conditions>
+                        </conditionGroup>
+                      </conditionGroups>
+                      <conditions>
+                        <condition type="lessThan" value="31" field="a623-fe74-1d33-cddf" scope="root-entry" childId="any" shared="true" includeChildSelections="true"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </modifier>
+                <modifier type="set" value="2" field="b03b-c239-15a5-da55">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="5929-ad51-d006-e008" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+              <costs>
+                <cost name="pts" typeId="51b2-306e-1021-d207" value="0"/>
+                <cost name="Crusade Points" typeId="b03b-c239-15a5-da55" value="2"/>
+                <cost name="Crusade: Battle Honours" typeId="75bb-ded1-c86d-bdf0" value="1"/>
+                <cost name="Diplomatic Power" typeId="4d7c-04b6-8a79-837f" value="0"/>
+                <cost name="Military Power" typeId="1cbe-d9c9-86a8-2d41" value="0"/>
+              </costs>
+            </selectionEntry>
+            <selectionEntry type="upgrade" import="true" name="Rod of Grace" hidden="false" id="3489-8563-c782-0e72">
+              <profiles>
+                <profile name="Rod of Grace" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="b8b3-5446-3985-d85b">
+                  <characteristics>
+                    <characteristic name="Description" typeId="9b8f-694b-e5e-b573">If this model is your **^^Blessed Orator^^**, you can intone Hymns of Battle up to twice during the battle, rather than only one (you must discard 2 Miracle dice each time you wish to do so). You cannot intone Hymns of Battle twice at the start of the same battle round using this Crusade Relic.</characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="e04d-786d-b933-c1a3" includeChildForces="true" includeChildSelections="true"/>
+              </constraints>
+              <modifiers>
+                <modifier type="set" value="true" field="hidden">
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditionGroups>
+                        <conditionGroup type="and">
+                          <conditions>
+                            <condition type="atLeast" value="1" field="selections" scope="roster" childId="3489-8563-c782-0e72" shared="true" includeChildForces="true" includeChildSelections="true"/>
+                            <condition type="lessThan" value="1" field="selections" scope="parent" childId="3489-8563-c782-0e72" shared="true" includeChildForces="true" includeChildSelections="true"/>
+                          </conditions>
+                        </conditionGroup>
+                      </conditionGroups>
+                      <conditions>
+                        <condition type="lessThan" value="31" field="a623-fe74-1d33-cddf" scope="root-entry" childId="any" shared="true" includeChildSelections="true"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </modifier>
+                <modifier type="set" value="2" field="b03b-c239-15a5-da55">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="5929-ad51-d006-e008" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+              <costs>
+                <cost name="pts" typeId="51b2-306e-1021-d207" value="0"/>
+                <cost name="Crusade Points" typeId="b03b-c239-15a5-da55" value="2"/>
+                <cost name="Crusade: Battle Honours" typeId="75bb-ded1-c86d-bdf0" value="1"/>
+                <cost name="Diplomatic Power" typeId="4d7c-04b6-8a79-837f" value="0"/>
+                <cost name="Military Power" typeId="1cbe-d9c9-86a8-2d41" value="0"/>
+              </costs>
+            </selectionEntry>
+          </selectionEntries>
+        </selectionEntryGroup>
+        <selectionEntryGroup name="Legendary Relics" id="b451-2281-699e-8eb4" hidden="false" sortIndex="3">
+          <selectionEntries>
+            <selectionEntry type="upgrade" import="true" name="Book of Saint Lucius" hidden="false" id="4651-5dfa-bce4-e79a">
+              <profiles>
+                <profile name="Book of Saint Lucius" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="3156-cd9c-ca71-732d">
+                  <characteristics>
+                    <characteristic name="Description" typeId="9b8f-694b-e5e-b573">If the bearer is your **^^Blessed Orator^^**, each time your army intones Hymns of Battle, if the bearer is on the battlefield, after selecting which Hymns will apply to your army, you can randomly select one additional Hymn of Battle to apply to your army (if you roll a result that you have already select, roll again until you result you have not rolled).</characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="e193-d997-476f-d27d" includeChildForces="true" includeChildSelections="true"/>
+              </constraints>
+              <modifiers>
+                <modifier type="set" value="true" field="hidden">
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditionGroups>
+                        <conditionGroup type="and">
+                          <conditions>
+                            <condition type="atLeast" value="1" field="selections" scope="roster" childId="4651-5dfa-bce4-e79a" shared="true" includeChildForces="true" includeChildSelections="true"/>
+                            <condition type="lessThan" value="1" field="selections" scope="parent" childId="4651-5dfa-bce4-e79a" shared="true" includeChildForces="true" includeChildSelections="true"/>
+                          </conditions>
+                        </conditionGroup>
+                      </conditionGroups>
+                      <conditions>
+                        <condition type="lessThan" value="51" field="a623-fe74-1d33-cddf" scope="root-entry" childId="any" shared="true" includeChildSelections="true"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </modifier>
+                <modifier type="set" value="2" field="b03b-c239-15a5-da55">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="5929-ad51-d006-e008" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+              <costs>
+                <cost name="pts" typeId="51b2-306e-1021-d207" value="0"/>
+                <cost name="Crusade Points" typeId="b03b-c239-15a5-da55" value="3"/>
+                <cost name="Crusade: Battle Honours" typeId="75bb-ded1-c86d-bdf0" value="1"/>
+                <cost name="Diplomatic Power" typeId="4d7c-04b6-8a79-837f" value="0"/>
+                <cost name="Military Power" typeId="1cbe-d9c9-86a8-2d41" value="0"/>
+              </costs>
+            </selectionEntry>
+          </selectionEntries>
+        </selectionEntryGroup>
+        <selectionEntryGroup name="Artificer Relics" id="b89b-313f-0674-4450" hidden="false" sortIndex="1">
+          <selectionEntries>
+            <selectionEntry type="upgrade" import="true" name="Armour of Saints" hidden="false" id="3e34-aaa1-d334-91ba">
+              <profiles>
+                <profile name="Armour of Saints" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="c27d-8821-d4d7-03f4">
+                  <characteristics>
+                    <characteristic name="Description" typeId="9b8f-694b-e5e-b573">**^^Adepta Sororitas^^** model only (excluding **^^Ministorum Priest^^** models). The bearer has a Save characteristic of 2+. The first time the bearer loses one or more Wounds, at the end of the phase in which those wounds were lost, you gain 1 Miracle dice (the value of this Miracle dice is always a 6).</characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="03dc-aacc-871c-e586" includeChildForces="true" includeChildSelections="true"/>
+              </constraints>
+              <modifiers>
+                <modifier type="set" value="true" field="hidden">
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditionGroups>
+                        <conditionGroup type="and">
+                          <conditions>
+                            <condition type="atLeast" value="1" field="selections" scope="roster" childId="3e34-aaa1-d334-91ba" shared="true" includeChildForces="true" includeChildSelections="true"/>
+                            <condition type="lessThan" value="1" field="selections" scope="parent" childId="3e34-aaa1-d334-91ba" shared="true" includeChildForces="true" includeChildSelections="true"/>
+                          </conditions>
+                        </conditionGroup>
+                      </conditionGroups>
+                      <conditions>
+                        <condition type="notInstanceOf" value="1" field="selections" scope="parent" childId="fd71-afa6-b13b-7fda" shared="true"/>
+                        <condition type="instanceOf" value="1" field="selections" scope="parent" childId="cc88-9467-86ac-4ca2" shared="true"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </modifier>
+                <modifier type="set" value="2" field="b03b-c239-15a5-da55">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="5929-ad51-d006-e008" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+              <costs>
+                <cost name="pts" typeId="51b2-306e-1021-d207" value="0"/>
+                <cost name="Crusade Points" typeId="b03b-c239-15a5-da55" value="1"/>
+                <cost name="Crusade: Battle Honours" typeId="75bb-ded1-c86d-bdf0" value="1"/>
+                <cost name="Diplomatic Power" typeId="4d7c-04b6-8a79-837f" value="0"/>
+                <cost name="Military Power" typeId="1cbe-d9c9-86a8-2d41" value="0"/>
+              </costs>
+              <modifierGroups>
+                <modifierGroup type="and">
+                  <modifiers>
+                    <modifier type="append" value="Armour of Saints" field="annotation" join=", " scope="model" affects="self.entries.recursive.profiles.Unit"/>
+                    <modifier type="set" value="2+" field="450-a17e-9d5e-29da" scope="model" affects="self.entries.recursive.profiles.Unit"/>
+                  </modifiers>
+                </modifierGroup>
+              </modifierGroups>
+            </selectionEntry>
+            <selectionEntry type="upgrade" import="true" name="Icon of Chiros" hidden="false" id="aeb2-d8cb-7a74-b0e0">
+              <profiles>
+                <profile name="Icon of Chiros" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="6c19-413a-0ebc-7bb7">
+                  <characteristics>
+                    <characteristic name="Description" typeId="9b8f-694b-e5e-b573">**^^Canoness^^**, **^^Ministorum Priest^^** or **^^Dialogus^^** only. The bearer can use the Once per Battle ability listed on their datasheet one additional time during the battle.</characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="46f1-e107-1f06-8b23" includeChildForces="true" includeChildSelections="true"/>
+              </constraints>
+              <modifiers>
+                <modifier type="set" value="true" field="hidden">
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditionGroups>
+                        <conditionGroup type="and">
+                          <conditions>
+                            <condition type="atLeast" value="1" field="selections" scope="roster" childId="aeb2-d8cb-7a74-b0e0" shared="true" includeChildForces="true" includeChildSelections="true"/>
+                            <condition type="lessThan" value="1" field="selections" scope="parent" childId="aeb2-d8cb-7a74-b0e0" shared="true" includeChildForces="true" includeChildSelections="true"/>
+                          </conditions>
+                        </conditionGroup>
+                        <conditionGroup type="and">
+                          <conditions>
+                            <condition type="notInstanceOf" value="1" field="selections" scope="parent" childId="fef8-7c60-b716-cf27" shared="true"/>
+                            <condition type="notInstanceOf" value="1" field="selections" scope="parent" childId="c22d-ed31-bda4-79d6" shared="true"/>
+                            <condition type="notInstanceOf" value="1" field="selections" scope="parent" childId="cc88-9467-86ac-4ca2" shared="true"/>
+                          </conditions>
+                        </conditionGroup>
+                      </conditionGroups>
+                    </conditionGroup>
+                  </conditionGroups>
+                </modifier>
+                <modifier type="set" value="2" field="b03b-c239-15a5-da55">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="5929-ad51-d006-e008" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+              <costs>
+                <cost name="pts" typeId="51b2-306e-1021-d207" value="0"/>
+                <cost name="Crusade Points" typeId="b03b-c239-15a5-da55" value="1"/>
+                <cost name="Crusade: Battle Honours" typeId="75bb-ded1-c86d-bdf0" value="1"/>
+                <cost name="Diplomatic Power" typeId="4d7c-04b6-8a79-837f" value="0"/>
+                <cost name="Military Power" typeId="1cbe-d9c9-86a8-2d41" value="0"/>
+              </costs>
+            </selectionEntry>
+            <selectionEntry type="upgrade" import="true" name="Sigil Sanctorum" hidden="false" id="bc6c-f58f-7bbd-a336">
+              <profiles>
+                <profile name="Sigil Sanctorum" typeId="9cc3-6d83-4dd3-9b64" typeName="Abilities" hidden="false" id="a6fd-f501-36da-8d29">
+                  <characteristics>
+                    <characteristic name="Description" typeId="9b8f-694b-e5e-b573">The bearer&apos;s unit is eligible to shoot or declare a charge in a turn in which it Fell Back, If your army is intoning Hymns of Battle this battle round, the bearer&apos;s unit is eligible to shoot and declare a charge in a turn in which it Fell Back.</characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+              <constraints>
+                <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="3940-f09a-7bf0-84c1" includeChildForces="true" includeChildSelections="true"/>
+              </constraints>
+              <modifiers>
+                <modifier type="set" value="true" field="hidden">
+                  <conditionGroups>
+                    <conditionGroup type="and">
+                      <conditions>
+                        <condition type="atLeast" value="1" field="selections" scope="roster" childId="bc6c-f58f-7bbd-a336" shared="true" includeChildForces="true" includeChildSelections="true"/>
+                        <condition type="lessThan" value="1" field="selections" scope="parent" childId="bc6c-f58f-7bbd-a336" shared="true" includeChildForces="true" includeChildSelections="true"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </modifier>
+                <modifier type="set" value="2" field="b03b-c239-15a5-da55">
+                  <conditions>
+                    <condition type="instanceOf" value="1" field="selections" scope="ancestor" childId="5929-ad51-d006-e008" shared="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+              <costs>
+                <cost name="pts" typeId="51b2-306e-1021-d207" value="0"/>
+                <cost name="Crusade Points" typeId="b03b-c239-15a5-da55" value="1"/>
+                <cost name="Crusade: Battle Honours" typeId="75bb-ded1-c86d-bdf0" value="1"/>
+                <cost name="Diplomatic Power" typeId="4d7c-04b6-8a79-837f" value="0"/>
+                <cost name="Military Power" typeId="1cbe-d9c9-86a8-2d41" value="0"/>
+              </costs>
+            </selectionEntry>
+          </selectionEntries>
+        </selectionEntryGroup>
+      </selectionEntryGroups>
+      <comment>Crusade content</comment>
+      <modifiers>
+        <modifier type="set" value="true" field="hidden">
+          <conditions>
+            <condition type="lessThan" value="1" field="selections" scope="roster" childId="c00c-b9d6-e0f7-4c37" shared="true" includeChildSelections="true" includeChildForces="true"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+    </selectionEntryGroup>
   </sharedSelectionEntryGroups>
   <entryLinks>
     <entryLink import="true" name="Aestred Thurga and Agathae Dolan" hidden="false" type="selectionEntry" id="29b2-5ee-95ac-8fe9" targetId="4b94-c22e-84f9-8d32"/>
@@ -11767,14 +12962,24 @@ Death Before Disgrace: Each time a PENITENT model from your army is destroyed by
         <entryLink import="true" name="Shadow Operations" hidden="false" id="e5fe-483d-2acf-2a50" type="selectionEntryGroup" targetId="68a2-ada5-3cd4-c5a3"/>
       </entryLinks>
     </entryLink>
+    <entryLink import="true" name="Celestian Insidiants" hidden="false" id="1f53-51d7-bb92-5d25" type="selectionEntry" targetId="e286-849d-8f74-75e6"/>
   </entryLinks>
   <catalogueLinks>
     <catalogueLink type="catalogue" name="Imperium - Imperial Knights - Library" id="f82d-fbeb-8ed2-4284" targetId="1b6d-dc06-5db9-c7d1" importRootEntries="true"/>
     <catalogueLink type="catalogue" name="Imperium - Agents of the Imperium" id="40ad-450d-52f8-cdb7" targetId="b00-cd86-4b4c-97ba" importRootEntries="true"/>
     <catalogueLink type="catalogue" name="Library - Titans" id="3d9-6f43-e1de-ae2b" targetId="7481-280e-b55e-7867" importRootEntries="true"/>
   </catalogueLinks>
-  <readme>GW can go fuck yourself with these points</readme>
+  <readme>GW just LOVES to nerf Sisters</readme>
   <publications>
     <publication name="Codex: Adepta Sororitas" id="7d85-6d0f-57e0-5dea" hidden="false" shortName="&quot;Only 4 detachments, GW hates Sisters&quot;" publisher="&apos;Still no Lance rule on the only Lance in the game&quot;" publisherUrl="https://40ksisters.libsyn.com/" publicationDate="If you&apos;re not on the Siscord what you doing with your life?"/>
   </publications>
+  <profileTypes>
+    <profileType name="Hymn of Battle" id="080e-29ff-c83f-bc44" hidden="false">
+      <comment>Crusade Content - White Dwarf</comment>
+      <characteristicTypes>
+        <characteristicType name="Description" id="3699-66b5-01a3-2f9b"/>
+        <characteristicType name="D6" id="4ab8-4478-7f0c-099d"/>
+      </characteristicTypes>
+    </profileType>
+  </profileTypes>
 </catalogue>

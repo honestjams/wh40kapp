@@ -68,6 +68,10 @@ const FACTION_COLORS: Record<string, string> = {
   'orks':                       '#4a6a1a',
   'tau-empire':                 '#1a5a6a',
   'tyranids':                   '#6a1a7a',
+  'chaos-emperors-children':    '#9c27b0',
+  'chaos-knights':              '#6a1a2a',
+  'imperium-imperial-knights':  '#c8922a',
+  'imperium-ultramarines':      '#0d47a1',
 }
 
 export function getFactionColor(id: string) {

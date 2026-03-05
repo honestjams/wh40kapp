@@ -15,9 +15,24 @@
     "file": "/bsData-json/imperium-astra-militarum.json"
   },
   {
+    "id": "chaos-knights",
+    "name": "Chaos Knights",
+    "file": "/bsData-json/chaos-knights.json"
+  },
+  {
+    "id": "imperium-imperial-knights",
+    "name": "Imperial Knights",
+    "file": "/bsData-json/imperium-imperial-knights.json"
+  },
+  {
     "id": "chaos-space-marines",
     "name": "Chaos Space Marines",
     "file": "/bsData-json/chaos-space-marines.json"
+  },
+  {
+    "id": "chaos-emperors-children",
+    "name": "Emperor's Children",
+    "file": "/bsData-json/chaos-emperors-children.json"
   },
   {
     "id": "chaos-death-guard",
@@ -78,6 +93,11 @@
     "id": "imperium-space-wolves",
     "name": "Space Wolves",
     "file": "/bsData-json/imperium-space-wolves.json"
+  },
+  {
+    "id": "imperium-ultramarines",
+    "name": "Ultramarines",
+    "file": "/bsData-json/imperium-ultramarines.json"
   },
   {
     "id": "leagues-of-votann",
