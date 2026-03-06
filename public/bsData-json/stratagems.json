@@ -100,32 +100,80 @@
         "cp": 1,
         "detachment": "The Angelic Host",
         "phase": "Movement",
-        "timing": "When a unit arrives from Deep Strike",
-        "effect": "That unit can be set up anywhere on the battlefield that is more than 3\" horizontally from all enemy models (instead of the normal 9\")."
+        "timing": "Your Movement phase, when a unit with Jump Pack arrives from Strategic Reserves",
+        "effect": "That unit can be set up anywhere on the battlefield more than 6\" from all enemy models rather than the normal 9\". That unit can also declare a charge this turn."
       },
       {
         "name": "Red Thirst",
         "cp": 1,
         "detachment": "The Angelic Host",
         "phase": "Fight",
-        "timing": "After a Blood Angels unit is selected to fight",
-        "effect": "Until the end of the phase, melee weapons equipped by models in that unit have the [SUSTAINED HITS 1] ability."
+        "timing": "Fight phase, when a BLOOD ANGELS unit with Jump Pack is selected to fight",
+        "effect": "Until end of phase, add 1 to the Attacks and Strength characteristics of melee weapons used by models in that unit."
       },
       {
-        "name": "Savage Echoes",
+        "name": "Line Breaker",
         "cp": 1,
-        "detachment": "The Angelic Host",
+        "detachment": "Liberator Assault Group",
+        "phase": "Movement",
+        "timing": "Your Movement phase, when a LIBERATOR ASSAULT GROUP unit finishes a charge move",
+        "effect": "Until end of turn, enemy units within Engagement Range of that unit are not Objective Secured."
+      },
+      {
+        "name": "Shock Assault",
+        "cp": 1,
+        "detachment": "Liberator Assault Group",
         "phase": "Fight",
-        "timing": "After charging",
-        "effect": "Until the end of the phase, add 1 to the Attacks characteristic of melee weapons equipped by models in that unit."
+        "timing": "Fight phase, when a unit from this detachment charges",
+        "effect": "Until end of phase, each time a model in that unit makes a melee attack, an unmodified hit roll of 6 scores 1 additional hit."
+      },
+      {
+        "name": "For the Chapter",
+        "cp": 1,
+        "detachment": "Angelic Inheritors",
+        "phase": "Any",
+        "timing": "Any phase, when an ANGELIC INHERITORS CHARACTER model is destroyed",
+        "effect": "Until end of battle, BLOOD ANGELS INFANTRY units within 6\" of where that model was destroyed re-roll hit rolls of 1 in melee."
+      },
+      {
+        "name": "Sanguine Bond",
+        "cp": 2,
+        "detachment": "Angelic Inheritors",
+        "phase": "Fight",
+        "timing": "Fight phase, when a unit from this detachment is selected to fight",
+        "effect": "Until end of phase, that unit has the Feel No Pain 5+ ability."
+      },
+      {
+        "name": "Rolling Thunder",
+        "cp": 1,
+        "detachment": "Wrathful Procession",
+        "phase": "Shooting",
+        "timing": "Your Shooting phase, when a BLOOD ANGELS VEHICLE unit is selected to shoot",
+        "effect": "Until end of phase, each time a model in that unit makes a ranged attack, re-roll a hit roll of 1."
+      },
+      {
+        "name": "The Black Rage",
+        "cp": 1,
+        "detachment": "Rage-Cursed Onslaught",
+        "phase": "Fight",
+        "timing": "Fight phase, when a RAGE-CURSED ONSLAUGHT unit is selected to fight",
+        "effect": "Until end of phase, that unit's OC characteristic is 0, but each time a model in that unit makes a melee attack, add 2 to the Attacks characteristic and 1 to the Strength characteristic."
       },
       {
         "name": "Armour of Contempt",
         "cp": 1,
         "detachment": "Any",
         "phase": "Any",
-        "timing": "When targeted by an attack",
-        "effect": "Until the end of the phase, worsen the AP of attacks targeting that unit by 1."
+        "timing": "Any phase, when a saving throw is failed by a BLOOD ANGELS VEHICLE",
+        "effect": "The AP of that attack is considered to be 0 for that saving throw. Re-roll the saving throw."
+      },
+      {
+        "name": "Gift of Foresight",
+        "cp": 1,
+        "detachment": "Any",
+        "phase": "Any",
+        "timing": "Start of any phase",
+        "effect": "Select one BLOOD ANGELS unit. Until end of phase, each time an attack is made against that unit, subtract 1 from the hit roll."
       }
     ],
     "imperium-dark-angels": [
@@ -860,6 +908,56 @@
         "phase": "Shooting",
         "timing": "Your Shooting phase (once per battle)",
         "effect": "Select one point on the battlefield. Each unit (friend and foe) within 3\" of that point suffers D3+3 mortal wounds on a 2+."
+      }
+    ],
+    "imperium-black-templars": [
+      {
+        "name": "Crusaders",
+        "cp": 1,
+        "detachment": "Black Spear Task Force",
+        "phase": "Fight",
+        "timing": "Fight phase, when a BLACK TEMPLARS unit is selected to fight after charging",
+        "effect": "Until end of phase, each time a model in that unit makes a melee attack, an unmodified hit roll of 6 scores 1 additional hit."
+      },
+      {
+        "name": "Abhor the Witch",
+        "cp": 1,
+        "detachment": "Black Spear Task Force",
+        "phase": "Any",
+        "timing": "Any phase, when a PSYKER unit targets a BLACK TEMPLARS unit",
+        "effect": "Until end of phase, that PSYKER unit's attacks suffer -1 to their hit rolls against the target BLACK TEMPLARS unit."
+      },
+      {
+        "name": "Vow of the Crusader",
+        "cp": 1,
+        "detachment": "Black Spear Task Force",
+        "phase": "Fight",
+        "timing": "Fight phase, when a BLACK TEMPLARS unit is selected to fight",
+        "effect": "Until end of phase, models in that unit have a 5+ Feel No Pain."
+      },
+      {
+        "name": "Zeal of the Initiate",
+        "cp": 2,
+        "detachment": "Black Spear Task Force",
+        "phase": "Fight",
+        "timing": "Fight phase, when a BLACK TEMPLARS INFANTRY unit is destroyed",
+        "effect": "Before removing that unit, it can immediately fight as if it were your turn to do so."
+      },
+      {
+        "name": "Armour of Contempt",
+        "cp": 1,
+        "detachment": "Any",
+        "phase": "Any",
+        "timing": "Any phase, when a saving throw is failed by a BLACK TEMPLARS VEHICLE",
+        "effect": "The AP of that attack is considered to be 0 for that saving throw. Re-roll the saving throw."
+      },
+      {
+        "name": "Devout Push",
+        "cp": 1,
+        "detachment": "Any",
+        "phase": "Movement",
+        "timing": "Your Movement phase, when a BLACK TEMPLARS unit ends a Normal Move, Advance, or charge move",
+        "effect": "Each enemy unit within 1\" of that unit must take a Battle-shock test."
       }
     ]
   }

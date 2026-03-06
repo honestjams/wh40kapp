@@ -72,6 +72,7 @@ const FACTION_COLORS: Record<string, string> = {
   'chaos-knights':              '#6a1a2a',
   'imperium-imperial-knights':  '#c8922a',
   'imperium-ultramarines':      '#0d47a1',
+  'imperium-black-templars':    '#1a1a1a',
 }
 
 export function getFactionColor(id: string) {
