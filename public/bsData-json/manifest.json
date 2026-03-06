@@ -70,6 +70,11 @@
     "file": "/bsData-json/imperium-adeptus-mechanicus.json"
   },
   {
+    "id": "imperium-black-templars",
+    "name": "Black Templars",
+    "file": "/bsData-json/imperium-black-templars.json"
+  },
+  {
     "id": "imperium-blood-angels",
     "name": "Blood Angels",
     "file": "/bsData-json/imperium-blood-angels.json"

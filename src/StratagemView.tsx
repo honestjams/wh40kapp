@@ -119,6 +119,13 @@ export default function StratagemView({ roster }: Props) {
     new Set(roster.filter(u => u.detachment).map(u => u.detachment!.name))
   )
 
+  // Map factionId -> set of selected detachment names (for stratagem filtering)
+  const factionDetachments = roster.reduce<Record<string, Set<string>>>((acc, u) => {
+    if (!acc[u.factionId]) acc[u.factionId] = new Set()
+    if (u.detachment) acc[u.factionId].add(u.detachment.name)
+    return acc
+  }, {})
+
   const toggleUsed = (key: string) => {
     setUsedStrats(prev => {
       const next = new Set(prev)
@@ -145,8 +152,17 @@ export default function StratagemView({ roster }: Props) {
   for (const fid of rosterFactions) {
     const fStrats = data.factions[fid] ?? []
     const fName = roster.find(u => u.factionId === fid)?.factionName ?? fid
+    const activeDets = factionDetachments[fid] ?? new Set()
     for (const s of fStrats) {
-      factionStrats.push({ ...s, factionId: fid, factionName: fName })
+      // Show if: "Any" detachment, no detachment selected, or matches an active detachment
+      const detMatches =
+        s.detachment === 'Any' ||
+        !s.detachment ||
+        activeDets.size === 0 ||
+        activeDets.has(s.detachment)
+      if (detMatches) {
+        factionStrats.push({ ...s, factionId: fid, factionName: fName })
+      }
     }
   }
 
