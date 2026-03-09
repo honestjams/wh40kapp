@@ -2,131 +2,166 @@
   {
     "id": "aeldari-craftworlds",
     "name": "Craftworlds (Aeldari)",
-    "file": "/bsData-json/aeldari-craftworlds.json"
+    "file": "/bsData-json/aeldari-craftworlds.json",
+    "allegiance": "xenos"
   },
   {
     "id": "chaos-daemons",
     "name": "Chaos Daemons",
-    "file": "/bsData-json/chaos-daemons.json"
+    "file": "/bsData-json/chaos-daemons.json",
+    "allegiance": "chaos"
   },
   {
     "id": "imperium-astra-militarum",
     "name": "Astra Militarum",
-    "file": "/bsData-json/imperium-astra-militarum.json"
+    "file": "/bsData-json/imperium-astra-militarum.json",
+    "allegiance": "imperium"
   },
   {
     "id": "chaos-knights",
     "name": "Chaos Knights",
-    "file": "/bsData-json/chaos-knights.json"
+    "file": "/bsData-json/chaos-knights.json",
+    "allegiance": "chaos"
   },
   {
     "id": "imperium-imperial-knights",
     "name": "Imperial Knights",
-    "file": "/bsData-json/imperium-imperial-knights.json"
+    "file": "/bsData-json/imperium-imperial-knights.json",
+    "allegiance": "imperium"
   },
   {
     "id": "chaos-space-marines",
     "name": "Chaos Space Marines",
-    "file": "/bsData-json/chaos-space-marines.json"
+    "file": "/bsData-json/chaos-space-marines.json",
+    "allegiance": "chaos"
   },
   {
     "id": "chaos-emperors-children",
     "name": "Emperor's Children",
-    "file": "/bsData-json/chaos-emperors-children.json"
+    "file": "/bsData-json/chaos-emperors-children.json",
+    "allegiance": "chaos"
   },
   {
     "id": "chaos-death-guard",
     "name": "Death Guard",
-    "file": "/bsData-json/chaos-death-guard.json"
+    "file": "/bsData-json/chaos-death-guard.json",
+    "allegiance": "chaos"
   },
   {
     "id": "chaos-thousand-sons",
     "name": "Thousand Sons",
-    "file": "/bsData-json/chaos-thousand-sons.json"
+    "file": "/bsData-json/chaos-thousand-sons.json",
+    "allegiance": "chaos"
   },
   {
     "id": "chaos-world-eaters",
     "name": "World Eaters",
-    "file": "/bsData-json/chaos-world-eaters.json"
+    "file": "/bsData-json/chaos-world-eaters.json",
+    "allegiance": "chaos"
   },
   {
     "id": "genestealer-cults",
     "name": "Genestealer Cults",
-    "file": "/bsData-json/genestealer-cults.json"
+    "file": "/bsData-json/genestealer-cults.json",
+    "allegiance": "xenos"
   },
   {
     "id": "imperium-adepta-sororitas",
     "name": "Adepta Sororitas",
-    "file": "/bsData-json/imperium-adepta-sororitas.json"
+    "file": "/bsData-json/imperium-adepta-sororitas.json",
+    "allegiance": "imperium"
   },
   {
     "id": "imperium-adeptus-custodes",
     "name": "Adeptus Custodes",
-    "file": "/bsData-json/imperium-adeptus-custodes.json"
+    "file": "/bsData-json/imperium-adeptus-custodes.json",
+    "allegiance": "imperium"
   },
   {
     "id": "imperium-adeptus-mechanicus",
     "name": "Adeptus Mechanicus",
-    "file": "/bsData-json/imperium-adeptus-mechanicus.json"
-  },
-  {
-    "id": "imperium-black-templars",
-    "name": "Black Templars",
-    "file": "/bsData-json/imperium-black-templars.json"
-  },
-  {
-    "id": "imperium-blood-angels",
-    "name": "Blood Angels",
-    "file": "/bsData-json/imperium-blood-angels.json"
-  },
-  {
-    "id": "imperium-dark-angels",
-    "name": "Dark Angels",
-    "file": "/bsData-json/imperium-dark-angels.json"
-  },
-  {
-    "id": "imperium-grey-knights",
-    "name": "Grey Knights",
-    "file": "/bsData-json/imperium-grey-knights.json"
+    "file": "/bsData-json/imperium-adeptus-mechanicus.json",
+    "allegiance": "imperium"
   },
   {
     "id": "imperium-space-marines",
     "name": "Space Marines",
-    "file": "/bsData-json/imperium-space-marines.json"
-  },
-  {
-    "id": "imperium-space-wolves",
-    "name": "Space Wolves",
-    "file": "/bsData-json/imperium-space-wolves.json"
-  },
-  {
-    "id": "imperium-ultramarines",
-    "name": "Ultramarines",
-    "file": "/bsData-json/imperium-ultramarines.json"
+    "file": "/bsData-json/imperium-space-marines.json",
+    "allegiance": "imperium",
+    "hasSubfactions": true,
+    "subfactions": [
+      {
+        "id": "imperium-blood-angels",
+        "name": "Blood Angels",
+        "file": "/bsData-json/imperium-blood-angels.json",
+        "color": "#8b0000",
+        "lore": "Angels of Death. Sons of Sanguinius."
+      },
+      {
+        "id": "imperium-black-templars",
+        "name": "Black Templars",
+        "file": "/bsData-json/imperium-black-templars.json",
+        "color": "#1a1a1a",
+        "lore": "Eternal Crusaders. No Mercy. No Respite."
+      },
+      {
+        "id": "imperium-dark-angels",
+        "name": "Dark Angels",
+        "file": "/bsData-json/imperium-dark-angels.json",
+        "color": "#1a4a1a",
+        "lore": "Unforgiven. Keepers of dark secrets."
+      },
+      {
+        "id": "imperium-grey-knights",
+        "name": "Grey Knights",
+        "file": "/bsData-json/imperium-grey-knights.json",
+        "color": "#4a5a6a",
+        "lore": "Daemon hunters. Warriors of the Imperium Sanctus."
+      },
+      {
+        "id": "imperium-space-wolves",
+        "name": "Space Wolves",
+        "file": "/bsData-json/imperium-space-wolves.json",
+        "color": "#3a5a7a",
+        "lore": "The Wolves of Fenris. Howl of Russ."
+      },
+      {
+        "id": "imperium-ultramarines",
+        "name": "Ultramarines",
+        "file": "/bsData-json/imperium-ultramarines.json",
+        "color": "#0d47a1",
+        "lore": "Defenders of Ultramar. Heirs of Guilliman."
+      }
+    ]
   },
   {
     "id": "leagues-of-votann",
     "name": "Leagues of Votann",
-    "file": "/bsData-json/leagues-of-votann.json"
+    "file": "/bsData-json/leagues-of-votann.json",
+    "allegiance": "xenos"
   },
   {
     "id": "necrons",
     "name": "Necrons",
-    "file": "/bsData-json/necrons.json"
+    "file": "/bsData-json/necrons.json",
+    "allegiance": "xenos"
   },
   {
     "id": "orks",
     "name": "Orks",
-    "file": "/bsData-json/orks.json"
+    "file": "/bsData-json/orks.json",
+    "allegiance": "xenos"
   },
   {
     "id": "tau-empire",
     "name": "T'au Empire",
-    "file": "/bsData-json/tau-empire.json"
+    "file": "/bsData-json/tau-empire.json",
+    "allegiance": "xenos"
   },
   {
     "id": "tyranids",
     "name": "Tyranids",
-    "file": "/bsData-json/tyranids.json"
+    "file": "/bsData-json/tyranids.json",
+    "allegiance": "xenos"
   }
 ]
